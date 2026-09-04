@@ -88,56 +88,56 @@
 
 // Filter Search Bar
 
-.filter-bar {
-  margin-block: 28px;
-  color: $text;
-  font-family: $font-body;
-  line-height: 1.5rem;
-  // background:
-  //   radial-gradient(
-  //     circle at 85% 20%,
-  //     rgba(36, 22, 64, 0.6) 0%,
-  //     transparent 60%
-  //   ),
-  //   radial-gradient(
-  //     circle at 10% 80%,
-  //     rgba(15, 182, 201, 0.05) 0%,
-  //     transparent 50%
-  //   );
-}
+// .filter-bar {
+//   margin-block: 28px;
+//   color: $text;
+//   font-family: $font-body;
+//   line-height: 1.5rem;
+//   // background:
+//   //   radial-gradient(
+//   //     circle at 85% 20%,
+//   //     rgba(36, 22, 64, 0.6) 0%,
+//   //     transparent 60%
+//   //   ),
+//   //   radial-gradient(
+//   //     circle at 10% 80%,
+//   //     rgba(15, 182, 201, 0.05) 0%,
+//   //     transparent 50%
+//   //   );
+// }
 
-.filter-bar-flex {
-  @include flex(space-between, center, row nowrap);
-}
+// .filter-bar-flex {
+//   @include flex(space-between, center, row nowrap);
+// }
 
-.filter-bar__content {
-  opacity: 0.9;
-  color: $shade;
-  font-family: $mono;
-}
+// .filter-bar__content {
+//   opacity: 0.9;
+//   color: $shade;
+//   font-family: $mono;
+// }
 
-.filter-bar__search {
-  border-bottom: 1px solid $secondary;
-  overflow: visible;
-  padding-block: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  .search {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    width: 180px;
-    color: $shade;
-    font-size: 0.75rem;
-    opacity: 0.9;
-  }
-  i {
-    color: $shade;
-    opacity: 0.9;
-    font-size: 0.85rem;
-  }
-}
+// .filter-bar__search {
+//   border-bottom: 1px solid $secondary;
+//   overflow: visible;
+//   padding-block: 0.5rem;
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 0.5rem;
+//   .search {
+//     border: none;
+//     outline: none;
+//     background-color: transparent;
+//     width: 180px;
+//     color: $shade;
+//     font-size: 0.75rem;
+//     opacity: 0.9;
+//   }
+//   i {
+//     color: $shade;
+//     opacity: 0.9;
+//     font-size: 0.85rem;
+//   }
+// }
 
 @keyframes signalBlink {
   0%,

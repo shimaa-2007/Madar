@@ -101,16 +101,67 @@
         </div>
       </div>
     </section>
+
+    <!-- اللي تحت https://getbootstrap.com/docs/5.3/components/navs-tabs/ -->
     <div class="filter-bar">
       <div class="container">
         <div class="filter-bar-flex">
-          <div class="filter-bar__content">
-            <span> SORT</span>: apparent magnitude / nearest signal
+          <div class="filter-bar__actions">
+            <ul
+              class="nav nav-pills filter-bar__categories"
+              id="cosmic-tabs"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="tab-all-btn"
+                  data-bs-toggle="pill"
+                  data-bs-target="#view-all"
+                  type="button"
+                  role="tab"
+                >
+                  ALL
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="tab-stars-btn"
+                  data-bs-toggle="pill"
+                  data-bs-target="#view-stars"
+                  type="button"
+                  role="tab"
+                >
+                  STARS
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="tab-galaxies-btn"
+                  data-bs-toggle="pill"
+                  data-bs-target="#view-galaxies"
+                  type="button"
+                  role="tab"
+                >
+                  GALAXIES
+                </button>
+              </li>
+            </ul>
+
+            <div class="filter-bar__sort">
+              <span class="sort-label">SORT:</span>
+              <span class="sort-value"
+                >apparent magnitude / nearest signal</span
+              >
+            </div>
           </div>
+
           <div class="filter-bar__search">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input
-              placeholder="Search Stars or Galaxies"
+              placeholder="Search Stars or Galaxies..."
               type="search"
               class="search"
             />
@@ -118,6 +169,114 @@
         </div>
       </div>
     </div>
+    <section class="stars-cards">
+      <div class="container">
+        <div class="tab-content">
+          <!-- First Auto Content-->
+          <div class="tab-pane fade show active" id="view-all">
+            <!-- All Cards Here-->
+            <div class="stars-grid">
+              <!-- 1. Betelgeuse -->
+              <article class="star-card">
+                <div class="star-card__header">
+                  <span class="star-card__badge">RED SUPERGIANT</span>
+                  <span class="star-card__distance">642 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Betelgeuse</h3>
+                  <p class="star-card__desc">
+                    An evolved massive star that has exhausted its core hydrogen
+                    fuel.
+                  </p>
+                  <a href="#" class="star-card__action"
+                    >Tune signal <i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/red-giant-2.png"
+                    alt="Betelgeuse"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 2. Sirius -->
+              <article class="star-card">
+                <div class="star-card__header">
+                  <span class="star-card__badge">BINARY SYSTEM</span>
+                  <span class="star-card__distance">8.6 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Sirius</h3>
+                  <p class="star-card__desc">
+                    The brightest point in our night sky is two stars dancing
+                    together.
+                  </p>
+                  <a href="#" class="star-card__action"
+                    >Tune signal <i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </div>
+                <div class="star-card__visual">
+                  <div class="star-sphere star-sphere--sirius"></div>
+                </div>
+              </article>
+
+              <!-- 3. Eta Carinae -->
+              <article class="star-card">
+                <div class="star-card__header">
+                  <span class="star-card__badge">LUMINOUS VARIABLE</span>
+                  <span class="star-card__distance">7,500 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Eta Carinae</h3>
+                  <p class="star-card__desc">
+                    A stellar giant expected to end its life in a spectacular
+                    supernova.
+                  </p>
+                  <a href="#" class="star-card__action"
+                    >Tune signal <i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </div>
+                <div class="star-card__visual">
+                  <div class="star-sphere star-sphere--variable"></div>
+                </div>
+              </article>
+
+              <!-- 4. TRAPPIST-1 -->
+              <article class="star-card">
+                <div class="star-card__header">
+                  <span class="star-card__badge">ULTRA-COOL DWARF</span>
+                  <span class="star-card__distance">40 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">TRAPPIST-1</h3>
+                  <p class="star-card__desc">
+                    Seven Earth-sized worlds orbit a small, quiet star.
+                  </p>
+                  <a href="#" class="star-card__action"
+                    >Tune signal <i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </div>
+                <div class="star-card__visual">
+                  <div class="star-sphere star-sphere--trappist"></div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Second Content-->
+          <div class="tab-pane fade" id="view-stars">
+            <!-- Only Stars Cards -->
+          </div>
+
+          <!-- Third Content-->
+          <div class="tab-pane fade" id="view-galaxies">
+            <!-- Only Galaxy Cards-->
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
