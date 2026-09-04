@@ -1,0 +1,6 @@
+// to make this scss work enter
+// sass -w assets/scss:assets/css --no-source-map
+//in the CLI
+
+@use 'variables' as *;
+@use 'mixins' as *;
