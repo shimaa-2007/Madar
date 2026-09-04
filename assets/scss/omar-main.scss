@@ -2,5 +2,7 @@
 // sass -w assets/scss:assets/css --no-source-map
 //in the CLI
 
-@use 'variables' as *;
-@use 'mixins' as *;
+@use 'abstract/index' as *;
+@use 'stars & galaxies/index' as *;
+
+//git add assets/scss/ assets/css/omar-main.css 4-Stars_Galaxies.html
