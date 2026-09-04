@@ -1,0 +1,353 @@
+    /* =========================================================
+   PLANETS HERO
+   Page Identity:
+   Interactive Catalog
+
+   Custom CSS:
+   - Cosmic background
+   - Glow
+   - Planet animation
+   - Floating stars
+   - Responsive behavior
+========================================================= */
+
+
+/* =========================================================
+   HERO CONTAINER
+   Gives the Planets page its cosmic atmosphere.
+========================================================= */
+
+.planets-hero {
+    position: relative;
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(123, 75, 254, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(15, 182, 201, 0.10),
+            transparent 30%
+        );
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   Keeps the text above decorative elements.
+========================================================= */
+
+.planets-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HERO TITLE
+   Main visual heading.
+========================================================= */
+
+.planets-hero-title {
+    margin-bottom: 20px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+
+    color: var(--gold);
+
+    text-shadow:
+        0 0 10px rgba(201, 150, 46, 0.5),
+        0 0 30px rgba(201, 150, 46, 0.25);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.planets-hero-text {
+    max-width: 550px;
+    margin-bottom: 30px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   HERO BUTTON
+   Bootstrap handles the basic button structure.
+   Custom CSS adds MADAR's visual identity.
+========================================================= */
+
+.planets-hero-btn {
+    padding: 12px 28px;
+
+    background-color: var(--gold);
+    border: 1px solid var(--gold);
+
+    color: #1d1c01;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Button Hover */
+
+.planets-hero-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 15px rgba(201, 150, 46, 0.6),
+        0 0 35px rgba(201, 150, 46, 0.25);
+
+    color: #1d1c01;
+}
+
+
+/* =========================================================
+   PLANET VISUAL AREA
+========================================================= */
+
+.planets-hero-visual {
+    position: relative;
+
+    width: min(450px, 80vw);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   PLANET
+   CSS-made temporary planet.
+========================================================= */
+
+.hero-planet {
+    position: relative;
+
+    width: clamp(220px, 30vw, 360px);
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #ffffff,
+            #d7b94c 12%,
+            #9d7520 35%,
+            #3d2a0e 65%,
+            #111111 100%
+        );
+
+    box-shadow:
+        0 0 25px rgba(201, 150, 46, 0.7),
+        0 0 70px rgba(201, 150, 46, 0.35);
+
+    animation:
+        planet-float 5s ease-in-out infinite,
+        planet-glow 3s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   PLANET SURFACE
+   Adds visual details to make the planet less flat.
+========================================================= */
+
+.planet-surface {
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at 65% 35%,
+            rgba(255, 255, 255, 0.15),
+            transparent 25%
+        ),
+        repeating-radial-gradient(
+            ellipse at 50% 50%,
+            transparent 0,
+            transparent 18px,
+            rgba(255, 255, 255, 0.04) 20px,
+            transparent 25px
+        );
+}
+
+
+/* =========================================================
+   PLANET FLOAT ANIMATION
+   Makes the planet slowly move up and down.
+========================================================= */
+
+@keyframes planet-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+
+/* =========================================================
+   PLANET GLOW ANIMATION
+   Creates a soft changing glow around the planet.
+========================================================= */
+
+@keyframes planet-glow {
+
+    from {
+        box-shadow:
+            0 0 25px rgba(201, 150, 46, 0.6),
+            0 0 60px rgba(201, 150, 46, 0.25);
+    }
+
+    to {
+        box-shadow:
+            0 0 40px rgba(201, 150, 46, 0.9),
+            0 0 100px rgba(201, 150, 46, 0.45);
+    }
+}
+
+
+/* =========================================================
+   FLOATING STARS
+========================================================= */
+
+.hero-star {
+    position: absolute;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 18px var(--neon-cyan);
+
+    animation: star-float 3s ease-in-out infinite alternate;
+}
+
+
+/* Different positions for the stars */
+
+.hero-star-1 {
+    top: 12%;
+    left: 15%;
+}
+
+.hero-star-2 {
+    top: 25%;
+    right: 10%;
+
+    animation-delay: 0.7s;
+}
+
+.hero-star-3 {
+    bottom: 15%;
+    left: 8%;
+
+    animation-delay: 1.2s;
+}
+
+.hero-star-4 {
+    bottom: 25%;
+    right: 15%;
+
+    animation-delay: 1.8s;
+}
+
+
+/* =========================================================
+   STAR ANIMATION
+========================================================= */
+
+@keyframes star-float {
+
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateY(-12px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Bootstrap handles the grid.
+   These rules handle the custom Hero styling.
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .planets-hero {
+        min-height: auto;
+        padding: 100px 0 70px;
+    }
+
+    .planets-hero-content {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .planets-hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .planets-hero-visual {
+        width: min(380px, 85vw);
+    }
+}
+
+
+@media (max-width: 575.98px) {
+
+    .planets-hero {
+        padding: 80px 0 50px;
+    }
+
+    .planets-hero-title {
+        font-size: 2.4rem;
+    }
+
+    .planets-hero-text {
+        font-size: 0.95rem;
+    }
+
+    .hero-planet {
+        width: 220px;
+    }
+}

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- planets style -->
+     <link rel="stylesheet" href="assets/css/planets.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +49,112 @@
       </div>
     </div>
 
-    <!-- bootstrap js -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- =========================================================
+     PLANETS HERO SECTION
+     Purpose:
+     - Introduce the Planets page
+     - Create the "Interactive Catalog" identity
+
+     Bootstrap used:
+     - container     → controls content width
+     - row           → creates the grid row
+     - col-lg-6      → two columns on large screens
+     - d-flex        → flexbox layout
+     - align-items-center → vertical alignment
+     - btn           → Bootstrap button styling
+
+     Custom CSS will handle:
+     - Cosmic background
+     - Glow effects
+     - Floating stars
+     - Planet rotation
+     - Hero animations
+========================================================= -->
+<section class="planets-hero">
+
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <!-- =====================================================
+           HERO CONTENT
+           Bootstrap:
+           - col-lg-6 → half width on large screens
+           - d-flex
+           - align-items-center
+           - justify-content-center
+
+           Contains:
+           - Main title
+           - Description
+           - Explore button
+      ====================================================== -->
+      <div class="col-lg-6 d-flex align-items-center">
+
+        <div class="planets-hero-content">
+
+          <!-- Main Hero Title -->
+          <h1 class="planets-hero-title">
+            EXPLORE THE PLANETS
+          </h1>
+
+          <!-- Hero Description -->
+          <p class="planets-hero-text">
+            Our cosmic neighborhood is bigger than you think.
+          </p>
+
+          <!-- Hero Action Button -->
+          <a href="#planets-catalog"
+             class="btn planets-hero-btn rounded-pill">
+            Explore Planets
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           PLANET VISUAL
+           Bootstrap:
+           - col-lg-6 → second half of the Hero
+           - d-flex
+           - justify-content-center
+           - align-items-center
+
+           Custom CSS:
+           - Planet rotation
+           - Glow
+           - Floating animation
+      ====================================================== -->
+      <div class="col-lg-6 d-flex justify-content-center align-items-center">
+
+        <div class="planets-hero-visual">
+
+          <!-- Decorative floating stars -->
+          <span class="hero-star hero-star-1">✦</span>
+          <span class="hero-star hero-star-2">✦</span>
+          <span class="hero-star hero-star-3">✦</span>
+          <span class="hero-star hero-star-4">✦</span>
+
+          <!-- Planet -->
+          <div class="hero-planet">
+            <div class="planet-surface"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+   <!-- Bootstrap JavaScript -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<!-- Planets Page JavaScript -->
+<script src="assets/js/planets.js"></script>
 </body>
 </html>
