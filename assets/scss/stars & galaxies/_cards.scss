@@ -3,21 +3,47 @@
 .stars-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: 1.5fr 1fr;
+  // grid-template-rows: 1.2fr 1fr 1fr;
+  grid-template-rows:
+    minmax(400px, auto)
+    minmax(350px, 350px)
+    minmax(320px, auto);
   gap: 1.5rem;
   margin-bottom: 3.5rem;
+  grid-template-areas:
+    'fstar fstar'
+    'sgalaxy sstar'
+    'fgalaxy fgalaxy';
+  @include respond-to(laptop-l) {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-rows:
+      minmax(400px, auto)
+      minmax(350px, 350px);
+    grid-template-areas:
+      'fstar  fgalaxy'
+      'sstar sgalaxy ';
+  }
 }
 
 // -------------------------------------------------------------
 // اCards Grid
 // -------------------------------------------------------------
 .stars-grid > .star-card:nth-child(1) {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  // grid-column: 1 / 2;
+  // grid-row: 1 / 2;
+  grid-area: fstar;
 }
 .stars-grid > .star-card:nth-child(2) {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  // grid-column: 2 / 3;
+  // grid-row: 1 / 2;
+  grid-area: fgalaxy;
+}
+.stars-grid > .star-card:nth-child(3) {
+  grid-area: sstar;
+}
+.stars-grid > .star-card:nth-child(4) {
+  grid-area: sgalaxy;
 }
 
 // -------------------------------------------------------------
@@ -122,17 +148,33 @@
 // -------------------------------------------------------------
 .star-card.carousel {
   padding: 0;
+  height: 100% !important;
+  // min-height: 480px;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
 
   .carousel-inner {
-    height: 100%;
     width: 100%;
     position: relative;
+    height: 100% !important;
+    flex: 1 1 auto !important;
   }
 
   .carousel-item {
-    min-height: 290px;
+    // min-height: 290px;
     padding: 1.75rem 2rem;
+    padding-block: clamp(2rem, 5vw, 2.5rem);
     position: relative;
+    min-height: 100%;
+    height: 100% !important;
+  }
+  .carousel-indicators {
+    position: absolute !important;
+    bottom: 1.25rem !important;
+    left: 2rem !important;
+    margin: 0 !important;
+    z-index: 10 !important;
   }
 }
 
@@ -175,32 +217,109 @@
 .star-card__body {
   position: relative;
   z-index: 3;
-  max-width: 55%;
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  border-radius: 12px;
+  // max-width: 55%;
+  // margin-top: 1.5rem;
+  // padding: 0.75rem;
+  // border-radius: 12px;
+  // background: radial-gradient(
+  //   ellipse at left,
+  //   rgba($card-bg, 0.85) 40%,
+  //   transparent 100%
+  // );
+  // backdrop-filter: blur(4px);
+
+  max-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem !important;
+  padding-block: clamp(1rem, 3vw, 1.25rem);
+  padding-inline: clamp(1rem, 3vw, 1.25rem);
+  border-radius: 16px;
   background: radial-gradient(
-    ellipse at left,
-    rgba($card-bg, 0.85) 40%,
-    transparent 100%
+    ellipse at top left,
+    rgba(16, 12, 28, 0.2) 0%,
+    rgba(16, 12, 28, 0.03) 100%
   );
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  @include respond-to(tablet) {
+    max-width: 100%;
+    padding-block: clamp(1.25rem, 3vw, 1.5rem);
+    padding-inline: clamp(1.5rem, 3vw, 1.75rem);
+  }
+  @include respond-to(laptop-l) {
+    max-width: 50%;
+
+    padding-block: clamp(1.25rem, 3vw, 1.5rem);
+    padding-inline: clamp(1.5rem, 3vw, 1.75rem);
+  }
+}
+.stars-grid .star-card:nth-child(1) .star-card__body {
+  max-width: 50%;
+}
+.stars-grid .star-card:nth-child(2) .star-card__body {
+  max-width: 50%;
+}
+.stars-grid .star-card:nth-child(3) .star-card__body {
+  backdrop-filter: blur(6px) !important;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 24, 48, 0.65) 0%,
+    rgba(42, 34, 68, 0.45) 100%
+  ) !important;
+  @include respond-to(laptop-l) {
+    backdrop-filter: blur(3px) !important;
+    background: radial-gradient(
+      ellipse at top left,
+      rgba(16, 12, 28, 0.2) 0%,
+      rgba(16, 12, 28, 0.03) 100%
+    ) !important;
+  }
+}
+.stars-grid .star-card:nth-child(4) .star-card__body {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 24, 48, 0.65) 0%,
+    rgba(42, 34, 68, 0.45) 100%
+  ) !important;
+  max-width: 80%;
+
+  backdrop-filter: blur(6px) !important;
+  @include respond-to(laptop) {
+    background: radial-gradient(
+      ellipse at top left,
+      rgba(16, 12, 28, 0.2) 0%,
+      rgba(16, 12, 28, 0.03) 100%
+    ) !important;
+    max-width: 70%;
+  }
+  @include respond-to(laptop-l) {
+    backdrop-filter: blur(3px) !important;
+  }
 }
 
 .star-card__title {
   font-family: $font-heading-2;
-  // font-size: 1.75rem;
-  min-height: calc(1.75rem * 1.2 * 2); //هنا علشان يقدر يستوعب سطرين
+  font-size: 1.45rem;
+  min-height: auto;
   color: $text;
   margin-bottom: 0.5rem;
   align-items: flex-end;
+  @include respond-to(laptop) {
+    // min-height: calc(1.75rem * 1.2 * 2); //هنا علشان يقدر يستوعب سطرين
+    font-size: 1.75rem;
+  }
 }
 
 .star-card__desc {
   color: $shade;
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.65rem;
+  line-height: 1.2;
   margin-bottom: 0;
+  @include respond-to(laptop) {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
 }
 
 .star-card__action {
@@ -282,10 +401,21 @@ button.star-card__action {
   > .star-card:nth-child(1)
   .carousel-item:nth-child(1)
   .star-card__visual {
-  right: 4%;
-  bottom: -65%;
-  width: 400px;
-  height: 400px;
+  right: 0%;
+  bottom: -35%;
+  width: clamp(380px, 90vw, 400px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  @include respond-to(laptop) {
+    width: clamp(400px, 90vw, 420px) !important;
+    right: 5%;
+    bottom: -30%;
+  }
+  @include respond-to(laptop-l) {
+    width: clamp(450px, 90vw, 470px) !important;
+    right: -5%;
+    bottom: -30%;
+  }
 }
 
 .stars-grid
@@ -305,10 +435,23 @@ button.star-card__action {
   > .star-card:nth-child(1)
   .carousel-item:nth-child(2)
   .star-card__visual {
-  right: 2%;
-  bottom: -60%;
-  width: 380px;
-  height: 380px;
+  right: 0%;
+  bottom: -25%;
+  width: clamp(360px, 90vw, 380px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  @include respond-to(laptop) {
+    width: clamp(380px, 90vw, 400px) !important; // Change the size of img here
+
+    right: 0%;
+    bottom: -25%;
+  }
+  @include respond-to(laptop-l) {
+    width: clamp(420px, 90vw, 440px) !important; // Change the size of img here
+
+    right: -5%;
+    bottom: -25%;
+  }
 }
 
 .stars-grid
@@ -368,10 +511,19 @@ button.star-card__action {
 // Second Card
 // --------------------------
 .stars-grid > .star-card:nth-child(2) .star-card__visual {
-  right: 5%;
-  bottom: -70%;
-  width: 380px;
-  height: 380px;
+  right: 0%;
+  bottom: -30%;
+  width: clamp(400px, 90vw, 420px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  @include respond-to(laptop) {
+    width: clamp(420px, 90vw, 480px) !important;
+  }
+  @include respond-to(laptop) {
+    width: clamp(370px, 90vw, 420px) !important;
+    right: -15%;
+    bottom: -15%;
+  }
 }
 
 .stars-grid > .star-card:nth-child(2) .star-card__visual:has(img)::before {
@@ -393,10 +545,16 @@ button.star-card__action {
 // Third Card
 // --------------------------
 .stars-grid > .star-card:nth-child(3) .star-card__visual {
-  right: 5%;
+  right: -5%;
   bottom: -15%;
-  width: 315px;
-  height: 315px;
+  width: clamp(220px, 90vw, 260px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  @include respond-to(laptop-l) {
+    width: clamp(260px, 90vw, 370px) !important; // Change the size of img here
+    right: -0%;
+    bottom: -10%;
+  }
 }
 
 .stars-grid > .star-card:nth-child(3) .star-card__visual:has(img)::before {
@@ -424,10 +582,17 @@ button.star-card__action {
   > .star-card:nth-child(4)
   .carousel-item:nth-child(1)
   .star-card__visual {
-  right: -15%;
-  bottom: -20%;
-  width: 380px;
-  height: 380px;
+  right: -20%;
+  bottom: -30%;
+
+  width: clamp(360px, 90vw, 380px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  @include respond-to(laptop) {
+    right: -15%;
+
+    width: clamp(380px, 90vw, 400px) !important; // Change the size of img here
+  }
 }
 
 .stars-grid
@@ -457,10 +622,16 @@ button.star-card__action {
   > .star-card:nth-child(4)
   .carousel-item:nth-child(2)
   .star-card__visual {
-  right: -10px;
-  bottom: -35px;
-  width: 320px;
-  height: 320px;
+  right: -22%;
+  bottom: -28%;
+
+  width: clamp(320px, 90vw, 340px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  @include respond-to(laptop) {
+    width: clamp(350px, 90vw, 380px) !important; // Change the size of img here
+    right: -12%;
+  }
 }
 
 .stars-grid
@@ -490,10 +661,12 @@ button.star-card__action {
   > .star-card:nth-child(4)
   .carousel-item:nth-child(3)
   .star-card__visual {
-  right: -10px;
+  right: -5%;
   bottom: -35px;
-  width: 320px;
-  height: 320px;
+
+  width: clamp(270px, 90vw, 280px) !important; // Change the size of img here
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
 }
 
 .stars-grid
