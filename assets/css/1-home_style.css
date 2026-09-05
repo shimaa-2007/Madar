@@ -117,9 +117,9 @@
   transition: all 0.4s ease;
 }
 
-.card-worlds { background-image: url('../images/img2.jpg'); }
-.card-missions { background-image: url('../images/img3.jpg'); }
-.card-deepspace { background-image: url('../images/img4.jpg'); }
+.card-worlds { background-image: url('../images/shimaa_images/img2.jpg'); }
+.card-missions { background-image: url('../images/shimaa_images/img3.jpg'); }
+.card-deepspace { background-image: url('../images/shimaa_images/img4.jpg'); }
 
 .archive-overlay {
   position: absolute;
