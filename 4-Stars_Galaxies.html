@@ -36,7 +36,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
       <div class="container">
         <nav>
           <a href="1-Home.html"
@@ -79,7 +79,7 @@
           >
         </nav>
       </div>
-    </div>
+    </div> -->
 
     <section class="stars-hero">
       <div class="container">
@@ -456,11 +456,305 @@
           <!-- Second Content-->
           <div class="tab-pane fade" id="view-stars">
             <!-- Only Stars Cards -->
+            <div class="stars-uniform-grid">
+              <!-- 1. Betelgeuse -->
+              <article class="star-card star-card--uniform">
+                <div class="star-card__header">
+                  <span class="star-card__badge">RED SUPERGIANT</span>
+                  <span class="star-card__distance">642 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Betelgeuse</h3>
+                  <p class="star-card__desc">
+                    An evolved massive star that has exhausted its core hydrogen
+                    fuel.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-betelgeuse"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/red-giant-2.png"
+                    alt="Betelgeuse"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 2. Rigel -->
+              <article class="star-card star-card--uniform">
+                <div class="star-card__header">
+                  <span class="star-card__badge">BLUE SUPERGIANT</span>
+                  <span class="star-card__distance">860 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Rigel</h3>
+                  <p class="star-card__desc">
+                    A blazing blue supergiant shining with tens of thousands of
+                    times the Sun's luminosity.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-rigel"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/rigel.png"
+                    alt="Rigel"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 3. The Sun -->
+              <article class="star-card star-card--uniform">
+                <div class="star-card__header">
+                  <span class="star-card__badge">YELLOW DWARF</span>
+                  <span class="star-card__distance">8.3 light-mins</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">The Sun</h3>
+                  <p class="star-card__desc">
+                    A dynamic G-type main-sequence star generating energy
+                    through core fusion.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-sun"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/sun.png"
+                    alt="The Sun"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 4. Sirius B -->
+              <article class="star-card star-card--uniform">
+                <div class="star-card__header">
+                  <span class="star-card__badge">WHITE DWARF</span>
+                  <span class="star-card__distance">8.6 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Sirius B</h3>
+                  <p class="star-card__desc">
+                    An ultra-dense stellar remnant packed with intense
+                    gravitational heat and pure white luminosity.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-sirius-b"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/white-dwarf.png"
+                    alt="Sirius B"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 5. Proxima Centauri -->
+              <article class="star-card star-card--uniform">
+                <div class="star-card__header">
+                  <span class="star-card__badge">RED DWARF</span>
+                  <span class="star-card__distance">4.24 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Proxima Centauri</h3>
+                  <p class="star-card__desc">
+                    A low-mass, cool stellar furnace and the nearest stellar
+                    neighbor to our Sun.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-proxima"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/red-dwarf.png"
+                    alt="Proxima Centauri"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 6. Vela Pulsar -->
+              <article class="star-card star-card--uniform">
+                <div class="star-card__header">
+                  <span class="star-card__badge">PULSAR / NEUTRON</span>
+                  <span class="star-card__distance">960 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Vela Pulsar</h3>
+                  <p class="star-card__desc">
+                    An ultra-dense stellar core spinning 11 times a second,
+                    enveloped in high-energy plasma winds.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-pulsar"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/stars/neuron.webp"
+                    alt="Vela Pulsar"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+            </div>
           </div>
 
           <!-- Third Content-->
-          <div class="tab-pane fade" id="view-galaxies">
-            <!-- Only Galaxy Cards-->
+          <!-- Third Content: Only Galaxies Cards -->
+          <div class="tab-pane fade" id="view-galaxies" role="tabpanel">
+            <div class="galaxies-grid">
+              <!-- 1. Spiral Galaxy: Milky Way -->
+              <article class="star-card star-card--galaxy">
+                <div class="star-card__header">
+                  <span class="star-card__badge">SPIRAL GALAXY</span>
+                  <span class="star-card__distance">0 ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Milky Way</h3>
+                  <p class="star-card__desc">
+                    A barred spiral disc harboring sweeping arms of gas, dust,
+                    and hundreds of billions of stars around a core black hole.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-milkyway"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/galaxies/spiral.webp"
+                    alt="Milky Way Spiral Galaxy"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 2. Elliptical Galaxy: Messier 87 -->
+              <article class="star-card star-card--galaxy">
+                <div class="star-card__header">
+                  <span class="star-card__badge">ELLIPTICAL GALAXY</span>
+                  <span class="star-card__distance">53.5M ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Messier 87</h3>
+                  <p class="star-card__desc">
+                    A supergiant ellipsoidal system dominated by ancient,
+                    low-mass stars and harboring a central supermassive black
+                    hole with virtually no active star formation.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-m87"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/galaxies/egg.png"
+                    alt="Messier 87 Elliptical Galaxy"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 3. Irregular Galaxy: Large Magellanic Cloud -->
+              <article class="star-card star-card--galaxy">
+                <div class="star-card__header">
+                  <span class="star-card__badge">IRREGULAR GALAXY</span>
+                  <span class="star-card__distance">163k ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Large Magellanic</h3>
+                  <p class="star-card__desc">
+                    A chaotic, unorganized celestial canopy heavily distorted by
+                    gravitational interactions, rich in starburst nebulae.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-magellanic"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/galaxies/Irregular.png"
+                    alt="Large Magellanic Cloud Irregular Galaxy"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+
+              <!-- 4. Lenticular Galaxy: Sombrero -->
+              <article class="star-card star-card--galaxy">
+                <div class="star-card__header">
+                  <span class="star-card__badge">LENTICULAR GALAXY</span>
+                  <span class="star-card__distance">31.1M ly</span>
+                </div>
+                <div class="star-card__body">
+                  <h3 class="star-card__title">Sombrero Galaxy</h3>
+                  <p class="star-card__desc">
+                    A disc-like transitional galaxy with an enormous central
+                    bulge and prominent dark dust lane, lacking open spiral
+                    arms.
+                  </p>
+                  <button
+                    type="button"
+                    class="star-card__action tune-btn"
+                    data-signal-target="#signal-sombrero"
+                  >
+                    Tune signal <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+                <div class="star-card__visual">
+                  <img
+                    src="assets/images/galaxies/last.png"
+                    alt="Sombrero Lenticular Galaxy"
+                    class="star-card__img"
+                  />
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -468,7 +762,7 @@
     <section class="signal-inspector">
       <div class="container">
         <div class="tab-content" id="signalTabContent">
-          <!-- 1. Betelgeuse (مفعلة افتراضياً عند تحميل الصفحة) -->
+          <!-- 1- Betelgeuse  -->
           <div
             class="tab-pane fade show active signal-card"
             id="signal-betelgeuse"
@@ -499,7 +793,7 @@
             </div>
           </div>
 
-          <!-- 2. Rigel -->
+          <!-- 2- Rigel -->
           <div
             class="tab-pane fade signal-card"
             id="signal-rigel"
@@ -530,7 +824,7 @@
             </div>
           </div>
 
-          <!-- 3. Milky Way -->
+          <!-- 3- Milky Way -->
           <div
             class="tab-pane fade signal-card"
             id="signal-milkyway"
@@ -561,7 +855,7 @@
             </div>
           </div>
 
-          <!-- 4. Large Magellanic Cloud -->
+          <!-- 4- Large Magellanic Cloud -->
           <div
             class="tab-pane fade signal-card"
             id="signal-magellanic"
@@ -593,7 +887,7 @@
             </div>
           </div>
 
-          <!-- 5. Sirius B -->
+          <!-- 5- Sirius B -->
           <div
             class="tab-pane fade signal-card"
             id="signal-sirius-b"
@@ -624,7 +918,7 @@
             </div>
           </div>
 
-          <!-- 6. Proxima Centauri -->
+          <!-- 6- Proxima Centauri -->
           <div
             class="tab-pane fade signal-card"
             id="signal-proxima"
@@ -656,38 +950,157 @@
               </div>
             </div>
           </div>
+          <!-- 7- Signal: The Sun -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-sun"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / THE SUN</span>
+              <h2 class="signal-card__title">Yellow Dwarf</h2>
+              <p class="signal-card__desc">
+                A main-sequence G-type star fusing 600 million tons of hydrogen
+                every second, sustaining all orbital mechanics and life within
+                the solar system.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">8.3 light-mins</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">MAGNITUDE</span>
+                <span class="metric-value">-26.74</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">SOL-001</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8- Signal: Vela Pulsar -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-pulsar"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / VELA PULSAR</span>
+              <h2 class="signal-card__title">Pulsar / Neutron Star</h2>
+              <p class="signal-card__desc">
+                A collapsed core rotating 11 times per second, generating
+                extreme magnetic fields and sweeping intense beams of
+                electromagnetic radiation across space.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">960 ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">PERIOD</span>
+                <span class="metric-value">89.3 ms</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">PSR B0833-45</span>
+              </div>
+            </div>
+          </div>
+          <!-- 9- Signal: Andromeda Galaxy -->
+          <!-- Signal: Messier 87 -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-m87"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / MESSIER 87</span>
+              <h2 class="signal-card__title">Elliptical Galaxy</h2>
+              <p class="signal-card__desc">
+                A giant smooth ellipsoidal galaxy with virtually no visible
+                spiral structure, dominated by ancient stars and harboring a
+                famous supermassive black hole at its core.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">53.5M ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">DIAMETER</span>
+                <span class="metric-value">120k ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">M87 / NGC 4486</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10- Signal: Sombrero Galaxy -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-sombrero"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / SOMBRERO</span>
+              <h2 class="signal-card__title">Lenticular Galaxy</h2>
+              <p class="signal-card__desc">
+                Distinguished by a brilliant oversized central bulge and a
+                razor-sharp equatorial dust absorption lane, anchoring an
+                ultra-massive central black hole.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">31.1M ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">DIAMETER</span>
+                <span class="metric-value">50k ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">M104 / NGC 4594</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cosmic-facts">
+      <div class="container">
+        <div class="fact-heading">
+          <h1 class="fact__header">Cosmic <span>Anomalies.</span></h1>
+        </div>
+        <div class="fact-card">
+          <div class="fact-card__header">
+            <span class="fact-card__tag">— COSMIC ARCHIVE / DID YOU KNOW?</span>
+            <button type="button" class="fact-card__btn" id="nextFactBtn">
+              <span>Discover another fact</span>
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+          </div>
+          <div class="fact-card__content">
+            <p class="fact-card__text" id="factText">
+              Loading cosmic signal...
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.querySelectorAll('.tune-btn').forEach((btn) => {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('data-signal-target');
-          const targetPane = document.querySelector(targetId);
-
-          if (targetPane) {
-            document
-              .querySelectorAll('#signalTabContent .signal-card')
-              .forEach((pane) => {
-                pane.classList.remove('show', 'active');
-              });
-
-            targetPane.classList.add('active');
-            setTimeout(() => {
-              targetPane.classList.add('show');
-            }, 20);
-
-            targetPane.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-            });
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/omar.js"></script>
   </body>
 </html>

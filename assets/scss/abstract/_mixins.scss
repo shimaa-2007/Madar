@@ -1,4 +1,4 @@
-@use 'sass:map' as *;
+@use 'sass:map' as map;
 @mixin flex($justify: center, $align: center, $flow) {
   display: flex;
   justify-content: $justify;

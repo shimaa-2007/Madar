@@ -1,0 +1,170 @@
+@use '../abstract/index' as *;
+
+// 1. شبكة النجوم المتساوية (عمودين مع صفوف بضعف الارتفاع)
+.stars-uniform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 620px;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+// 2. الكارت الموحد (مضاعفة الارتفاع إلى الضعف)
+.stars-uniform-grid .star-card--uniform {
+  position: relative;
+  min-height: 620px;
+  padding: 2.5rem 2.25rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+// 3. تثبيت الحاوية البصرية للنجوم بحجم أكبر يتناسب مع الارتفاع الجديد
+// 3. تثبيت الحاوية البصرية: تكبيرها ونقلها نحو اليسار
+.stars-uniform-grid .star-card--uniform .star-card__visual {
+  position: absolute !important;
+  right: 80px !important; // ← زادت من 15px لتدفع النجوم نحو اليسار
+  bottom: 25px !important;
+  top: auto !important;
+  left: auto !important;
+  width: 380px !important; // ← تكبير الحاوية من 320px
+  height: 380px !important; // ← تكبير الحاوية من 320px
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// 4. الهالة المضيئة
+.stars-uniform-grid .star-card--uniform .star-card__visual::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  filter: blur(45px) !important; // زيادة التمويه قليلاً لتناسب الحجم الأكبر
+  animation: none !important;
+  z-index: 1 !important;
+}
+
+// 5. تكبير مقاس النجوم لتملأ الحجم الجديد
+.stars-uniform-grid .star-card--uniform .star-card__img {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 300px !important; // ← تكبير القطر من 250px إلى 300px
+  height: 300px !important; // ← تكبير القطر من 250px إلى 300px
+  min-width: 300px !important;
+  min-height: 300px !important;
+  max-width: 300px !important;
+  max-height: 300px !important;
+  object-fit: contain !important;
+  border-radius: 50% !important;
+  mix-blend-mode: screen !important;
+  transition: transform 0.3s ease;
+}
+
+// -------------------------------------------------------------
+// الألوان والمقاييس الدقيقة لكل كارت (1 إلى 6)
+// -------------------------------------------------------------
+
+// 1. Betelgeuse (أحمر ناري)
+.stars-uniform-grid
+  .star-card--uniform:nth-child(1)
+  .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    #ff2a00 15%,
+    #d50000 50%,
+    rgba(255, 69, 0, 0) 75%
+  ) !important;
+}
+.stars-uniform-grid .star-card--uniform:nth-child(1) .star-card__img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 24px rgba(255, 69, 0, 0.85)) !important;
+}
+
+// 2. Rigel (أزرق كهربائي)
+.stars-uniform-grid
+  .star-card--uniform:nth-child(2)
+  .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(77, 163, 255, 0.95) 10%,
+    rgba(29, 94, 255, 0.75) 45%,
+    rgba(9, 34, 101, 0) 75%
+  ) !important;
+}
+.stars-uniform-grid .star-card--uniform:nth-child(2) .star-card__img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 26px rgba(77, 163, 255, 0.9)) !important;
+}
+
+// 3. The Sun (ذهبي شمسي ناصع)
+.stars-uniform-grid
+  .star-card--uniform:nth-child(3)
+  .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 240, 102, 0.95) 15%,
+    rgba(255, 140, 0, 0.8) 48%,
+    rgba(230, 81, 0, 0) 75%
+  ) !important;
+}
+.stars-uniform-grid .star-card--uniform:nth-child(3) .star-card__img {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 26px rgba(255, 215, 0, 0.9)) !important;
+}
+
+// 4. Sirius B (أبيض ثلجي ساطع)
+.stars-uniform-grid
+  .star-card--uniform:nth-child(4)
+  .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 10%,
+    rgba(190, 225, 255, 0.8) 40%,
+    rgba(70, 140, 255, 0) 72%
+  ) !important;
+}
+.stars-uniform-grid .star-card--uniform:nth-child(4) .star-card__img {
+  transform: scale(1.22);
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 50px rgba(160, 210, 255, 0.5)) !important;
+}
+
+// 5. Proxima Centauri (قزم أحمر متوهج)
+.stars-uniform-grid
+  .star-card--uniform:nth-child(5)
+  .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 110, 20, 0.95) 15%,
+    rgba(230, 40, 10, 0.75) 45%,
+    rgba(140, 15, 5, 0) 72%
+  ) !important;
+}
+.stars-uniform-grid .star-card--uniform:nth-child(5) .star-card__img {
+  transform: scale(1.28);
+  filter: drop-shadow(0 0 24px rgba(255, 90, 0, 0.9))
+    drop-shadow(0 0 40px rgba(220, 30, 0, 0.45)) !important;
+}
+
+// 6. Vela Pulsar (ماجنتا / بنفسجي متوهج)
+.stars-uniform-grid
+  .star-card--uniform:nth-child(6)
+  .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 120, 50, 0.95) 15%,
+    rgba(215, 30, 230, 0.75) 40%,
+    rgba(100, 15, 180, 0) 72%
+  ) !important;
+}
+.stars-uniform-grid .star-card--uniform:nth-child(6) .star-card__img {
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 26px rgba(220, 40, 240, 0.95))
+    drop-shadow(0 0 45px rgba(255, 120, 0, 0.5)) !important;
+}
