@@ -338,6 +338,22 @@
   transition: transform 0.25s ease;
 }
 
+.star-card__action.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  background: transparent;
+  color: var(--gold);
+}
+
+button.star-card__action {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .star-card__visual {
   position: absolute;
   pointer-events: none;

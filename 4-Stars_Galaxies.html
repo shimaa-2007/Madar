@@ -176,7 +176,7 @@
           <div class="tab-pane fade show active" id="view-all">
             <!-- All Cards Here-->
             <div class="stars-grid">
-              <!-- 1. Betelgeuse Carousel Card -->
+              <!-- 1st Card -->
               <article
                 id="starCardCarousel1"
                 class="star-card carousel slide"
@@ -199,12 +199,6 @@
                     data-bs-slide-to="1"
                     aria-label="Slide 2"
                   ></button>
-                  <!-- <button
-                    type="button"
-                    data-bs-target="#starCardCarousel1"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button> -->
                 </div>
 
                 <div class="carousel-inner">
@@ -220,9 +214,13 @@
                         An evolved massive star that has exhausted its core
                         hydrogen fuel.
                       </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
+                      <button
+                        type="button"
+                        class="star-card__action tune-btn"
+                        data-signal-target="#signal-betelgeuse"
+                      >
+                        Tune signal <i class="fa-solid fa-angle-right"></i>
+                      </button>
                     </div>
                     <div class="star-card__visual">
                       <img
@@ -245,9 +243,13 @@
                         A blazing blue supergiant shining with tens of thousands
                         of times the Sun's luminosity.
                       </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
+                      <button
+                        type="button"
+                        class="star-card__action tune-btn"
+                        data-signal-target="#signal-rigel"
+                      >
+                        Tune signal <i class="fa-solid fa-angle-right"></i>
+                      </button>
                     </div>
                     <div class="star-card__visual">
                       <img
@@ -257,31 +259,6 @@
                       />
                     </div>
                   </div>
-
-                  <!-- Third in Carousal -->
-                  <!-- <div class="carousel-item">
-                    <div class="star-card__header">
-                      <span class="star-card__badge">YELLOW DWARF</span>
-                      <span class="star-card__distance">8.3 light-mins</span>
-                    </div>
-                    <div class="star-card__body">
-                      <h3 class="star-card__title">The Sun</h3>
-                      <p class="star-card__desc">
-                        A dynamic G-type main-sequence star generating energy
-                        through core fusion.
-                      </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
-                    </div>
-                    <div class="star-card__visual">
-                      <img
-                        src="assets/images/stars/sun.png"
-                        alt="Antares"
-                        class="star-card__img"
-                      />
-                    </div>
-                  </div> -->
                 </div>
               </article>
 
@@ -302,18 +279,6 @@
                     aria-current="true"
                     aria-label="Slide 1"
                   ></button>
-                  <!-- <button
-                    type="button"
-                    data-bs-target="#starCardCarousel2"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button> -->
-                  <!-- <button
-                    type="button"
-                    data-bs-target="#starCardCarousel1"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button> -->
                 </div>
 
                 <div class="carousel-inner">
@@ -330,9 +295,13 @@
                         system, with spiraling arms bound to a supermassive
                         core.
                       </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
+                      <button
+                        type="button"
+                        class="star-card__action tune-btn"
+                        data-signal-target="#signal-milkyway"
+                      >
+                        Tune signal <i class="fa-solid fa-angle-right"></i>
+                      </button>
                     </div>
                     <div class="star-card__visual">
                       <img
@@ -342,56 +311,6 @@
                       />
                     </div>
                   </div>
-
-                  <!-- Second in Carousal-->
-                  <!-- <div class="carousel-item">
-                    <div class="star-card__header">
-                      <span class="star-card__badge">BLUE SUPERGIANT</span>
-                      <span class="star-card__distance">860 ly</span>
-                    </div>
-                    <div class="star-card__body">
-                      <h3 class="star-card__title">Rigel</h3>
-                      <p class="star-card__desc">
-                        A blazing blue supergiant shining with tens of thousands
-                        of times the Sun's luminosity.
-                      </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
-                    </div>
-                    <div class="star-card__visual">
-                      <img
-                        src="assets/images/stars/rigel.png"
-                        alt="Antares"
-                        class="star-card__img"
-                      />
-                    </div>
-                  </div> -->
-
-                  <!-- Third in Carousal -->
-                  <!-- <div class="carousel-item">
-                    <div class="star-card__header">
-                      <span class="star-card__badge">YELLOW DWARF</span>
-                      <span class="star-card__distance">8.3 light-mins</span>
-                    </div>
-                    <div class="star-card__body">
-                      <h3 class="star-card__title">The Sun</h3>
-                      <p class="star-card__desc">
-                        A dynamic G-type main-sequence star generating energy
-                        through core fusion.
-                      </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
-                    </div>
-                    <div class="star-card__visual">
-                      <img
-                        src="assets/images/stars/sun.png"
-                        alt="Antares"
-                        class="star-card__img"
-                      />
-                    </div>
-                  </div> -->
                 </div>
               </article>
 
@@ -412,18 +331,6 @@
                     aria-current="true"
                     aria-label="Slide 1"
                   ></button>
-                  <!-- <button
-                    type="button"
-                    data-bs-target="#starCardCarousel3"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button> -->
-                  <!-- <button
-                    type="button"
-                    data-bs-target="#starCardCarousel3"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button> -->
                 </div>
 
                 <div class="carousel-inner">
@@ -439,9 +346,13 @@
                         A chaotic satellite galaxy bursting with energetic
                         star-forming regions and vibrant cosmic nebulae.
                       </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
+                      <button
+                        type="button"
+                        class="star-card__action tune-btn"
+                        data-signal-target="#signal-magellanic"
+                      >
+                        Tune signal <i class="fa-solid fa-angle-right"></i>
+                      </button>
                     </div>
                     <div class="star-card__visual">
                       <img
@@ -451,56 +362,6 @@
                       />
                     </div>
                   </div>
-
-                  <!-- Second in Carousal-->
-                  <!-- <div class="carousel-item">
-                    <div class="star-card__header">
-                      <span class="star-card__badge">BLUE SUPERGIANT</span>
-                      <span class="star-card__distance">860 ly</span>
-                    </div>
-                    <div class="star-card__body">
-                      <h3 class="star-card__title">Rigel</h3>
-                      <p class="star-card__desc">
-                        A blazing blue supergiant shining with tens of thousands
-                        of times the Sun's luminosity.
-                      </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
-                    </div>
-                    <div class="star-card__visual">
-                      <img
-                        src="assets/images/stars/rigel.png"
-                        alt="Antares"
-                        class="star-card__img"
-                      />
-                    </div>
-                  </div> -->
-
-                  <!-- Third in Carousal -->
-                  <!-- <div class="carousel-item">
-                    <div class="star-card__header">
-                      <span class="star-card__badge">YELLOW DWARF</span>
-                      <span class="star-card__distance">8.3 light-mins</span>
-                    </div>
-                    <div class="star-card__body">
-                      <h3 class="star-card__title">The Sun</h3>
-                      <p class="star-card__desc">
-                        A dynamic G-type main-sequence star generating energy
-                        through core fusion.
-                      </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
-                    </div>
-                    <div class="star-card__visual">
-                      <img
-                        src="assets/images/stars/sun.png"
-                        alt="Antares"
-                        class="star-card__img"
-                      />
-                    </div>
-                  </div> -->
                 </div>
               </article>
 
@@ -527,12 +388,6 @@
                     data-bs-slide-to="1"
                     aria-label="Slide 2"
                   ></button>
-                  <!-- <button
-                    type="button"
-                    data-bs-target="#starCardCarousel4"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button> -->
                 </div>
 
                 <div class="carousel-inner">
@@ -548,9 +403,13 @@
                         An ultra-dense stellar remnant packed with intense
                         gravitational heat and pure white luminosity.
                       </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
+                      <button
+                        type="button"
+                        class="star-card__action tune-btn"
+                        data-signal-target="#signal-sirius-b"
+                      >
+                        Tune signal <i class="fa-solid fa-angle-right"></i>
+                      </button>
                     </div>
                     <div class="star-card__visual">
                       <img
@@ -562,7 +421,7 @@
                   </div>
 
                   <!-- Second in Carousal-->
-                  <div class="carousel-item a">
+                  <div class="carousel-item">
                     <div class="star-card__header">
                       <span class="star-card__badge">RED DWARF</span>
                       <span class="star-card__distance">4.24 ly</span>
@@ -573,9 +432,13 @@
                         A low-mass, cool stellar furnace and the nearest stellar
                         neighbor to our Sun.
                       </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
+                      <button
+                        type="button"
+                        class="star-card__action tune-btn"
+                        data-signal-target="#signal-proxima"
+                      >
+                        Tune signal <i class="fa-solid fa-angle-right"></i>
+                      </button>
                     </div>
                     <div class="star-card__visual">
                       <img
@@ -585,31 +448,6 @@
                       />
                     </div>
                   </div>
-
-                  <!-- Third in Carousal -->
-                  <!-- <div class="carousel-item">
-                    <div class="star-card__header">
-                      <span class="star-card__badge">PULSAR / NEUTRO</span>
-                      <span class="star-card__distance">960 ly</span>
-                    </div>
-                    <div class="star-card__body">
-                      <h3 class="star-card__title">Vela Pulsar</h3>
-                      <p class="star-card__desc">
-                        An ultra-dense stellar core spinning 11 times a second,
-                        enveloped in high-energy plasma winds.
-                      </p>
-                      <a href="#" class="star-card__action"
-                        >Tune signal <i class="fa-solid fa-angle-right"></i
-                      ></a>
-                    </div>
-                    <div class="star-card__visual">
-                      <img
-                        src="assets/images/stars/neuron.webp"
-                        alt="Antares"
-                        class="star-card__img"
-                      />
-                    </div>
-                  </div> -->
                 </div>
               </article>
             </div>
@@ -630,7 +468,7 @@
     <section class="signal-inspector">
       <div class="container">
         <div class="tab-content" id="signalTabContent">
-          <!-- 1. شريحة لوحة Betelgeuse (مفعلة افتراضياً) -->
+          <!-- 1. Betelgeuse (مفعلة افتراضياً عند تحميل الصفحة) -->
           <div
             class="tab-pane fade show active signal-card"
             id="signal-betelgeuse"
@@ -661,43 +499,195 @@
             </div>
           </div>
 
-          <!-- 2. شريحة لوحة Eta Carinae (تظهر عند الضغط على Tune signal في كارتها) -->
+          <!-- 2. Rigel -->
           <div
             class="tab-pane fade signal-card"
-            id="signal-eta-carinae"
+            id="signal-rigel"
             role="tabpanel"
           >
             <div class="signal-card__info">
-              <span class="signal-card__tag">— SIGNAL LOCK / ETA CARINAE</span>
-              <h2 class="signal-card__title">Luminous variable</h2>
+              <span class="signal-card__tag">— SIGNAL LOCK / RIGEL</span>
+              <h2 class="signal-card__title">Blue Supergiant</h2>
               <p class="signal-card__desc">
-                A stellar giant expected to end its life in a spectacular
-                supernova. At 7,500 ly, its light is an old message still
-                arriving now.
+                A blazing blue supergiant shining with tens of thousands of
+                times the Sun's luminosity, projecting radiant electric-blue
+                stellar winds across Orion.
               </p>
             </div>
             <div class="signal-card__metrics">
               <div class="metric-item">
                 <span class="metric-label">DISTANCE</span>
-                <span class="metric-value">7,500 ly</span>
+                <span class="metric-value">860 ly</span>
               </div>
               <div class="metric-item">
                 <span class="metric-label">MAGNITUDE</span>
-                <span class="metric-value">4.50</span>
+                <span class="metric-value">0.13</span>
               </div>
               <div class="metric-item">
                 <span class="metric-label">CATALOGUE</span>
-                <span class="metric-value">HIP 020</span>
+                <span class="metric-value">HIP 24436</span>
               </div>
             </div>
           </div>
 
-          <!-- كرر نفس الـ tab-pane لباقي النجوم (Sirius, Rigel, TRAPPIST-1, إلخ) -->
+          <!-- 3. Milky Way -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-milkyway"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / MILKY WAY</span>
+              <h2 class="signal-card__title">Barred Spiral Galaxy</h2>
+              <p class="signal-card__desc">
+                Our home harbor spanning 100,000 light-years across sweeping
+                density waves and interstellar dust, anchored by the central
+                black hole Sagittarius A*.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">0 ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">DIAMETER</span>
+                <span class="metric-value">100k ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CORE</span>
+                <span class="metric-value">Sgr A*</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Large Magellanic Cloud -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-magellanic"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag"
+                >— SIGNAL LOCK / LARGE MAGELLANIC</span
+              >
+              <h2 class="signal-card__title">Irregular Galaxy</h2>
+              <p class="signal-card__desc">
+                A chaotic satellite companion rich in volatile interstellar gas
+                and home to the gigantic Tarantula Nebula starburst nursery.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">163k ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">DIAMETER</span>
+                <span class="metric-value">14k ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">ESO 56-115</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Sirius B -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-sirius-b"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / SIRIUS B</span>
+              <h2 class="signal-card__title">White Dwarf</h2>
+              <p class="signal-card__desc">
+                An Earth-sized stellar remnant packing the mass of an entire
+                star, emitting intense gravitational heat and pure thermodynamic
+                white luminosity.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">8.6 ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">MAGNITUDE</span>
+                <span class="metric-value">8.44</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">HIP 32349B</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Proxima Centauri -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-proxima"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag"
+                >— SIGNAL LOCK / PROXIMA CENTAURI</span
+              >
+              <h2 class="signal-card__title">Red Dwarf</h2>
+              <p class="signal-card__desc">
+                A low-mass, cool stellar furnace and our solar system's nearest
+                celestial neighbor, possessing an estimated lifespan measured in
+                trillions of years.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">4.24 ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">MAGNITUDE</span>
+                <span class="metric-value">11.13</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">HIP 70890</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.querySelectorAll('.tune-btn').forEach((btn) => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-signal-target');
+          const targetPane = document.querySelector(targetId);
+
+          if (targetPane) {
+            document
+              .querySelectorAll('#signalTabContent .signal-card')
+              .forEach((pane) => {
+                pane.classList.remove('show', 'active');
+              });
+
+            targetPane.classList.add('active');
+            setTimeout(() => {
+              targetPane.classList.add('show');
+            }, 20);
+
+            targetPane.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center',
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
