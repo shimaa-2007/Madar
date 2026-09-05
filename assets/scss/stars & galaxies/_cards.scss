@@ -2,18 +2,33 @@
 
 .stars-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr;
   // grid-template-rows: 1.2fr 1fr 1fr;
   grid-template-rows:
     minmax(400px, auto)
-    minmax(350px, 350px)
-    minmax(320px, auto);
+    minmax(450px, 350px)
+    minmax(400px, auto)
+    minmax(350px, auto);
   gap: 1.5rem;
   margin-bottom: 3.5rem;
   grid-template-areas:
-    'fstar fstar'
-    'sgalaxy sstar'
-    'fgalaxy fgalaxy';
+    'fstar'
+    'fgalaxy'
+    'sstar'
+    'sgalaxy';
+
+  @include respond-to(tablet) {
+    grid-template-columns: 1.5fr 1fr;
+
+    grid-template-areas:
+      'fstar fstar'
+      'sgalaxy sstar'
+      'fgalaxy fgalaxy';
+    grid-template-rows:
+      minmax(400px, auto)
+      minmax(350px, 350px)
+      minmax(320px, auto);
+  }
   @include respond-to(laptop-l) {
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 1.5fr 1fr;
@@ -255,10 +270,18 @@
   }
 }
 .stars-grid .star-card:nth-child(1) .star-card__body {
-  max-width: 50%;
+  max-width: 100%;
+
+  @include respond-to(tablet) {
+    max-width: 50%;
+  }
 }
 .stars-grid .star-card:nth-child(2) .star-card__body {
-  max-width: 50%;
+  max-width: 100%;
+
+  @include respond-to(tablet) {
+    max-width: 50%;
+  }
 }
 .stars-grid .star-card:nth-child(3) .star-card__body {
   backdrop-filter: blur(6px) !important;
@@ -282,7 +305,10 @@
     rgba(30, 24, 48, 0.65) 0%,
     rgba(42, 34, 68, 0.45) 100%
   ) !important;
-  max-width: 80%;
+  max-width: 100%;
+  @include respond-to(tablet) {
+    max-width: 80%;
+  }
 
   backdrop-filter: blur(6px) !important;
   @include respond-to(laptop) {
@@ -401,11 +427,22 @@ button.star-card__action {
   > .star-card:nth-child(1)
   .carousel-item:nth-child(1)
   .star-card__visual {
-  right: 0%;
-  bottom: -35%;
-  width: clamp(380px, 90vw, 400px) !important; // Change the size of img here
+  right: -5%;
+  bottom: -15%;
+  width: clamp(220px, 90vw, 240px) !important; // Change the size of img here
   aspect-ratio: 1 / 1 !important;
   height: auto !important;
+
+  @include respond-to(mobile-m) {
+    width: clamp(250px, 90vw, 280px) !important; // Change the size of img here
+    right: -5%;
+    bottom: -25%;
+  }
+  @include respond-to(tablet) {
+    width: clamp(380px, 90vw, 400px) !important; // Change the size of img here
+    right: 0%;
+    bottom: -35%;
+  }
   @include respond-to(laptop) {
     width: clamp(400px, 90vw, 420px) !important;
     right: 5%;
@@ -435,11 +472,28 @@ button.star-card__action {
   > .star-card:nth-child(1)
   .carousel-item:nth-child(2)
   .star-card__visual {
-  right: 0%;
-  bottom: -25%;
-  width: clamp(360px, 90vw, 380px) !important; // Change the size of img here
+  right: -5%;
+  bottom: -15%;
+  width: clamp(220px, 90vw, 240px) !important; // Change the size of img here
   aspect-ratio: 1 / 1 !important;
   height: auto !important;
+  @include respond-to(mobile-m) {
+    width: clamp(250px, 90vw, 280px) !important; // Change the size of img here
+    right: 0%;
+    bottom: -20%;
+  }
+  @include respond-to(tablet) {
+    width: clamp(320px, 90vw, 350px) !important; // Change the size of img here
+    right: 0%;
+    bottom: -20%;
+  }
+
+  @include respond-to(laptop) {
+    width: clamp(360px, 90vw, 380px) !important; // Change the size of img here
+
+    right: 0%;
+    bottom: -25%;
+  }
   @include respond-to(laptop) {
     width: clamp(380px, 90vw, 400px) !important; // Change the size of img here
 
@@ -512,10 +566,21 @@ button.star-card__action {
 // --------------------------
 .stars-grid > .star-card:nth-child(2) .star-card__visual {
   right: 0%;
-  bottom: -30%;
-  width: clamp(400px, 90vw, 420px) !important; // Change the size of img here
+  bottom: -5%;
+  width: clamp(280px, 90vw, 300px) !important; // Change the size of img here
   aspect-ratio: 1 / 1 !important;
   height: auto !important;
+  @include respond-to(mobile-l) {
+    right: 0%;
+    bottom: -10%;
+    width: clamp(300px, 90vw, 340px) !important;
+  }
+  @include respond-to(tablet) {
+    right: 0%;
+    bottom: -30%;
+    width: clamp(400px, 90vw, 420px) !important;
+  }
+
   @include respond-to(laptop) {
     width: clamp(420px, 90vw, 480px) !important;
   }
@@ -545,11 +610,21 @@ button.star-card__action {
 // Third Card
 // --------------------------
 .stars-grid > .star-card:nth-child(3) .star-card__visual {
-  right: -5%;
-  bottom: -15%;
-  width: clamp(220px, 90vw, 260px) !important; // Change the size of img here
+  right: 5%;
+  bottom: -5%;
+  width: clamp(200px, 90vw, 250px) !important; // Change the size of img here
   aspect-ratio: 1 / 1 !important;
+  @include respond-to(mobile-l) {
+    right: 8%;
+    bottom: -10%;
+    width: clamp(220px, 90vw, 280px) !important; // Change the size of img here
+  }
   height: auto !important;
+  @include respond-to(tablet) {
+    right: -5%;
+    bottom: -15%;
+    width: clamp(220px, 90vw, 260px) !important;
+  }
   @include respond-to(laptop-l) {
     width: clamp(260px, 90vw, 370px) !important; // Change the size of img here
     right: -0%;
