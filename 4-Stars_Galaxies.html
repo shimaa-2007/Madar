@@ -176,90 +176,440 @@
           <div class="tab-pane fade show active" id="view-all">
             <!-- All Cards Here-->
             <div class="stars-grid">
-              <!-- 1. Betelgeuse -->
-              <article class="star-card">
-                <div class="star-card__header">
-                  <span class="star-card__badge">RED SUPERGIANT</span>
-                  <span class="star-card__distance">642 ly</span>
+              <!-- 1. Betelgeuse Carousel Card -->
+              <article
+                id="starCardCarousel1"
+                class="star-card carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="4000"
+              >
+                <!-- Carousal buttons -->
+                <div class="carousel-indicators star-card__indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#starCardCarousel1"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#starCardCarousel1"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#starCardCarousel1"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button> -->
                 </div>
-                <div class="star-card__body">
-                  <h3 class="star-card__title">Betelgeuse</h3>
-                  <p class="star-card__desc">
-                    An evolved massive star that has exhausted its core hydrogen
-                    fuel.
-                  </p>
-                  <a href="#" class="star-card__action"
-                    >Tune signal <i class="fa-solid fa-angle-right"></i
-                  ></a>
-                </div>
-                <div class="star-card__visual">
-                  <img
-                    src="assets/images/stars/red-giant-2.png"
-                    alt="Betelgeuse"
-                    class="star-card__img"
-                  />
+
+                <div class="carousel-inner">
+                  <!-- First in Carousal: Betelgeuse -->
+                  <div class="carousel-item active">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">RED SUPERGIANT</span>
+                      <span class="star-card__distance">642 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Betelgeuse</h3>
+                      <p class="star-card__desc">
+                        An evolved massive star that has exhausted its core
+                        hydrogen fuel.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/red-giant-2.png"
+                        alt="Betelgeuse"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Second in Carousal-->
+                  <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">BLUE SUPERGIANT</span>
+                      <span class="star-card__distance">860 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Rigel</h3>
+                      <p class="star-card__desc">
+                        A blazing blue supergiant shining with tens of thousands
+                        of times the Sun's luminosity.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/rigel.png"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Third in Carousal -->
+                  <!-- <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">YELLOW DWARF</span>
+                      <span class="star-card__distance">8.3 light-mins</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">The Sun</h3>
+                      <p class="star-card__desc">
+                        A dynamic G-type main-sequence star generating energy
+                        through core fusion.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/sun.png"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div> -->
                 </div>
               </article>
 
-              <!-- 2. Sirius -->
-              <article class="star-card">
-                <div class="star-card__header">
-                  <span class="star-card__badge">BINARY SYSTEM</span>
-                  <span class="star-card__distance">8.6 ly</span>
+              <!-- 2nd Card-->
+              <article
+                id="starCardCarousel2"
+                class="star-card carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="4000"
+              >
+                <!-- Carousal buttons -->
+                <div class="carousel-indicators star-card__indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#starCardCarousel2"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#starCardCarousel2"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button> -->
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#starCardCarousel1"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button> -->
                 </div>
-                <div class="star-card__body">
-                  <h3 class="star-card__title">Sirius</h3>
-                  <p class="star-card__desc">
-                    The brightest point in our night sky is two stars dancing
-                    together.
-                  </p>
-                  <a href="#" class="star-card__action"
-                    >Tune signal <i class="fa-solid fa-angle-right"></i
-                  ></a>
-                </div>
-                <div class="star-card__visual">
-                  <div class="star-sphere star-sphere--sirius"></div>
+
+                <div class="carousel-inner">
+                  <!-- First in Carousal: Betelgeuse -->
+                  <div class="carousel-item active">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">BARRED SPIRAL</span>
+                      <span class="star-card__distance">0 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Milky Way</h3>
+                      <p class="star-card__desc">
+                        A grand barred spiral harbor containing our solar
+                        system, with spiraling arms bound to a supermassive
+                        core.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/galaxies/spiral.webp"
+                        alt="Betelgeuse"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Second in Carousal-->
+                  <!-- <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">BLUE SUPERGIANT</span>
+                      <span class="star-card__distance">860 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Rigel</h3>
+                      <p class="star-card__desc">
+                        A blazing blue supergiant shining with tens of thousands
+                        of times the Sun's luminosity.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/rigel.png"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div> -->
+
+                  <!-- Third in Carousal -->
+                  <!-- <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">YELLOW DWARF</span>
+                      <span class="star-card__distance">8.3 light-mins</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">The Sun</h3>
+                      <p class="star-card__desc">
+                        A dynamic G-type main-sequence star generating energy
+                        through core fusion.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/sun.png"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div> -->
                 </div>
               </article>
 
-              <!-- 3. Eta Carinae -->
-              <article class="star-card">
-                <div class="star-card__header">
-                  <span class="star-card__badge">LUMINOUS VARIABLE</span>
-                  <span class="star-card__distance">7,500 ly</span>
+              <!-- 3 th Card -->
+              <article
+                id="starCardCarousel3"
+                class="star-card carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="4000"
+              >
+                <!-- Carousal buttons -->
+                <div class="carousel-indicators star-card__indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#starCardCarousel3"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#starCardCarousel3"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button> -->
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#starCardCarousel3"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button> -->
                 </div>
-                <div class="star-card__body">
-                  <h3 class="star-card__title">Eta Carinae</h3>
-                  <p class="star-card__desc">
-                    A stellar giant expected to end its life in a spectacular
-                    supernova.
-                  </p>
-                  <a href="#" class="star-card__action"
-                    >Tune signal <i class="fa-solid fa-angle-right"></i
-                  ></a>
-                </div>
-                <div class="star-card__visual">
-                  <div class="star-sphere star-sphere--variable"></div>
+
+                <div class="carousel-inner">
+                  <!-- First in Carousal: Betelgeuse -->
+                  <div class="carousel-item active">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">IRREGULAR GALAXY</span>
+                      <span class="star-card__distance">163k ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Large Magellanic</h3>
+                      <p class="star-card__desc">
+                        A chaotic satellite galaxy bursting with energetic
+                        star-forming regions and vibrant cosmic nebulae.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/galaxies/Irregular.png"
+                        alt="Betelgeuse"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Second in Carousal-->
+                  <!-- <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">BLUE SUPERGIANT</span>
+                      <span class="star-card__distance">860 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Rigel</h3>
+                      <p class="star-card__desc">
+                        A blazing blue supergiant shining with tens of thousands
+                        of times the Sun's luminosity.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/rigel.png"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div> -->
+
+                  <!-- Third in Carousal -->
+                  <!-- <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">YELLOW DWARF</span>
+                      <span class="star-card__distance">8.3 light-mins</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">The Sun</h3>
+                      <p class="star-card__desc">
+                        A dynamic G-type main-sequence star generating energy
+                        through core fusion.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/sun.png"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div> -->
                 </div>
               </article>
 
-              <!-- 4. TRAPPIST-1 -->
-              <article class="star-card">
-                <div class="star-card__header">
-                  <span class="star-card__badge">ULTRA-COOL DWARF</span>
-                  <span class="star-card__distance">40 ly</span>
+              <!-- 4th card -->
+              <article
+                id="starCardCarousel4"
+                class="star-card carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="3000"
+              >
+                <!-- Carousal buttons -->
+                <div class="carousel-indicators star-card__indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#starCardCarousel4"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#starCardCarousel4"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <!-- <button
+                    type="button"
+                    data-bs-target="#starCardCarousel4"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button> -->
                 </div>
-                <div class="star-card__body">
-                  <h3 class="star-card__title">TRAPPIST-1</h3>
-                  <p class="star-card__desc">
-                    Seven Earth-sized worlds orbit a small, quiet star.
-                  </p>
-                  <a href="#" class="star-card__action"
-                    >Tune signal <i class="fa-solid fa-angle-right"></i
-                  ></a>
-                </div>
-                <div class="star-card__visual">
-                  <div class="star-sphere star-sphere--trappist"></div>
+
+                <div class="carousel-inner">
+                  <!-- First in Carousal: Betelgeuse -->
+                  <div class="carousel-item active">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">WHITE DWARF</span>
+                      <span class="star-card__distance">8.6 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Sirius B</h3>
+                      <p class="star-card__desc">
+                        An ultra-dense stellar remnant packed with intense
+                        gravitational heat and pure white luminosity.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/white-dwarf.png"
+                        alt="Betelgeuse"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Second in Carousal-->
+                  <div class="carousel-item a">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">RED DWARF</span>
+                      <span class="star-card__distance">4.24 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Proxima Centauri</h3>
+                      <p class="star-card__desc">
+                        A low-mass, cool stellar furnace and the nearest stellar
+                        neighbor to our Sun.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/red-dwarf.png"
+                        alt="Betelgeuse"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Third in Carousal -->
+                  <!-- <div class="carousel-item">
+                    <div class="star-card__header">
+                      <span class="star-card__badge">PULSAR / NEUTRO</span>
+                      <span class="star-card__distance">960 ly</span>
+                    </div>
+                    <div class="star-card__body">
+                      <h3 class="star-card__title">Vela Pulsar</h3>
+                      <p class="star-card__desc">
+                        An ultra-dense stellar core spinning 11 times a second,
+                        enveloped in high-energy plasma winds.
+                      </p>
+                      <a href="#" class="star-card__action"
+                        >Tune signal <i class="fa-solid fa-angle-right"></i
+                      ></a>
+                    </div>
+                    <div class="star-card__visual">
+                      <img
+                        src="assets/images/stars/neuron.webp"
+                        alt="Antares"
+                        class="star-card__img"
+                      />
+                    </div>
+                  </div> -->
                 </div>
               </article>
             </div>
@@ -274,6 +624,75 @@
           <div class="tab-pane fade" id="view-galaxies">
             <!-- Only Galaxy Cards-->
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="signal-inspector">
+      <div class="container">
+        <div class="tab-content" id="signalTabContent">
+          <!-- 1. شريحة لوحة Betelgeuse (مفعلة افتراضياً) -->
+          <div
+            class="tab-pane fade show active signal-card"
+            id="signal-betelgeuse"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / BETELGEUSE</span>
+              <h2 class="signal-card__title">Red Supergiant</h2>
+              <p class="signal-card__desc">
+                An evolved massive star that has exhausted its core hydrogen
+                fuel. At 642 ly, its light is an ancient furnace message still
+                pulsing into deep space.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">642 ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">MAGNITUDE</span>
+                <span class="metric-value">0.50</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">HIP 27989</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. شريحة لوحة Eta Carinae (تظهر عند الضغط على Tune signal في كارتها) -->
+          <div
+            class="tab-pane fade signal-card"
+            id="signal-eta-carinae"
+            role="tabpanel"
+          >
+            <div class="signal-card__info">
+              <span class="signal-card__tag">— SIGNAL LOCK / ETA CARINAE</span>
+              <h2 class="signal-card__title">Luminous variable</h2>
+              <p class="signal-card__desc">
+                A stellar giant expected to end its life in a spectacular
+                supernova. At 7,500 ly, its light is an old message still
+                arriving now.
+              </p>
+            </div>
+            <div class="signal-card__metrics">
+              <div class="metric-item">
+                <span class="metric-label">DISTANCE</span>
+                <span class="metric-value">7,500 ly</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">MAGNITUDE</span>
+                <span class="metric-value">4.50</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">CATALOGUE</span>
+                <span class="metric-value">HIP 020</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- كرر نفس الـ tab-pane لباقي النجوم (Sirius, Rigel, TRAPPIST-1, إلخ) -->
         </div>
       </div>
     </section>

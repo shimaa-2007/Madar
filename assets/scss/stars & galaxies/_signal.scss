@@ -1,0 +1,141 @@
+@use '../abstract/index' as *;
+
+.signal-inspector {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.signal-card {
+  background-color: $card-bg;
+  background-image:
+    radial-gradient(
+      1px 1px at 20px 30px,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 75px 60px,
+      rgba(255, 255, 255, 0.9),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 140px 40px,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 190px 95px,
+      rgba(255, 255, 255, 0.75),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 45px 130px,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 110px 170px,
+      rgba(255, 255, 255, 0.85),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 170px 145px,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 220px 185px,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 60px 220px,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 135px 230px,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 210px 250px,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 25px 270px,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+  background-repeat: repeat;
+  background-size: 240px 240px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease;
+}
+
+.signal-card.active {
+  display: flex;
+}
+
+.signal-card__tag {
+  font-family: $mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba($text, 0.6);
+  display: block;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.signal-card__title {
+  font-family: $font-heading-2;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: $text;
+  margin-bottom: 1.25rem;
+  text-transform: capitalize;
+}
+
+.signal-card__desc {
+  color: $shade;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 550px;
+  margin-bottom: 0;
+}
+
+.signal-card__metrics {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  padding-left: 3.5rem;
+}
+
+.signal-card__metrics .metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.signal-card__metrics .metric-item .metric-label {
+  font-family: $mono;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba($text, 0.5);
+}
+
+.signal-card__metrics .metric-item .metric-value {
+  font-family: $mono;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: $accent;
+}

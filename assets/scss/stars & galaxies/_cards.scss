@@ -1,23 +1,5 @@
 @use '../abstract/index' as *;
 
-@keyframes starAura {
-  0% {
-    transform: scale(0.96);
-    opacity: 0.7;
-    filter: blur(25px);
-  }
-  50% {
-    transform: scale(1.12);
-    opacity: 1;
-    filter: blur(38px);
-  }
-  100% {
-    transform: scale(0.96);
-    opacity: 0.7;
-    filter: blur(25px);
-  }
-}
-
 .stars-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -26,41 +8,24 @@
   margin-bottom: 3.5rem;
 }
 
+// -------------------------------------------------------------
+// اCards Grid
+// -------------------------------------------------------------
 .star-card:nth-child(1) {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
-
-.star-card:nth-child(1) .star-card__visual::before {
-  background: radial-gradient(
-    circle,
-    #ff2a00 0%,
-    #d50000 50%,
-    rgba(255, 69, 0, 0) 75%
-  );
-}
-
-.star-card:nth-child(1) .star-card__visual {
-  right: 3%;
-  bottom: -4%;
-  width: 400px;
-  height: 400px;
-}
-
 .star-card:nth-child(2) {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 }
 
-.star-card:nth-child(2) .star-card__visual {
-  width: 250px;
-  height: 250px;
-}
-
+// -------------------------------------------------------------
+// الكارت الأساسي
+// -------------------------------------------------------------
 .star-card {
   position: relative;
   background-color: $card-bg;
-
   background-image:
     radial-gradient(
       1px 1px at 20px 30px,
@@ -127,14 +92,48 @@
   background-size: 240px 240px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
-  padding: 1.75rem 2rem;
   min-height: 290px;
   width: 100%;
   overflow: hidden;
-  @include flex(flex-start, flex-start, column nowrap);
+  isolation: isolate;
   transition:
     border-color 0.3s ease,
     transform 0.3s ease;
+}
+.star-card {
+  animation: cardEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.22s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.34s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.46s;
+  }
+}
+
+// -------------------------------------------------------------
+// حل تراكب شاشات الكاروسيل فوق بعض
+// -------------------------------------------------------------
+.star-card.carousel {
+  padding: 0;
+
+  .carousel-inner {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  .carousel-item {
+    min-height: 290px;
+    padding: 1.75rem 2rem;
+    position: relative;
+  }
 }
 
 .star-card:hover {
@@ -172,7 +171,7 @@
   opacity: 0.7;
   font-size: 0.7rem;
 }
-// Blurring
+
 .star-card__body {
   position: relative;
   z-index: 3;
@@ -190,9 +189,11 @@
 
 .star-card__title {
   font-family: $font-heading-2;
-  font-size: 1.75rem;
+  // font-size: 1.75rem;
+  min-height: calc(1.75rem * 1.2 * 2); //هنا علشان يقدر يستوعب سطرين
   color: $text;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  align-items: flex-end;
 }
 
 .star-card__desc {
@@ -219,6 +220,9 @@
   transition: transform 0.25s ease;
 }
 
+// -------------------------------------------------------------
+// Visuals
+// -------------------------------------------------------------
 .star-card__visual {
   position: absolute;
   pointer-events: none;
@@ -256,4 +260,325 @@
   transform: scale(1.04);
 }
 
-// Carousal
+// First Card
+
+// Firstd slide
+.star-card:nth-child(1) .carousel-item:nth-child(1) .star-card__visual {
+  right: 4%;
+  bottom: -65%;
+  width: 400px;
+  height: 400px;
+}
+
+.star-card:nth-child(1) .carousel-item:nth-child(1) .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    #ff2a00 0%,
+    #d50000 50%,
+    rgba(255, 69, 0, 0) 75%
+  );
+}
+
+// second slide
+.star-card:nth-child(1) .carousel-item:nth-child(2) .star-card__visual {
+  right: 2%;
+  bottom: -60%;
+  width: 380px;
+  height: 380px;
+}
+
+.star-card:nth-child(1) .carousel-item:nth-child(2) .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(77, 163, 255, 0.95) 0%,
+    rgba(29, 94, 255, 0.75) 42%,
+    rgba(9, 34, 101, 0.4) 65%,
+    rgba(9, 34, 101, 0) 78%
+  );
+}
+
+.star-card:nth-child(1) .carousel-item:nth-child(2) .star-card__img {
+  filter: drop-shadow(0 0 22px rgba(77, 163, 255, 0.9))
+    drop-shadow(0 0 45px rgba(29, 94, 255, 0.5));
+}
+
+// Third SLide
+.star-card:nth-child(1) .carousel-item:nth-child(3) .star-card__visual {
+  right: 2%;
+  bottom: -40%;
+  width: 380px;
+  height: 380px;
+}
+
+.star-card:nth-child(1) .carousel-item:nth-child(3) .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 240, 102, 0.95) 0%,
+    rgba(255, 140, 0, 0.8) 45%,
+    rgba(230, 81, 0, 0.35) 65%,
+    rgba(230, 81, 0, 0) 78%
+  );
+}
+
+.star-card:nth-child(1) .carousel-item:nth-child(3) .star-card__img {
+  filter: drop-shadow(0 0 22px rgba(255, 235, 59, 0.9))
+    drop-shadow(0 0 45px rgba(255, 111, 0, 0.6));
+}
+
+// ------------------------
+// Second Card
+// --------------------------
+.star-card:nth-child(2) .star-card__visual {
+  right: 5%;
+  bottom: -70%;
+  width: 380px;
+  height: 380px;
+}
+
+.star-card:nth-child(2) .star-card__visual:has(img)::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 190, 90, 0.85) 0%,
+    rgba(180, 70, 40, 0.45) 42%,
+    rgba(40, 15, 60, 0.2) 65%,
+    transparent 75%
+  );
+  inset: -10px;
+}
+
+.star-card:nth-child(2) .star-card__img {
+  filter: drop-shadow(0 0 20px rgba(255, 180, 80, 0.75))
+    drop-shadow(0 0 40px rgba(160, 50, 30, 0.35));
+}
+// ------------------------
+// Third Card
+// --------------------------
+.star-card:nth-child(3) .star-card__visual {
+  right: 5%;
+  bottom: -15%;
+  width: 315px;
+  height: 315px;
+}
+
+.star-card:nth-child(3) .star-card__visual:has(img)::before {
+  background: radial-gradient(
+    circle,
+    rgba(215, 60, 180, 0.7) 0%,
+    rgba(70, 130, 255, 0.5) 45%,
+    rgba(20, 30, 80, 0.3) 65%,
+    transparent 78%
+  );
+  inset: -10px;
+}
+
+.star-card:nth-child(3) .star-card__img {
+  filter: drop-shadow(0 0 20px rgba(200, 50, 170, 0.8))
+    drop-shadow(0 0 35px rgba(60, 140, 255, 0.65));
+}
+
+// -------------------------------
+//            Fourth Card
+// ----------------------------------
+
+//First slide
+.star-card:nth-child(4) .carousel-item:nth-child(1) .star-card__visual {
+  right: -15%;
+  bottom: -20%;
+  width: 380px;
+  height: 380px;
+}
+
+.star-card:nth-child(4) .carousel-item:nth-child(1) .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(190, 225, 255, 0.8) 35%,
+    rgba(70, 140, 255, 0.4) 60%,
+    transparent 78%
+  );
+  // inset: -10px;
+}
+
+.star-card:nth-child(4) .carousel-item:nth-child(1) .star-card__img {
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 50px rgba(100, 180, 255, 0.6));
+}
+
+// Second Slide
+.star-card:nth-child(4) .carousel-item:nth-child(2) .star-card__visual {
+  right: -10px;
+  bottom: -35px;
+  width: 320px;
+  height: 320px;
+}
+
+.star-card:nth-child(4) .carousel-item:nth-child(2) .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 110, 20, 0.9) 0%,
+    rgba(230, 40, 10, 0.7) 22%,
+    rgba(140, 15, 5, 0.35) 42%,
+    transparent 58%
+  );
+  inset: -10px;
+}
+
+.star-card:nth-child(4) .carousel-item:nth-child(2) .star-card__img {
+  filter: drop-shadow(0 0 16px rgba(255, 90, 0, 0.85))
+    drop-shadow(0 0 30px rgba(180, 20, 0, 0.5));
+}
+
+// Third SLide
+.star-card:nth-child(4) .carousel-item:nth-child(3) .star-card__visual {
+  right: -10px;
+  bottom: -35px;
+  width: 320px;
+  height: 320px;
+}
+
+.star-card:nth-child(4) .carousel-item:nth-child(3) .star-card__visual::before {
+  background: radial-gradient(
+    circle,
+    rgba(255, 120, 50, 0.95) 0%,
+    rgba(215, 30, 230, 0.75) 30%,
+    rgba(100, 15, 180, 0.4) 55%,
+    transparent 72%
+  );
+  inset: -10px;
+}
+
+.star-card:nth-child(4) .carousel-item:nth-child(3) .star-card__img {
+  filter: drop-shadow(0 0 20px rgba(220, 40, 240, 0.9))
+    drop-shadow(0 0 40px rgba(255, 120, 0, 0.55));
+}
+
+// الكارت الثاني: Sirius (Binary System / White Dwarf)
+
+// .star-card:nth-child(2) .star-card__visual {
+//   right: -25px;
+//   bottom: -35px;
+//   width: 250px;
+//   height: 250px;
+// }
+
+// .star-card:nth-child(2) .star-card__visual::before {
+//   background: radial-gradient(
+//     circle,
+//     #a0d8ef 0%,
+//     #3a88fe 45%,
+//     rgba(58, 136, 254, 0) 75%
+//   );
+// }
+
+// // الكارت الثالث: Eta Carinae
+// .star-card:nth-child(3) .star-card__visual {
+//   right: -20px;
+//   bottom: -30px;
+//   width: 240px;
+//   height: 240px;
+// }
+
+// .star-card:nth-child(3) .star-card__visual::before {
+//   background: radial-gradient(
+//     circle,
+//     #ffb300 0%,
+//     #f57c00 45%,
+//     rgba(245, 124, 0, 0) 75%
+//   );
+// }
+
+// // الكارت الرابع: TRAPPIST-1
+// .star-card:nth-child(4) .star-card__visual {
+//   right: -20px;
+//   bottom: -30px;
+//   width: 230px;
+//   height: 230px;
+// }
+
+// .star-card:nth-child(4) .star-card__visual::before {
+//   background: radial-gradient(
+//     circle,
+//     #e91e63 0%,
+//     #880e4f 45%,
+//     rgba(136, 14, 79, 0) 75%
+//   );
+// }
+
+// -------------------------------------------------------------
+// Indicators
+// -------------------------------------------------------------
+.star-card .star-card__indicators {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 2rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+
+  button {
+    all: unset !important;
+    box-sizing: border-box !important;
+    display: inline-block !important;
+    width: 8px !important;
+    height: 8px !important;
+    min-width: 8px !important;
+    min-height: 8px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border: none !important;
+    opacity: 0.6 !important;
+    cursor: pointer !important;
+    text-indent: 0 !important;
+    margin: 0 !important;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      opacity: 1 !important;
+    }
+
+    &.active {
+      opacity: 1 !important;
+      background-color: $accent !important;
+      transform: scale(1.35) !important;
+      box-shadow: 0 0 8px rgba(209, 250, 61, 0.75) !important;
+    }
+  }
+}
+
+// Animations
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes starAura {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.7;
+    filter: blur(25px);
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+    filter: blur(38px);
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.7;
+    filter: blur(25px);
+  }
+}
