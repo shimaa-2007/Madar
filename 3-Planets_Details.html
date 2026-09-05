@@ -1,53 +1,431 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlanetsDetails-Madar</title>
-    <!-- fav icon -->
-    <link rel="icon" href="assets/images/favicon.jpg" />
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <!-- main style -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>Planet Details - Madar</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="assets/images/favicon.jpg">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Planet Details Style -->
+    <link rel="stylesheet" href="assets/css/planet-details.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- font awesome -->
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
-      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
 </head>
+
+
 <body>
-    <!-- navbar -->
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <div class="container-fluid">
-      <div class="container">
-        <nav>
-          <a href="1-Home.html"><img src="assets/images/logo.jpg" alt="logo" class="logo" /></a>
-          
-          <ul>
-            <li><a class="nav-link-custom" href="2-Planets.html">Planets</a></li>
-            <li><a class="nav-link-custom" href="3-Planets_Details.html">Planets Details</a></li>
-            <li><a class="nav-link-custom" href="4-Stars_Galaxies.html">Stars & Galaxies</a></li>
-            <li><a class="nav-link-custom" href="5-Missions.html">Missions</a></li>
-            <li><a class="nav-link-custom" href="6-Discoveries.html">Discoveries</a></li>
-            <li><a class="nav-link-custom" href="7-Solar_System.html">Solar System</a></li>
-            <li><a class="nav-link-custom" href="8-About_Us.html">About Us</a></li>
-          </ul>
-          <a class="main-btn btn rounded-pill fw-medium" href="9-Contact.html">Transmit</a>
-        </nav>
-      </div>
+
+        <div class="container">
+
+            <nav>
+
+                <a href="1-Home.html">
+
+                    <img
+                        src="assets/images/logo.jpg"
+                        alt="Madar Logo"
+                        class="logo">
+
+                </a>
+
+
+                <ul>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="2-Planets.html">
+                            Planets
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="3-Planets_Details.html">
+                            Planets Details
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="4-Stars_Galaxies.html">
+                            Stars & Galaxies
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="5-Missions.html">
+                            Missions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="6-Discoveries.html">
+                            Discoveries
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="7-Solar_System.html">
+                            Solar System
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link-custom"
+                           href="8-About_Us.html">
+                            About Us
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <a
+                    class="main-btn btn rounded-pill fw-medium"
+                    href="9-Contact.html">
+
+                    Transmit
+
+                </a>
+
+            </nav>
+
+        </div>
+
     </div>
-    
-    <!-- bootstrap js -->
+
+
+
+    <!-- =========================
+         PLANET DETAILS
+    ========================== -->
+
+    <main class="planet-details-page">
+
+
+        <!-- Back Button -->
+
+        <div class="container">
+
+            <a
+                href="2-Planets.html"
+                class="back-planets">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Planets
+
+            </a>
+
+
+            <!-- Planet Hero -->
+
+            <section class="planet-hero">
+
+                <div class="row align-items-center g-5">
+
+
+                    <!-- Planet Image -->
+
+                    <div class="col-lg-6">
+
+                        <div class="planet-image-wrapper">
+
+                            <img
+                                id="planetImage"
+                                src=""
+                                alt="Planet"
+                                class="planet-main-image">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Planet Information -->
+
+                    <div class="col-lg-6">
+
+                        <div class="planet-info">
+
+                            <span
+                                id="planetType"
+                                class="planet-type">
+                            </span>
+
+
+                            <h1
+                                id="planetName"
+                                class="planet-name">
+                            </h1>
+
+
+                            <p
+                                id="planetDescription"
+                                class="planet-description">
+                            </p>
+
+
+                            <!-- Favorite -->
+
+                            <button
+                                id="favoriteBtn"
+                                class="favorite-btn"
+                                type="button">
+
+                                <i class="fa-regular fa-star"></i>
+
+                                <span>Add to Favorites</span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 PLANET STATS
+            ========================== -->
+
+            <section class="planet-stats-section">
+
+                <div class="section-heading">
+
+                    <span>
+                        PLANET DATA
+                    </span>
+
+                    <h2>
+                        At a Glance
+                    </h2>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- Distance -->
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="planet-stat-card">
+
+                            <i class="fa-solid fa-ruler-horizontal"></i>
+
+                            <span>
+                                Distance from Sun
+                            </span>
+
+                            <strong id="planetDistance">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Diameter -->
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="planet-stat-card">
+
+                            <i class="fa-solid fa-globe"></i>
+
+                            <span>
+                                Diameter
+                            </span>
+
+                            <strong id="planetDiameter">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Day -->
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="planet-stat-card">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            <span>
+                                Day Length
+                            </span>
+
+                            <strong id="planetDay">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Year -->
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="planet-stat-card">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                            <span>
+                                Year Length
+                            </span>
+
+                            <strong id="planetYear">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 ADDITIONAL INFORMATION
+            ========================== -->
+
+            <section class="planet-extra-section">
+
+                <div class="row g-4">
+
+
+                    <div class="col-lg-6">
+
+                        <div class="planet-extra-card">
+
+                            <span>
+                                COMPOSITION
+                            </span>
+
+                            <h3>
+                                What is it made of?
+                            </h3>
+
+                            <p id="planetComposition">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-6">
+
+                        <div class="planet-extra-card">
+
+                            <span>
+                                ATMOSPHERE
+                            </span>
+
+                            <h3>
+                                Atmospheric Conditions
+                            </h3>
+
+                            <p id="planetAtmosphere">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 FUN FACT
+            ========================== -->
+
+            <section class="planet-fact-section">
+
+                <div class="planet-fact-card">
+
+                    <span>
+                        DID YOU KNOW?
+                    </span>
+
+                    <h2 id="planetFact">
+                    </h2>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Planet Details JavaScript -->
+
+    <script src="assets/js/planet-details.js"></script>
+
+
 </body>
+
 </html>

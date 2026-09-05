@@ -1,0 +1,418 @@
+/* =========================================
+   PLANET DETAILS PAGE
+========================================= */
+
+.planet-details-page {
+    padding: 30px 0 80px;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-planets {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #2f80ff;
+    text-decoration: none;
+
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    transition: 0.3s ease;
+}
+
+.back-planets:hover {
+    color: #c8ff00;
+}
+
+
+/* =========================================
+   PLANET HERO
+========================================= */
+
+.planet-hero {
+    width: 100%;
+    overflow: hidden;
+}
+
+.planet-hero .row {
+    align-items: center;
+}
+
+
+/* =========================================
+   PLANET IMAGE
+========================================= */
+
+.planet-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.planet-main-image {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: 500px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border: none;
+}
+
+
+/* =========================================
+   PLANET INFORMATION
+========================================= */
+
+.planet-info {
+    padding: 20px;
+    color: #ffffff;
+}
+
+.planet-type {
+    display: block;
+
+    color: #c8ff00;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.planet-name {
+    color: #ffffff;
+
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 600;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+.planet-description {
+    color: #d6d9e0;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    max-width: 550px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   FAVORITE BUTTON
+========================================= */
+
+.favorite-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 1px solid #c8ff00;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.favorite-btn i {
+    color: #c8ff00;
+}
+
+.favorite-btn:hover {
+    background: #c8ff00;
+    color: #111111;
+}
+
+.favorite-btn:hover i {
+    color: #111111;
+}
+
+
+/* =========================================
+   PLANET DATA
+========================================= */
+
+.planet-stats-section {
+    margin-top: 70px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading > span {
+    display: block;
+
+    color: #c8ff00;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    color: #ffffff;
+
+    font-size: 40px;
+    font-weight: 600;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.planet-stat-card {
+    height: 100%;
+
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    color: #ffffff;
+}
+
+.planet-stat-card i {
+    color: #c8ff00;
+
+    margin-right: 5px;
+}
+
+.planet-stat-card span {
+    color: #aeb4c0;
+
+    font-size: 14px;
+}
+
+.planet-stat-card strong {
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   EXTRA INFORMATION
+========================================= */
+
+.planet-extra-section {
+    margin-top: 50px;
+}
+
+.planet-extra-card {
+    height: 100%;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+}
+
+.planet-extra-card > span {
+    display: block;
+
+    color: #c8ff00;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.planet-extra-card h3 {
+    color: #ffffff;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.planet-extra-card p {
+    color: #c5cad3;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   FUN FACT
+========================================= */
+
+.planet-fact-section {
+    margin-top: 40px;
+}
+
+.planet-fact-card {
+    padding: 35px;
+
+    background: rgba(200, 255, 0, 0.04);
+
+    border: 1px solid rgba(200, 255, 0, 0.15);
+
+    border-radius: 14px;
+}
+
+.planet-fact-card > span {
+    display: block;
+
+    color: #c8ff00;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.planet-fact-card h2 {
+    color: #ffffff;
+
+    font-size: clamp(24px, 3vw, 38px);
+
+    line-height: 1.4;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991.98px) {
+
+    .planet-main-image {
+        height: 420px;
+    }
+
+    .planet-info {
+        padding: 10px 0;
+    }
+
+    .planet-name {
+        font-size: 48px;
+    }
+
+    .planet-stats-section {
+        margin-top: 50px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767.98px) {
+
+    .planet-details-page {
+        padding-top: 20px;
+    }
+
+    .planet-main-image {
+        height: 320px;
+    }
+
+    .planet-info {
+        padding: 10px 0;
+    }
+
+    .planet-name {
+        font-size: 42px;
+    }
+
+    .planet-description {
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .planet-extra-card {
+        padding: 22px;
+    }
+
+    .planet-extra-card h3 {
+        font-size: 24px;
+    }
+
+    .planet-fact-card {
+        padding: 25px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575.98px) {
+
+    .planet-main-image {
+        height: 260px;
+    }
+
+    .planet-name {
+        font-size: 36px;
+    }
+
+    .favorite-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
