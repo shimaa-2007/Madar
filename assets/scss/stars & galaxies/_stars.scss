@@ -10,6 +10,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  padding-block-start: clamp(2rem, 6vh, 3.5rem);
+  padding-block-end: clamp(1rem, 6vh, 1.25rem);
+  @include respond-to(tablet) {
+    padding-block: clamp(2rem, 6vh, 3.5rem);
+  }
 
   padding-block-start: 5rem;
   background:
@@ -26,9 +31,14 @@
 }
 
 .stars-hero__content {
-  @include flex(space-between, center, row nowrap);
-  padding-bottom: 4rem;
+  @include flex(space-between, center, column nowrap);
+  padding-block-end: 2rem;
   border-bottom: 1px solid $secondary;
+  gap: 2rem;
+  @include respond-to(tablet) {
+    @include flex(space-between, center, row nowrap);
+    padding-block-end: 4rem;
+  }
 }
 
 .stars-hero__heading {
@@ -39,9 +49,12 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 10px;
+    font-size: 0.5rem;
     letter-spacing: 0.16em;
     // transform: translateX(15%);
+    @include respond-to(laptop) {
+      font-size: 10px;
+    }
 
     &::before {
       content: '';
@@ -58,13 +71,23 @@
   }
   .stars-hero__header {
     margin-block-start: 1rem;
-    max-width: 8ch;
-    font-size: 6.875rem;
+    max-width: 8ch !important;
+    font-size: 3rem;
     font-weight: 700;
     // font-family: $font-heading;
     font-family: $font-heading-2;
-    line-height: 6.5rem;
-    letter-spacing: -0.4rem;
+    line-height: 3rem;
+    letter-spacing: -0rem;
+    @include respond-to(tablet) {
+      font-size: 4.5rem;
+      line-height: 4.875rem;
+      max-width: 8ch !important;
+      letter-spacing: -0.4rem;
+    }
+    @include respond-to(laptop) {
+      font-size: 6.875rem;
+      line-height: 6.5rem;
+    }
 
     & > span {
       // opacity: 0.7;
@@ -74,15 +97,27 @@
 }
 
 .stars-hero__p {
-  align-self: flex-end;
+  align-self: flex-start;
+  @include respond-to(tablet) {
+    align-self: flex-end;
+  }
   animation: heroEntrance 0.8s ease-out forwards;
   & > p {
-    max-width: 35ch;
+    max-width: 50ch;
     // opacity: 0.55;
     color: $shade;
     font-family: $font-heading-2;
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.4;
+
+    @include respond-to(tablet) {
+      max-width: 30ch;
+    }
+    @include respond-to(laptop) {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 35ch;
+    }
   }
 }
 
