@@ -1,0 +1,135 @@
+@use '../abstract/index' as *;
+
+.cosmic-facts {
+  margin-block: 3.5rem 2rem;
+}
+
+.fact-heading {
+  margin-bottom: 2rem;
+
+  .fact__header {
+    margin-block-start: 1rem;
+    font-family: $font-heading-2;
+    font-weight: 700;
+    color: $text;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    max-width: 14ch;
+
+    span {
+      color: $shade;
+    }
+
+    @include respond-to(tablet) {
+      margin-block-start: 1.5rem;
+    }
+
+    @include respond-to(laptop) {
+      font-size: clamp(4rem, 6vw, 5.5rem);
+      line-height: 1;
+    }
+  }
+}
+
+.fact-card {
+  position: relative;
+  background-color: $card-bg;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding-block: clamp(1.5rem, 3vw, 2rem);
+  padding-inline: clamp(1.5rem, 3vw, 2.5rem);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  @include respond-to(mobile-m) {
+    padding-inline: clamp(2rem, 3vw, 2.5rem);
+  }
+  @include respond-to(mobile-l) {
+    padding-block: clamp(2rem, 5vw, 2.5rem);
+  }
+  @include respond-to(tablet) {
+    padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $accent, transparent);
+    box-shadow: 0 0 12px $accent;
+  }
+}
+
+.fact-card__header {
+  @include flex(space-between, flex-start, column nowrap);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  @include respond-to(tablet) {
+    @include flex(space-between, center, row nowrap);
+  }
+}
+
+.fact-card__tag {
+  font-family: $mono;
+  font-size: 0.62rem;
+  padding-inline-start: 0.3rem;
+  letter-spacing: 0.12em;
+  color: rgba($text, 0.6);
+  white-space: nowrap;
+  @include respond-to(tablet) {
+    font-size: 0.72rem;
+    padding-inline-start: 0;
+  }
+}
+
+.fact-card__btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(209, 250, 61, 0.25);
+  color: $accent;
+  font-family: $mono;
+  font-size: 0.75rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $accent;
+    color: $text-dark;
+    box-shadow: 0 0 16px rgba(209, 250, 61, 0.4);
+
+    i {
+      transform: rotate(180deg);
+    }
+  }
+
+  i {
+    transition: transform 0.4s ease;
+  }
+}
+
+.fact-card__text {
+  font-family: $font-heading-2;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: $text;
+  margin: 0;
+  min-height: 3.8rem;
+  display: flex;
+  align-items: center;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  &.fade-out {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}

@@ -1,0 +1,27 @@
+@use 'sass:map' as map;
+@mixin flex($justify: center, $align: center, $flow) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $flow !=null {
+    flex-flow: $flow;
+  }
+}
+$breakpoints: (
+  mobile-s: 320px,
+  mobile-m: 375px,
+  mobile-l: 425px,
+  tablet: 768px,
+  laptop: 1024px,
+  laptop-l: 1440px,
+  4K: 2560px,
+);
+
+@mixin respond-to($name) {
+  $size: map.get($breakpoints, $name);
+  @if $size !=null {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
