@@ -1,0 +1,11 @@
+# navbar --> responsive -- collapsse
+# light and dark mode
+# footer
+# to top button --> js
+
+# social icon --> general
+# select text --> general -> gold
+
+# form validation --> js
+
+# take user name at first//////

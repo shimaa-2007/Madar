@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/9-contact.css" />
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +28,114 @@
     />
 </head>
 <body>
-    
+    <!-- navbar -->
+     <div class="container-fluid">
+      <div class="container">
+        <nav>
+          <a href="1-Home.html"><img src="assets/images/logo.jpg" alt="logo" class="logo" /></a>
+          
+          <ul>
+            <li><a class="nav-link-custom" href="2-Planets.html">Planets</a></li>
+            <li><a class="nav-link-custom" href="3-Planets_Details.html">Planets Details</a></li>
+            <li><a class="nav-link-custom" href="4-Stars_Galaxies.html">Stars & Galaxies</a></li>
+            <li><a class="nav-link-custom" href="5-Missions.html">Missions</a></li>
+            <li><a class="nav-link-custom" href="6-Discoveries.html">Discoveries</a></li>
+            <li><a class="nav-link-custom" href="7-Solar_System.html">Solar System</a></li>
+            <li><a class="nav-link-custom" href="8-About_Us.html">About Us</a></li>
+          </ul>
+          <a class="main-btn btn rounded-pill fw-medium" href="9-Contact.html">Transmit</a>
+        </nav>
+      </div>
+    </div>
+    <!-- ---------- -->
+    <section class="contact-section py-5 position-relative overflow-hidden">
+      <div class="container py-4">
+        
+        <div class="text-center mb-5">
+          <h1 class="text-white fw-bold display-4 glow-text">Send a Transmission</h1>
+           <!-- <i class="fa-solid fa-rocket"></i> -- rocket -->
+          <p class="msg opacity-75">
+            Ready to send a message beyond the stars?<br />
+            <strong>Tell us what’s on your mind.</strong>
+          </p>
+        </div>
+
+        <div class="row justify-content-center align-items-center g-4">
+          
+          <div class="col-lg-8 col-md-10 position-relative">
+            
+            <div class="rocket-wrapper">
+              <img src="assets/images/shimaa_images/spaceCraft-removebg-preview.png" alt="Rocket" class="floating-rocket" />
+            </div>
+            <div class="astronaut-wrapper">
+            <img src="assets/images/shimaa_images/astronaut.png" alt="Astronaut" class="floating-astro" />
+            </div>
+
+            <div class="glass-card p-4 p-md-5 rounded-4 shadow-lg">
+              <h3 class="text-white mb-4 fs-4 fw-semibold border-bottom border-secondary pb-3">
+                <i class="fas fa-satellite-dish me-2 text-warning"></i> Transmission Terminal
+              </h3>
+              
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label text-light fs-7">Full Name</label>
+                    <input type="text" class="form-control custom-input" placeholder="e.g. Shimaa Aboelela" />
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label class="form-label text-light fs-7">Email Address</label>
+                    <input type="email" class="form-control custom-input" placeholder="name@gmail.com" />
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label text-light fs-7">Space Topic</label>
+                    <select class="form-select custom-input text-light">
+                      <option selected disabled class="bg-dark">Select a Topic</option>
+                      <option class="bg-dark">Scientific Inquiry (Site Content)</option>
+                      <option class="bg-dark">Technical Inquiry (Website Development)</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label text-light fs-7">Message</label>
+                    <textarea class="form-control custom-input" rows="4" placeholder="Write your message here..."></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <a href="10-confirm.html" class="btn main-btn w-100 rounded-pill fw-bold py-3 text-uppercase tracking-wider">
+                    Transmit Message <i class="fas fa-paper-plane ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 col-md-10">
+            <div class="glass-card p-4 rounded-4 mb-4">
+              <h4 class="text-white mb-3 fs-5"><i class="fas fa-headset me-2 text-warning"></i> Contact Info</h4>
+              <ul class="list-unstyled text-light opacity-75 mb-0">
+                <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-warning"></i> 123 Cosmic Way, Sector 7</li>
+                <li class="mb-2"><i class="fas fa-phone me-2 text-warning"></i> +20 11 4752 0585</li>
+                <li><i class="fas fa-envelope me-2 text-warning"></i> s03034702@gmail.com</li>
+              </ul>
+            </div>
+
+            <div class="glass-card p-4 rounded-4 text-center">
+              <h5 class="text-white mb-3 fs-6">Connect across the Galaxy</h5>
+              <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="social-icon"><i class="fab me-0 fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab me-0 fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
