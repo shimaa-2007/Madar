@@ -16,50 +16,64 @@ a {
 }
 ul {
     list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
 }
-.container-fluid{
-    background-color: var(--navb);
-    position: sticky;
-    top: 0;
-    z-index: 1000000;
+.navbar-bg {
+  background-color: var(--navb);
+  z-index: 100000;
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 0;
+
+.logo {
+  width: 150px;
 }
-nav .logo {
-    width: 150px;
+
+.nav-link-custom {
+  color: #ffca91;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  display: inline-block;
 }
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+.nav-link-custom:hover,.nav-link-custom.active {
+  background-color: rgba(160, 160, 159, 0.15);
+  border-color: var(--dots-color);
+  box-shadow: 0 0 10px var(--dots-color);
+  color: #ffffff;
 }
+
 .main-btn {
-    background-color: var(--gold);
-    color: #3d1c01;
-    padding: 10px 24px;
-    transition: all 0.3s ease;
+  background-color: var(--gold);
+  color: #3d1c01;
+  padding: 8px 22px;
+  transition: all 0.3s ease;
 }
 
 .main-btn:hover {
-    transform: translate(4px, -4px);
-    box-shadow: -4px 4px 15px rgba(209, 250, 61, 0.6);
-    color: #fd881b;
-}
-nav ul .nav-link-custom {
-    color: #ffca91;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid transparent; 
-    transition: all 0.3s ease;
+  transform: translate(3px, -3px);
+  box-shadow: -4px 4px 15px rgba(209, 250, 61, 0.6);
+  color: #fd881b;
 }
 
-nav ul .nav-link-custom:hover {
-    background-color: rgba(160, 160, 159, 0.15); 
-    border-color: var(--dots-color); 
-    box-shadow: 0 0 10px var(--dots-color); 
-    color: #ffffff;
+.custom-toggler {
+  filter: invert(80%) sepia(50%) saturate(1000%) hue-rotate(15deg);
+}
+
+.custom-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .nav-link-custom {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6px;
+  }
 }
