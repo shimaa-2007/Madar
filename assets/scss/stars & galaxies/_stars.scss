@@ -98,6 +98,9 @@
 
 .stars-hero__p {
   align-self: flex-start;
+  @include respond-to(mobile-m) {
+    align-self: center;
+  }
   @include respond-to(tablet) {
     align-self: flex-end;
   }

@@ -166,10 +166,18 @@
     width: clamp(650px, 90vw, 1000px) !important;
   }
 }
-// تكبير سينمائي هادئ عند الـ Hover
+.galaxies-grid .star-card--galaxy:nth-child(4) .star-card__visual {
+  transform: rotate(-18deg) scale(1.15) !important;
+  // right: -5% !important;
+  // bottom: -40% !important;
+}
 .galaxies-grid .star-card--galaxy:hover .star-card__visual {
   opacity: 1;
   transform: scale(1.08) rotate(-2deg) !important;
+}
+.galaxies-grid .star-card--galaxy:nth-child(4):hover .star-card__visual {
+  opacity: 1;
+  transform: scale(1.08) rotate(-20deg) !important;
 }
 
 // -------------------------------------------------------------
@@ -250,11 +258,11 @@
     transparent 78%
   ) !important;
 }
-.galaxies-grid .star-card--galaxy:nth-child(4) .star-card__visual {
-  transform: rotate(-18deg) scale(1.15) !important;
-  right: -5% !important;
-  bottom: -20% !important;
-}
+// .galaxies-grid .star-card--galaxy:nth-child(4) .star-card__visual {
+//   transform: rotate(-18deg) scale(1.15) !important;
+//   right: -5% !important;
+//   bottom: -20% !important;
+// }
 .galaxies-grid .star-card--galaxy:nth-child(4) .star-card__img {
   filter: contrast(115%) brightness(95%)
     drop-shadow(0 0 25px rgba(140, 240, 255, 0.7)) !important;

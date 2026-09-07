@@ -1,4 +1,6 @@
 @use 'sass:map' as map;
+@use 'sass:math';
+@use 'sass:list';
 @mixin flex($justify: center, $align: center, $flow) {
   display: flex;
   justify-content: $justify;
@@ -24,4 +26,18 @@ $breakpoints: (
       @content;
     }
   }
+}
+
+// functions
+@function generate-random-stars($count) {
+  $shadows: ();
+  @for $i from 1 through $count {
+    $x: math.random(2000) * 1px;
+    $y: math.random(3500) * 1px;
+    $opacity: math.div(math.random(60) + 20, 100);
+
+    $single-star: #{$x} #{$y} 0 rgba(255, 255, 255, $opacity);
+    $shadows: list.append($shadows, $single-star, comma);
+  }
+  @return $shadows;
 }

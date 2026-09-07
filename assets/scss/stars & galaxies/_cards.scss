@@ -583,8 +583,9 @@ button.star-card__action {
 
   @include respond-to(laptop) {
     width: clamp(420px, 90vw, 480px) !important;
+    right: 0%;
   }
-  @include respond-to(laptop) {
+  @include respond-to(laptop-l) {
     width: clamp(370px, 90vw, 420px) !important;
     right: -15%;
     bottom: -15%;
