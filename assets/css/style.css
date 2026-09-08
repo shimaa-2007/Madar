@@ -77,3 +77,41 @@ ul {
     margin-bottom: 6px;
   }
 }
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffca91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--gold);
+  color: #0b0e19;
+  box-shadow: 0 0 12px var(--gold);
+  transform: translateY(-3px);
+}
+.shimaa-gold-text {
+  /* font-family: 'Dancing Script', cursive;  */
+  font-family: "Caacupe One", sans-serif;
+  font-size: 3rem;
+  color: var(--gold);
+  text-shadow: 0 0 15px rgba(209, 250, 61, 0.6),
+               0 0 30px rgba(209, 250, 61, 0.2);
+  letter-spacing: 1px;
+  margin: 0;
+}
+.main-footer {
+  background-color: var(--navb); 
+  border-top: 1px solid rgba(160, 160, 159, 0.15);
+}
+.copyright-text {
+  color: #a0a09f;
+  
+}

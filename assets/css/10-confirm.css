@@ -22,12 +22,3 @@
   font-size: 1rem;
 }
 
-.shimaa-gold-text {
-  font-family: 'Dancing Script', cursive; 
-  font-size: 3rem;
-  color: var(--gold);
-  text-shadow: 0 0 15px rgba(209, 250, 61, 0.6),
-               0 0 30px rgba(209, 250, 61, 0.2);
-  letter-spacing: 1px;
-  margin: 0;
-}
