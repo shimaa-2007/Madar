@@ -1,0 +1,36 @@
+:root {
+  --main-bg-color: #0b0e19;
+  --dots-color: #a0a09f;
+  --gold: #d1fa3d;
+  --navb: #0f121e;
+
+  // Omar's Colors
+  --deep-purple: #241640;
+  --card-bg: #131726;
+  --neon-cyan: #0fb6c9;
+  --card-border: rgba(255, 255, 255, 0.08);
+  // Omar's Ends Here
+}
+
+$accent: var(--gold);
+$main-bg: var(--main-bg-color);
+$text: #f3f0e7;
+$text-dark: #0b0e19;
+$secondary: #262a3b;
+$shade: var(--dots-color);
+$card-bg: var(--card-bg);
+$purple: var(--deep-purple);
+$cyan: var(--neon-cyan);
+$card-border: var(--card-border);
+
+$font-body: 'Plus Jakarta Sans', sans-serif;
+$font-heading: 'Space Grotesk', sans-serif;
+$font-heading-2: 'Syne', sans-serif;
+$mono: 'DM Mono', monospace;
+
+.container {
+  margin-inline: auto;
+}
+* {
+  box-sizing: border-box;
+}

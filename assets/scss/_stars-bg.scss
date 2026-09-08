@@ -1,0 +1,39 @@
+@use 'abstract/index' as *;
+// Stars Background
+.stars-hero,
+.stars-cards,
+.cosmic-facts,
+.signal-inspector,
+.filter-bar {
+  position: relative;
+  background-color: #0b0d14;
+  overflow-x: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5px;
+    height: 1.5px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: generate-random-stars(500);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5px;
+    height: 2.5px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: generate-random-stars(100);
+    pointer-events: none;
+    z-index: 0;
+  }
+}

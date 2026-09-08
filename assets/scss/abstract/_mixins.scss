@@ -1,0 +1,43 @@
+@use 'sass:map' as map;
+@use 'sass:math';
+@use 'sass:list';
+@mixin flex($justify: center, $align: center, $flow) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $flow !=null {
+    flex-flow: $flow;
+  }
+}
+$breakpoints: (
+  mobile-s: 320px,
+  mobile-m: 375px,
+  mobile-l: 425px,
+  tablet: 768px,
+  laptop: 1024px,
+  laptop-l: 1440px,
+  4K: 2560px,
+);
+
+@mixin respond-to($name) {
+  $size: map.get($breakpoints, $name);
+  @if $size !=null {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+// functions
+@function generate-random-stars($count) {
+  $shadows: ();
+  @for $i from 1 through $count {
+    $x: math.random(2000) * 1px;
+    $y: math.random(3500) * 1px;
+    $opacity: math.div(math.random(60) + 20, 100);
+
+    $single-star: #{$x} #{$y} 0 rgba(255, 255, 255, $opacity);
+    $shadows: list.append($shadows, $single-star, comma);
+  }
+  @return $shadows;
+}

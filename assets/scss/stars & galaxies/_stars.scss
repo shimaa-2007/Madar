@@ -1,0 +1,199 @@
+@use '../abstract/index' as *;
+*::selection {
+  background-color: $accent;
+  color: $text-dark;
+}
+
+.stars-hero {
+  color: $text;
+  font-family: $font-body;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding-block-start: clamp(2rem, 6vh, 3.5rem);
+  padding-block-end: clamp(1rem, 6vh, 1.25rem);
+  @include respond-to(tablet) {
+    padding-block: clamp(2rem, 6vh, 3.5rem);
+  }
+
+  padding-block-start: 5rem;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(36, 22, 64, 0.6) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(15, 182, 201, 0.05) 0%,
+      transparent 50%
+    );
+}
+
+.stars-hero__content {
+  @include flex(space-between, center, column nowrap);
+  padding-block-end: 2rem;
+  border-bottom: 1px solid $secondary;
+  gap: 2rem;
+  @include respond-to(tablet) {
+    @include flex(space-between, center, row nowrap);
+    padding-block-end: 4rem;
+  }
+}
+
+.stars-hero__heading {
+  animation: heroEntrance 0.8s ease-out forwards;
+  .label {
+    color: $accent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+    // transform: translateX(15%);
+    @include respond-to(laptop) {
+      font-size: 10px;
+    }
+
+    &::before {
+      content: '';
+      // position: absolute;
+      width: 1.5rem;
+      height: 1px;
+      background-color: $accent;
+      // left: -2rem;
+      // top: 50%;
+      // transform: translateY(-50%);
+
+      animation: signalBlink 2.5s infinite ease-in-out;
+    }
+  }
+  .stars-hero__header {
+    margin-block-start: 1rem;
+    max-width: 8ch !important;
+    font-size: 3rem;
+    font-weight: 700;
+    // font-family: $font-heading;
+    font-family: $font-heading-2;
+    line-height: 3rem;
+    letter-spacing: -0rem;
+    @include respond-to(tablet) {
+      font-size: 4.5rem;
+      line-height: 4.875rem;
+      max-width: 8ch !important;
+      letter-spacing: -0.4rem;
+    }
+    @include respond-to(laptop) {
+      font-size: 6.875rem;
+      line-height: 6.5rem;
+    }
+
+    & > span {
+      // opacity: 0.7;
+      color: $shade;
+    }
+  }
+}
+
+.stars-hero__p {
+  align-self: flex-start;
+  @include respond-to(mobile-m) {
+    align-self: center;
+  }
+  @include respond-to(tablet) {
+    align-self: flex-end;
+  }
+  animation: heroEntrance 0.8s ease-out forwards;
+  & > p {
+    max-width: 50ch;
+    // opacity: 0.55;
+    color: $shade;
+    font-family: $font-heading-2;
+    font-size: 12px;
+    line-height: 1.4;
+
+    @include respond-to(tablet) {
+      max-width: 30ch;
+    }
+    @include respond-to(laptop) {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 35ch;
+    }
+  }
+}
+
+// Filter Search Bar
+
+// .filter-bar {
+//   margin-block: 28px;
+//   color: $text;
+//   font-family: $font-body;
+//   line-height: 1.5rem;
+//   // background:
+//   //   radial-gradient(
+//   //     circle at 85% 20%,
+//   //     rgba(36, 22, 64, 0.6) 0%,
+//   //     transparent 60%
+//   //   ),
+//   //   radial-gradient(
+//   //     circle at 10% 80%,
+//   //     rgba(15, 182, 201, 0.05) 0%,
+//   //     transparent 50%
+//   //   );
+// }
+
+// .filter-bar-flex {
+//   @include flex(space-between, center, row nowrap);
+// }
+
+// .filter-bar__content {
+//   opacity: 0.9;
+//   color: $shade;
+//   font-family: $mono;
+// }
+
+// .filter-bar__search {
+//   border-bottom: 1px solid $secondary;
+//   overflow: visible;
+//   padding-block: 0.5rem;
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 0.5rem;
+//   .search {
+//     border: none;
+//     outline: none;
+//     background-color: transparent;
+//     width: 180px;
+//     color: $shade;
+//     font-size: 0.75rem;
+//     opacity: 0.9;
+//   }
+//   i {
+//     color: $shade;
+//     opacity: 0.9;
+//     font-size: 0.85rem;
+//   }
+// }
+
+@keyframes signalBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Missions-Madar</title>
     <!-- fav icon -->
     <link rel="icon" href="assets/images/favicon.jpg" />
@@ -20,7 +20,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Comic+Relief:wght@400;700&family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reem+Kufi:wght@400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Comic+Relief:wght@400;700&family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reem+Kufi:wght@400..700&display=swap"/>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
     <!-- font awesome -->
@@ -31,8 +34,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/omar-main.css" />
+  </head>
+  <body class="missions-body">
     <!-- navbar -->
     <div class="container-fluid sticky-top navbar-bg">
       <div class="container">
@@ -71,6 +75,240 @@
         </nav>
       </div>
     </div>
+    <section class="stars-hero missions-hero">
+      <div class="container">
+        <div class="stars-hero__content">
+          <div class="stars-hero__heading">
+            <span class="label">Mission control / archive</span>
+            <h1 class="stars-hero__header missions-hero__header">
+              People who <span>went first.</span>
+            </h1>
+          </div>
+          <div class="stars-hero__p missions-hero__p">
+            <p>
+              A timeline of the transmissions, machines, and stubborn questions
+              that pushed our horizon outward.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- أزرار الفلترة والعداد -->
+    <section class="missions-filter">
+      <div class="container">
+        <div class="missions-filter-bar">
+          <div class="filter-pills">
+            <button class="pill-btn active" data-filter="all">
+              ALL MISSIONS
+            </button>
+            <button class="pill-btn" data-filter="lunar">LUNAR</button>
+            <button class="pill-btn" data-filter="mars">MARS</button>
+            <button class="pill-btn" data-filter="deep-space">
+              DEEP SPACE
+            </button>
+            <button class="pill-btn" data-filter="observatory">
+              OBSERVATORY
+            </button>
+            <button class="pill-btn" data-filter="ocean-worlds">
+              OCEAN WORLDS
+            </button>
+          </div>
+
+          <!-- عداد السجلات -->
+          <span class="records-count"
+            ><strong id="records-num">5</strong> records / chronological</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!--The timeline-->
+    <section class="missions">
+      <div class="container">
+        <div class="missions-list">
+          <div class="mission-item" data-category="lunar" style="--delay: 0ms">
+            <!-- محتوى مهمة القمر A footprint in stillness -->
+            <div class="mission__date">JUL 1969</div>
+            <div class="mission__content">
+              <div class="mission__tag">LUNAR</div>
+              <h3 class="mission__header">
+                A footprint in stillness <span>verified</span>
+              </h3>
+              <p class="mission__p">
+                Apollo 11 opens a door between worlds. Two humans step onto the
+                Moon while millions listen to the same transmission.
+              </p>
+              <button class="button button-ghost" type="button">
+                <span>View record</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-up-right"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="mission-item" data-category="mars" style="--delay: 70ms">
+            <!-- محتوى مهمة المريخ The first soil of Mars -->
+            <div class="mission__date">JUL 1976</div>
+            <div class="mission__content">
+              <div class="mission__tag">MARS</div>
+              <h3 class="mission__header">
+                The first soil of Mars <span>verified</span>
+              </h3>
+              <p class="mission__p">
+                Viking 1 returns the first panoramic image from the Martian
+                surface, a new horizon rendered in red and ochre.
+              </p>
+              <button class="button button-ghost" type="button">
+                <span>View record</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-up-right"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="mission-item"
+            data-category="deep-space"
+            style="--delay: 140ms"
+          >
+            <!-- محتوى مهمة الفضاء السحيق A pale blue dot -->
+            <div class="mission__date">FEB 1990</div>
+            <div class="mission__content">
+              <div class="mission__tag">DEEP SPACE</div>
+              <h3 class="mission__header">
+                A pale blue dot<span>verified</span>
+              </h3>
+              <p class="mission__p">
+                Voyager 1 turns its camera back toward home. Earth becomes a
+                single pixel in a sunbeam, impossibly small and wholly ours.
+              </p>
+              <button class="button button-ghost" type="button">
+                <span>View record</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-up-right"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="mission-item"
+            data-category="observatory"
+            style="--delay: 210ms"
+          >
+            <!-- محتوى التلسكوب The infrared eye opens -->
+            <div class="mission__date">JUL 2021</div>
+            <div class="mission__content">
+              <div class="mission__tag">OBSERVATORY</div>
+              <h3 class="mission__header">
+                The infrared eye opens <span>verified</span>
+              </h3>
+              <p class="mission__p">
+                The James Webb Space Telescope unfolds its honeycomb mirror,
+                ready to look through the dust of deep time.
+              </p>
+              <button class="button button-ghost" type="button">
+                <span>View record</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-up-right"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            class="mission-item"
+            data-category="ocean-worlds"
+            style="--delay: 180ms"
+          >
+            <!-- محتوى التلسكوب The infrared eye opens -->
+            <div class="mission__date">APR 2023</div>
+            <div class="mission__content">
+              <div class="mission__tag">OCEAN WORLDS</div>
+              <h3 class="mission__header">
+                Europa Clipper / underway<span>verified</span>
+              </h3>
+              <p class="mission__p">
+                A future mission traces the chemistry and ice of Jupiter’s moon,
+                looking for the conditions that could host life.
+              </p>
+              <button class="button button-ghost" type="button">
+                <span>View record</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-up-right"
+                  aria-hidden="true"
+                >
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- footer -->
     <footer class="main-footer py-3 mt-5">
@@ -98,5 +336,6 @@
     </footer>
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="assets/js/omar.js"></script>
+  </body>
 </html>

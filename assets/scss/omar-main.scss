@@ -1,0 +1,10 @@
+// to make this scss work enter
+// sass -w assets/scss:assets/css --no-source-map
+//in the CLI
+
+@use 'abstract/index' as *;
+@use 'stars & galaxies/index' as *;
+@use 'missions/index' as *;
+@use 'stars-bg' as *;
+
+// git add assets/scss/ assets/css/omar-main.css 4-Stars_Galaxies.html assets/js/omar.js assets/images/galaxies assets/images/stars

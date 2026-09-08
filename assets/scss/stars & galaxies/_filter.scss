@@ -1,0 +1,154 @@
+@use '../abstract/index' as *;
+
+.filter-bar {
+  margin-block: 2rem 3rem;
+  color: $text;
+  font-family: $font-body;
+  @include respond-to(tablet) {
+    margin-block-end: 5rem;
+  }
+}
+
+.filter-bar-flex {
+  @include flex(space-between, center, column nowrap);
+  gap: clamp(2rem, 5vw, 2.5rem);
+
+  @include respond-to(tablet) {
+    @include flex(space-between, center, row nowrap);
+  }
+}
+
+.filter-bar__actions {
+  flex-shrink: 0;
+  @include flex(center, center, column nowrap);
+  gap: clamp(1.6rem, 3vw, 2rem);
+  @include respond-to(tablet) {
+    @include flex(center, center, column nowrap);
+    flex-basis: 40%;
+  }
+  @include respond-to(laptop) {
+    @include flex(center, center, row nowrap);
+    flex-basis: auto;
+  }
+}
+.filter-bar__categories {
+  align-self: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+
+  @include respond-to(laptop) {
+    @include flex(center, center, row nowrap);
+  }
+}
+.filter-bar__categories.nav-pills {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 0.35rem;
+
+  .nav-link {
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: $shade;
+    font-family: $mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.9rem;
+    transition:
+      color 0.25s ease,
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      color: $text;
+    }
+
+    &.active {
+      color: $text-dark;
+      background-color: $accent;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(209, 250, 61, 0.35);
+    }
+  }
+}
+
+.filter-bar__sort {
+  font-family: $mono;
+  font-size: 0.55rem;
+  color: $shade;
+  opacity: 0.85;
+  @include respond-to(tablet) {
+    font-size: 0.75rem;
+    padding-inline-start: 0.25rem;
+  }
+  @include respond-to(tablet) {
+    padding-inline-start: 0rem;
+  }
+
+  .sort-label {
+    color: $text;
+    letter-spacing: 0.08em;
+  }
+  .sort-value {
+    white-space: nowrap;
+  }
+}
+
+.filter-bar__search {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-block: 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  @include respond-to(tablet) {
+    align-self: flex-start;
+  }
+
+  i {
+    color: $shade;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+  }
+
+  .search {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    // width: 190px;
+    width: 100%;
+    color: $text;
+    font-family: $font-body;
+    font-size: 0.8rem;
+    transition: width 0.3s ease;
+    @include respond-to(tablet) {
+      width: 190px;
+    }
+
+    &::placeholder {
+      color: $shade;
+      font-family: $font-body;
+      font-size: 0.78rem;
+    }
+  }
+
+  &:focus-within {
+    border-bottom-color: $accent;
+    border-radius: 0.5rem;
+    padding-inline: 0.5rem;
+    box-shadow: 0 2px 8px -2px rgba(209, 250, 61, 0.4);
+
+    i {
+      color: $accent;
+    }
+
+    .search {
+      width: 240px;
+    }
+  }
+}
