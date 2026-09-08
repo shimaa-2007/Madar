@@ -10,11 +10,25 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- home style -->
+    <link rel="stylesheet" href="assets/css/1-home_style.css" />
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reem+Kufi:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reem+Kufi:wght@400..700&display=swap"
       rel="stylesheet"
     />
     <!-- font awesome -->
@@ -25,28 +39,464 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <!-- navbar -->
     <div class="container-fluid">
       <div class="container">
         <nav>
-          <a href="1-Home.html"><img src="assets/images/logo.jpg" alt="logo" class="logo" /></a>
-          
+          <a href="1-Home.html"
+            ><img src="assets/images/logo.jpg" alt="logo" class="logo"
+          /></a>
           <ul>
-            <li><a class="nav-link-custom" href="2-Planets.html">Planets</a></li>
-            <li><a class="nav-link-custom" href="3-Planets_Details.html">Planets Details</a></li>
-            <li><a class="nav-link-custom" href="4-Stars_Galaxies.html">Stars & Galaxies</a></li>
-            <li><a class="nav-link-custom" href="5-Missions.html">Missions</a></li>
-            <li><a class="nav-link-custom" href="6-Discoveries.html">Discoveries</a></li>
-            <li><a class="nav-link-custom" href="7-Solar_System.html">Solar System</a></li>
-            <li><a class="nav-link-custom" href="8-About_Us.html">About Us</a></li>
+            <li>
+              <a class="nav-link-custom" href="2-Planets.html">Planets</a>
+            </li>
+            <li>
+              <a class="nav-link-custom" href="3-Planets_Details.html"
+                >Planets Details</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="4-Stars_Galaxies.html"
+                >Stars & Galaxies</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="5-Missions.html">Missions</a>
+            </li>
+            <li>
+              <a class="nav-link-custom" href="6-Discoveries.html"
+                >Discoveries</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="7-Solar_System.html"
+                >Solar System</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="8-About_Us.html">About Us</a>
+            </li>
           </ul>
-          <a class="main-btn btn rounded-pill fw-medium" href="9-Contact.html">Transmit</a>
+          <a class="main-btn btn rounded-pill fw-medium" href="9-Contact.html"
+            >Transmit</a
+          >
         </nav>
       </div>
     </div>
+    <!-- hero section -->
+    <section class="hero-section">
+      <div class="container">
+        <div
+          class="quran-container mx-auto animate__animated animate__fadeInRight"
+        >
+          <p class="basmala">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+          <blockquote class="quran-verse">
+            ﴿ إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ
+            عَشَرَ كَوْكَباً وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ
+            ﴾
+          </blockquote>
+          <p class="sadaqah text-start">صدق الله العظيم</p>
+        </div>
+        <div class="video-wrapper mt-4 animate__animated animate__fadeInLeft">
+          <video controls playsinline class="hero-video">
+            <source src="assets/videos/vid1.mp4" type="video/mp4" />
+            your browser does not support this video.
+          </video>
+        </div>
+      </div>
+    </section>
 
+    <!-- section2 -->
+    <section class="cosmos-glance py-5">
+      <div class="container text-center">
+        <span class="small-label">THE COSMOS / AT A GLANCE</span>
+        <h2 class="main-heading my-3">A UNIVERSE TOO LARGE TO MEASURE.</h2>
+        <p class="section-desc mx-auto mb-5">
+          We have mapped only a fraction of what exists beyond our world. Every
+          number is an invitation to ask another question.
+        </p>
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-num">01</span>
+              <h3 class="stat-value">8</h3>
+              <p class="stat-label">PLANETS IN OUR SOLAR SYSTEM</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-num">02</span>
+              <h3 class="stat-value">13.8B</h3>
+              <p class="stat-label">YEARS OF OBSERVABLE TIME</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-num">03</span>
+              <h3 class="stat-value">400B+</h3>
+              <p class="stat-label">STARS IN THE MILKY WAY</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card">
+              <span class="stat-num">04</span>
+              <h3 class="stat-value">∞</h3>
+              <p class="stat-label">QUESTIONS STILL OPEN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section3 -->
+    <section class="archive-section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="main-heading">WHERE DO YOU WANT TO BEGIN?</h2>
+          <p class="section-desc mx-auto">
+            Start close. Then go further. Choose a path into the archive.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- card1 -->
+          <div class="col-md-4">
+            <div class="archive-card card-worlds">
+              <div class="archive-overlay"></div>
+              <div class="archive-content">
+                <span class="card-num">01 / WORLDS</span>
+                <h3>PLANETS</h3>
+                <p>
+                  Explore the worlds orbiting our Sun — from rocky surfaces to
+                  colossal gas giants.
+                </p>
+                <a href="2-Planets.html" class="archive-btn"
+                  >EXPLORE WORLDS &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card2 -->
+          <div class="col-md-4">
+            <div class="archive-card card-missions">
+              <div class="archive-overlay"></div>
+              <div class="archive-content">
+                <span class="card-num animate__flipInX">02 / MISSIONS</span>
+                <h3>MISSIONS</h3>
+                <p>
+                  Follow humanity's journey beyond Earth, from the first steps
+                  to the edge of the solar system.
+                </p>
+                <a href="5-Missions.html" class="archive-btn"
+                  >VIEW MISSIONS &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card3 -->
+          <div class="col-md-4">
+            <div class="archive-card card-deepspace">
+              <div class="archive-overlay"></div>
+              <div class="archive-content">
+                <span class="card-num">03 / DEEP SPACE</span>
+                <h3>STARS & GALAXIES</h3>
+                <p>
+                  Trace distant stars, strange galaxies, stellar explosions, and
+                  places we are only beginning to understand.
+                </p>
+                <a href="4-Stars_Galaxies.html" class="archive-btn"
+                  >ENTER DEEP SPACE &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section4 -->
+    <section class="featured-worlds py-5">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3"
+        >
+          <div>
+            <span class="small-label">THE SOLAR SYSTEM / 01</span>
+            <h2 class="main-heading mt-2">WORLDS WORTH GETTING LOST IN.</h2>
+          </div>
+          <p class="section-desc m-0">
+            Eight worlds. Eight stories. One extraordinary system.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="planet-card">
+              <div class="planet-img-wrapper">
+                <img
+                  src="assets/images/shimaa_images/img6-removebg-preview.png"
+                  alt="Earth"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="planet-info">
+                <span class="planet-tag">TERRESTRIAL / BLUE WORLD</span>
+                <h4>EARTH</h4>
+                <p>Our home. A world of oceans, atmosphere, and life.</p>
+                <a href="3-Planets_Details.html" class="planet-link"
+                  >EXPLORE &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="planet-card">
+              <div class="planet-img-wrapper">
+                <img
+                  src="assets/images/shimaa_images/img5-removebg-preview.png"
+                  alt="Mars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="planet-info">
+                <span class="planet-tag">TERRESTRIAL / RED WORLD</span>
+                <h4>MARS</h4>
+                <p>A frozen desert carrying clues to a wetter, warmer past.</p>
+                <a href="3-Planets_Details.html" class="planet-link"
+                  >EXPLORE &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="planet-card">
+              <div class="planet-img-wrapper">
+                <img
+                  src="assets/images/shimaa_images/img7-removebg-preview.png"
+                  alt="Jupiter"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="planet-info">
+                <span class="planet-tag">GAS GIANT / OUTER SYSTEM</span>
+                <h4>JUPITER</h4>
+                <p>
+                  The largest planet in our solar system, ruled by storms that
+                  outlive generations.
+                </p>
+                <a href="3-Planets_Details.html" class="planet-link"
+                  >EXPLORE &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="planet-card">
+              <div class="planet-img-wrapper">
+                <img
+                  src="assets/images/shimaa_images/img8-removebg-preview.png"
+                  alt="Saturn"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="planet-info">
+                <span class="planet-tag">GAS GIANT / RINGED WORLD</span>
+                <h4>SATURN</h4>
+                <p>
+                  A giant wrapped in ice, dust, and one of the most recognizable
+                  silhouettes in space.
+                </p>
+                <a href="3-Planets_Details.html" class="planet-link"
+                  >EXPLORE &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <span class="d-block text-muted mb-2 font-monospace"
+            >08 WORLDS / COUNTLESS QUESTIONS</span
+          >
+          <a href="2-Planets.html" class="main-btn btn rounded-pill fw-medium"
+            >VIEW ALL PLANETS</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- facts section -->
+    <section class="facts-section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="small-label">COSMIC KNOWLEDGE</span>
+          <h2 class="main-heading mt-2">DID YOU KNOW?</h2>
+          <p class="section-desc mx-auto">
+            Curious bits of information from across our solar system and beyond.
+          </p>
+        </div>
+
+        <!-- carousel -->
+        <div
+          id="factsCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1500"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3"><i class="fas fa-sun"></i></div>
+                    <span class="fact-number">FACT #01</span>
+                    <p class="fact-text mt-2">
+                      One million Earths could fit inside the Sun – and the Sun
+                      is considered an average-size star.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-water"></i>
+                    </div>
+                    <span class="fact-number">FACT #02</span>
+                    <p class="fact-text mt-2">
+                      Scientists revealed evidence of intermittent running water
+                      on Mars, challenging the belief that Earth was unique in
+                      liquid water.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-meteor"></i>
+                    </div>
+                    <span class="fact-number">FACT #03</span>
+                    <p class="fact-text mt-2">
+                      Comets are leftovers from our solar system creation 4.5
+                      billion years ago, made of sand, ice, and carbon dioxide.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-wind"></i>
+                    </div>
+                    <span class="fact-number">FACT #04</span>
+                    <p class="fact-text mt-2">
+                      You wouldn’t be able to walk on Jupiter, Saturn, Uranus,
+                      or Neptune because they have no solid surface!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <span class="fact-number">FACT #05</span>
+                    <p class="fact-text mt-2">
+                      If you could fly a commercial airplane to Pluto, the
+                      entire trip would take more than 800 years!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <span class="fact-number">FACT #06</span>
+                    <p class="fact-text mt-2">
+                      There are over 500,000 pieces of space junk orbiting
+                      Earth, including fragments and tools lost during ISS
+                      construction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span class="fact-number">FACT #07</span>
+                    <p class="fact-text mt-2">
+                      A car-sized asteroid enters Earth’s atmosphere roughly
+                      once a year, but burns up safely before reaching us.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-mountain"></i>
+                    </div>
+                    <span class="fact-number">FACT #08</span>
+                    <p class="fact-text mt-2">
+                      The highest mountain known is on asteroid Vesta, measuring
+                      22km high — three times the height of Mount Everest!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="fact-card h-100 p-4">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <span class="fact-number">FACT #09</span>
+                    <p class="fact-text mt-2">
+                      There are more stars in the universe than grains of sand
+                      on all beaches on Earth — at least a billion trillion!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="fact-card h-100 p-4 text-center">
+                    <div class="fact-icon mb-3">
+                      <i class="fas fa-sun-plant-wilt text-warning"></i>
+                    </div>
+                    <span class="fact-number">FACT #10</span>
+                    <p class="fact-text mt-2 fs-5">
+                      The sunset on Mars appears distinctly blue due to dust
+                      particles scattering blue light in its atmosphere.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>

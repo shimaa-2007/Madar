@@ -1,0 +1,278 @@
+/* Hero Section Styling */
+.hero-section {
+  direction: rtl;
+  font-family: "Reem Kufi", sans-serif;
+  color: #ffffff;
+}
+
+.quran-container {
+  max-width: 800px;
+  background: rgba(15, 18, 30, 0.6);
+  border: 1px solid #0B0E19;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 32px 0 rgba(251, 149, 40, 0.37);
+  backdrop-filter: blur(4px);
+}
+
+.basmala {
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.quran-verse {
+  font-size: 1.5rem;
+  line-height: 2.2;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 800;
+}
+
+.sadaqah {
+  font-size: 1.1rem;
+  color: var(--dots-color);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* Video Styling */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(160, 160, 159, 0.2);
+}
+
+.hero-video {
+  width: 100%;
+  max-height: 55vh;
+  object-fit: cover;
+  display: block;
+}
+.small-label {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main-heading {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-family: "Comic Relief", system-ui !important;
+}
+
+.section-desc {
+  color: #a0a09f;
+  max-width: 600px;
+  font-size: 0.95rem;
+}
+.stat-card {
+  background: rgba(15, 18, 30, 0.5);
+  border: 1px solid rgba(160, 160, 159, 0.15);
+  border-radius: 16px;
+  padding: 30px 15px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.stat-num {
+  font-size: 0.8rem;
+  color: var(--dots-color);
+  display: block;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin: 10px 0;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.archive-card {
+  position: relative;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  border: 1px solid rgba(160, 160, 159, 0.2);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s ease;
+}
+
+.card-worlds { background-image: url('../images/shimaa_images/img2.jpg'); }
+.card-missions { background-image: url('../images/shimaa_images/img3.jpg'); }
+.card-deepspace { background-image: url('../images/shimaa_images/img4.jpg'); }
+
+.archive-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 14, 25, 0.2) 0%, rgba(11, 14, 25, 0.95) 100%);
+  transition: all 0.3s ease;
+}
+
+.archive-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.card-num {
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.archive-content h3 {
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.archive-content p {
+  font-size: 0.85rem;
+  color: #d1d1d1;
+}
+
+.archive-btn {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.archive-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 25px rgba(209, 250, 61, 0.2);
+}
+
+.archive-card:hover .archive-btn {
+  transform: translateX(-5px);
+}
+.planet-card {
+  background: rgba(15, 18, 30, 0.6);
+  border: 1px solid rgba(160, 160, 159, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.planet-img-wrapper {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.planet-img-wrapper img {
+  max-height: 140px;
+  border-radius: 20px;
+  animation: shimaaPlanet 4s ease-in-out infinite;
+  transition: filter 0.3s ease;
+
+}
+@keyframes shimaaPlanet {
+  0% { transform: translateY(0px) rotate(0deg);}
+  50% { transform: translateY(-10px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg);}
+}
+.planet-card:hover .planet-img-wrapper img {
+  filter: drop-shadow(0 0 12px rgba(251, 149, 40, 0.6));
+}
+
+.planet-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.planet-tag {
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.planet-info h4 {
+  color: #fff;
+  margin: 8px 0;
+}
+
+.planet-info p {
+  font-size: 0.85rem;
+  color: var(--dots-color);
+}
+
+.planet-link {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.planet-card:hover .planet-link {
+  color: var(--gold);
+}
+.featured-worlds span.font-monospace {
+  color: #a0a09f !important;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.fact-card {
+  background: rgba(15, 18, 30, 0.6);
+  border: 1px solid rgba(160, 160, 159, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.fact-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 25px rgba(209, 250, 61, 0.15);
+}
+
+.fact-icon {
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.fact-number {
+  font-size: 0.75rem;
+  color: var(--dots-color);
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.fact-text {
+  color: #f5f4f4;
+  font-family: "Comic Relief", system-ui;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.carousel-item {
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}

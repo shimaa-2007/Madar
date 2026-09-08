@@ -37,3 +37,25 @@
     z-index: 0;
   }
 }
+// Animation
+.star-card {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms),
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms),
+    filter 0.45s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  &.search-hidden {
+    display: none !important;
+    opacity: 0;
+  }
+}

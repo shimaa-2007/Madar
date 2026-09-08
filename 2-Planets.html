@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planets-Madar</title>
     <!-- fav icon -->
     <link rel="icon" href="assets/images/favicon.jpg" />
@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- planets style -->
+    <link rel="stylesheet" href="assets/css/planets.css" />
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,29 +27,684 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+  </head>
+  <body>
     <!-- navbar -->
     <div class="container-fluid">
       <div class="container">
         <nav>
-          <a href="1-Home.html"><img src="assets/images/logo.jpg" alt="logo" class="logo" /></a>
-          
+          <a href="1-Home.html"
+            ><img src="assets/images/logo.jpg" alt="logo" class="logo"
+          /></a>
+
           <ul>
-            <li><a class="nav-link-custom" href="2-Planets.html">Planets</a></li>
-            <li><a class="nav-link-custom" href="3-Planets_Details.html">Planets Details</a></li>
-            <li><a class="nav-link-custom" href="4-Stars_Galaxies.html">Stars & Galaxies</a></li>
-            <li><a class="nav-link-custom" href="5-Missions.html">Missions</a></li>
-            <li><a class="nav-link-custom" href="6-Discoveries.html">Discoveries</a></li>
-            <li><a class="nav-link-custom" href="7-Solar_System.html">Solar System</a></li>
-            <li><a class="nav-link-custom" href="8-About_Us.html">About Us</a></li>
+            <li>
+              <a class="nav-link-custom" href="2-Planets.html">Planets</a>
+            </li>
+            <li>
+              <a class="nav-link-custom" href="3-Planets_Details.html"
+                >Planets Details</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="4-Stars_Galaxies.html"
+                >Stars & Galaxies</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="5-Missions.html">Missions</a>
+            </li>
+            <li>
+              <a class="nav-link-custom" href="6-Discoveries.html"
+                >Discoveries</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="7-Solar_System.html"
+                >Solar System</a
+              >
+            </li>
+            <li>
+              <a class="nav-link-custom" href="8-About_Us.html">About Us</a>
+            </li>
           </ul>
-          <a class="main-btn btn rounded-pill fw-medium" href="9-Contact.html">Transmit</a>
+          <a class="main-btn btn rounded-pill fw-medium" href="9-Contact.html"
+            >Transmit</a
+          >
         </nav>
       </div>
     </div>
 
-    <!-- bootstrap js -->
+    <!-- =========================
+     PLANETS HERO
+     Left: Introduction
+     Right: Animated Solar System
+========================= -->
+
+    <section class="planets-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- =========================
+                 HERO CONTENT
+                 Contains title, description
+                 and Explore button
+            ========================= -->
+
+          <div class="col-lg-5 planets-hero-content">
+            <span class="section-label"> SOLAR SYSTEM </span>
+
+            <h1>
+              Explore the
+              <span>Planets</span>
+            </h1>
+
+            <p>
+              Discover the worlds that orbit our Sun. Explore their unique
+              environments, characteristics, and fascinating stories.
+            </p>
+
+            <a href="#planets" class="main-btn btn rounded-pill">
+              Explore Planets
+
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+
+          <!-- =========================
+                 SOLAR SYSTEM
+                 Animated planets orbiting
+                 around the Sun
+            ========================= -->
+
+          <div class="col-lg-7">
+            <div class="solar-system">
+              <!-- Sun -->
+
+              <div class="solar-sun"></div>
+
+              <!-- Mercury Orbit -->
+
+              <div class="solar-orbit orbit-mercury">
+                <img
+                  src="assets/images/planets/Mercury.png"
+                  alt="Mercury"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Venus Orbit -->
+
+              <div class="solar-orbit orbit-venus">
+                <img
+                  src="assets/images/planets/Venus.png"
+                  alt="Venus"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Earth Orbit -->
+
+              <div class="solar-orbit orbit-earth">
+                <img
+                  src="assets/images/planets/Earth.png"
+                  alt="Earth"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Mars Orbit -->
+
+              <div class="solar-orbit orbit-mars">
+                <img
+                  src="assets/images/planets/Mars.png"
+                  alt="Mars"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Jupiter Orbit -->
+
+              <div class="solar-orbit orbit-jupiter">
+                <img
+                  src="assets/images/planets/Jupiter.png"
+                  alt="Jupiter"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Saturn Orbit -->
+
+              <div class="solar-orbit orbit-saturn">
+                <img
+                  src="assets/images/planets/Saturn.png"
+                  alt="Saturn"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Uranus Orbit -->
+
+              <div class="solar-orbit orbit-uranus">
+                <img
+                  src="assets/images/planets/Uranus.png"
+                  alt="Uranus"
+                  class="solar-planet"
+                />
+              </div>
+
+              <!-- Neptune Orbit -->
+
+              <div class="solar-orbit orbit-neptune">
+                <img
+                  src="assets/images/planets/Neptune.png"
+                  alt="Neptune"
+                  class="solar-planet"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     PLANETS SECTION
+========================= -->
+
+    <section class="planets-section" id="planets">
+      <div class="container">
+        <!-- Section Header -->
+
+        <div class="planets-header">
+          <div>
+            <span class="section-label"> OUR COSMIC NEIGHBORS </span>
+
+            <h2>The Eight <span>Planets</span></h2>
+
+            <p>
+              Choose a planet and begin your journey through our solar system.
+            </p>
+          </div>
+
+          <!-- Search -->
+
+          <div class="planet-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              id="planetSearch"
+              placeholder="Search planet..."
+            />
+          </div>
+        </div>
+
+        <!-- Filters -->
+
+        <div class="planet-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+
+          <button class="filter-btn" data-filter="terrestrial">
+            Terrestrial
+          </button>
+
+          <button class="filter-btn" data-filter="gas">Gas Giants</button>
+
+          <button class="filter-btn" data-filter="ice">Ice Giants</button>
+        </div>
+
+        <!-- =========================
+             PLANETS GRID
+        ========================= -->
+
+        <div class="row g-4" id="planetsGrid">
+          <!-- Mercury -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="mercury"
+            data-type="terrestrial"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+                <img
+                  src="assets/images/planets/Mercury.png"
+                  alt="Mercury"
+                  class="planet-modal-trigger"
+                  data-planet="mercury"
+                />
+
+                <span class="planet-number"> 01 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> TERRESTRIAL PLANET </span>
+
+                <h3>Mercury</h3>
+
+                <p>The smallest planet and the closest world to the Sun.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Mercury to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Venus -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="venus"
+            data-type="terrestrial"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+                <img
+                  src="assets/images/planets/Venus.png"
+                  alt="Venus"
+                  class="planet-modal-trigger"
+                  data-planet="venus"
+                />
+
+                <span class="planet-number"> 02 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> TERRESTRIAL PLANET </span>
+
+                <h3>Venus</h3>
+
+                <p>A hot world hidden beneath a thick atmosphere.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Venus to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Earth -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="earth"
+            data-type="terrestrial"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+               <img
+    src="assets/images/planets/Earth.png"
+    alt="Earth"
+    class="planet-modal-trigger"
+    data-planet="earth"
+/>
+
+                <span class="planet-number"> 03 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> TERRESTRIAL PLANET </span>
+
+                <h3>Earth</h3>
+
+                <p>Our home planet and the only known world supporting life.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Earth to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mars -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="mars"
+            data-type="terrestrial"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+                <img
+    src="assets/images/planets/Mars.png"
+    alt="Mars"
+    class="planet-modal-trigger"
+    data-planet="mars"
+/>
+
+                <span class="planet-number"> 04 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> TERRESTRIAL PLANET </span>
+
+                <h3>Mars</h3>
+
+                <p>The red planet with a history of ancient water.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Mars to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jupiter -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="jupiter"
+            data-type="gas"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+                <img
+    src="assets/images/planets/Jupiter.png"
+    alt="Jupiter"
+    class="planet-modal-trigger"
+    data-planet="jupiter"
+/>
+
+                <span class="planet-number"> 05 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> GAS GIANT </span>
+
+                <h3>Jupiter</h3>
+
+                <p>The largest planet in our solar system.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Jupiter to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saturn -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="saturn"
+            data-type="gas"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+               <img
+    src="assets/images/planets/Saturn.png"
+    alt="Saturn"
+    class="planet-modal-trigger"
+    data-planet="saturn"
+/>
+
+                <span class="planet-number"> 06 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> GAS GIANT </span>
+
+                <h3>Saturn</h3>
+
+                <p>A magnificent gas giant famous for its spectacular rings.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Saturn to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uranus -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="uranus"
+            data-type="ice"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+                <img
+    src="assets/images/planets/Uranus.png"
+    alt="Uranus"
+    class="planet-modal-trigger"
+    data-planet="uranus"
+/>
+
+                <span class="planet-number"> 07 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> ICE GIANT </span>
+
+                <h3>Uranus</h3>
+
+                <p>An icy blue world rotating on its side.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Uranus to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Neptune -->
+
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 planet-item"
+            data-name="neptune"
+            data-type="ice"
+          >
+            <div class="planet-card">
+              <div class="planet-image">
+               <img
+    src="assets/images/planets/Neptune.png"
+    alt="Neptune"
+    class="planet-modal-trigger"
+    data-planet="neptune"
+/>
+
+                <span class="planet-number"> 08 </span>
+              </div>
+
+              <div class="planet-content">
+                <span class="planet-type"> ICE GIANT </span>
+
+                <h3>Neptune</h3>
+
+                <p>The distant blue giant with incredibly powerful winds.</p>
+
+                <div class="planet-actions">
+                  <a href="3-Planets_Details.html" class="planet-link">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+
+                  <button
+                    class="favorite-btn"
+                    type="button"
+                    aria-label="Add Neptune to favorites"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Results -->
+
+        <div class="no-results" id="noResults">
+          <i class="fa-solid fa-satellite"></i>
+
+          <h3>Planet not found</h3>
+
+          <p>Try searching for another planet.</p>
+        </div>
+      </div>
+    </section>
+<!-- Planet Modal -->
+<div
+  class="modal fade planet-modal"
+  id="planetModal"
+  tabindex="-1"
+  aria-labelledby="planetModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content planet-modal-content">
+
+      <!-- Header -->
+      <div class="modal-header planet-modal-header">
+        <h5 class="modal-title" id="planetModalLabel">
+          Planet
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body planet-modal-body">
+
+        <div class="planet-modal-image">
+          <img
+            id="modalPlanetImage"
+            src=""
+            alt=""
+          >
+        </div>
+
+        <div class="planet-modal-info">
+
+          <span
+            id="modalPlanetType"
+            class="planet-modal-type"
+          >
+            ICE GIANT
+          </span>
+
+          <p id="modalPlanetDescription">
+            A distant ice giant known for its deep blue color
+            and powerful winds.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer planet-modal-footer">
+
+        <button
+          type="button"
+          class="modal-close-btn"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+
+        <a
+          id="modalExploreBtn"
+          href="#"
+          class="modal-explore-btn"
+        >
+          Explore Details
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <!-- Bootstrap JavaScript -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- Planets Page JavaScript -->
+    <script src="assets/js/planets.js"></script>
+  </body>
 </html>
