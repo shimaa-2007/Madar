@@ -1,10 +1,10 @@
 # navbar --> responsive -- collapsse __________________ done
 # light and dark mode
-# footer
+# footer __________________ done
 # to top button --> js
 
-# social icon --> general
-# select text --> general -> gold
+# social icon --> general ___________________ done
+# select text --> general -> gold _____________ done
 
 # form validation --> js
 
