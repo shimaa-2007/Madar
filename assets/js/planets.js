@@ -160,6 +160,275 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // ===============================
+// FAVORITE PLANETS
+// ===============================
+
+const favoriteButtons = document.querySelectorAll(".favorite-btn");
+
+let favoritePlanets =
+    JSON.parse(localStorage.getItem("favoritePlanets")) || [];
+
+
+// ===============================
+// Update Favorite Button
+// ===============================
+
+function updateFavoriteButton(button, planetName) {
+
+    const icon = button.querySelector("i");
+
+    if (favoritePlanets.includes(planetName)) {
+
+        button.classList.add("active");
+
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
+
+    } else {
+
+        button.classList.remove("active");
+
+        icon.classList.remove("fa-solid");
+        icon.classList.add("fa-regular");
+    }
+}
+
+
+// ===============================
+// Initial Favorite State
+// ===============================
+
+favoriteButtons.forEach((button) => {
+
+    const planetItem = button.closest(".planet-item");
+
+    if (!planetItem) return;
+
+    const planetName = planetItem.dataset.name;
+
+    updateFavoriteButton(button, planetName);
+});
+
+
+// ===============================
+// Favorite Click
+// ===============================
+
+favoriteButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const planetItem =
+            button.closest(".planet-item");
+
+        if (!planetItem) return;
+
+        const planetName =
+            planetItem.dataset.name;
+
+        // Add / Remove favorite
+
+        if (favoritePlanets.includes(planetName)) {
+
+            favoritePlanets =
+                favoritePlanets.filter(
+                    (planet) => planet !== planetName
+                );
+
+        } else {
+
+            favoritePlanets.push(planetName);
+        }
+
+        // Save favorites
+
+        localStorage.setItem(
+            "favoritePlanets",
+            JSON.stringify(favoritePlanets)
+        );
+
+        // Update button
+
+        updateFavoriteButton(
+            button,
+            planetName
+        );
+    });
+});
+
+// ===============================
+// PLANET CARDS ANIMATION
+// ===============================
+
+const planetObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+                planetObserver.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+planetItems.forEach((planet, index) => {
+
+    planet.style.transitionDelay = `${index * 0.08}s`;
+
+    planetObserver.observe(planet);
+});
+
+    // ===============================
+// PLANET MODAL
+// ===============================
+
+const modalTriggers =
+    document.querySelectorAll(".planet-modal-trigger");
+
+const modalElement =
+    document.getElementById("planetModal");
+
+const planetModal =
+    new bootstrap.Modal(modalElement);
+
+const modalTitle =
+    document.getElementById("planetModalLabel");
+
+const modalImage =
+    document.getElementById("modalPlanetImage");
+
+const modalType =
+    document.getElementById("modalPlanetType");
+
+const modalDescription =
+    document.getElementById("modalPlanetDescription");
+
+const modalExploreButton =
+    document.getElementById("modalExploreBtn");
+
+
+// ===============================
+// Planet Data
+// ===============================
+
+const planetData = {
+
+    mercury: {
+        name: "Mercury",
+        type: "TERRESTRIAL PLANET",
+        image: "assets/images/planets/Mercury.png",
+        description:
+            "The smallest planet and the closest world to the Sun."
+    },
+
+    venus: {
+        name: "Venus",
+        type: "TERRESTRIAL PLANET",
+        image: "assets/images/planets/Venus.png",
+        description:
+            "A hot world covered by a thick atmosphere and clouds."
+    },
+
+    earth: {
+        name: "Earth",
+        type: "TERRESTRIAL PLANET",
+        image: "assets/images/planets/Earth.png",
+        description:
+            "Our home planet and the only known world to support life."
+    },
+
+    mars: {
+        name: "Mars",
+        type: "TERRESTRIAL PLANET",
+        image: "assets/images/planets/Mars.png",
+        description:
+            "The Red Planet, known for its rocky surface and dusty landscape."
+    },
+
+    jupiter: {
+        name: "Jupiter",
+        type: "GAS GIANT",
+        image: "assets/images/planets/Jupiter.png",
+        description:
+            "The largest planet in our solar system."
+    },
+
+    saturn: {
+        name: "Saturn",
+        type: "GAS GIANT",
+        image: "assets/images/planets/Saturn.png",
+        description:
+            "A giant planet famous for its spectacular ring system."
+    },
+
+    uranus: {
+        name: "Uranus",
+        type: "ICE GIANT",
+        image: "assets/images/planets/Uranus.png",
+        description:
+            "An ice giant with a distinctive blue-green appearance."
+    },
+
+    neptune: {
+        name: "Neptune",
+        type: "ICE GIANT",
+        image: "assets/images/planets/Neptune.png",
+        description:
+            "A distant ice giant known for its deep blue color and powerful winds."
+    }
+};
+
+
+// ===============================
+// Open Modal
+// ===============================
+
+modalTriggers.forEach((trigger) => {
+
+    trigger.addEventListener("click", () => {
+
+        const planetName =
+            trigger.dataset.planet;
+
+        const planet =
+            planetData[planetName];
+
+        if (!planet) return;
+
+
+        modalTitle.textContent =
+            planet.name;
+
+        modalImage.src =
+            planet.image;
+
+        modalImage.alt =
+            planet.name;
+
+        modalType.textContent =
+            planet.type;
+
+        modalDescription.textContent =
+            planet.description;
+
+        modalExploreButton.href =
+            `3-Planets_Details.html?planet=${planetName}`;
+
+        planetModal.show();
+    });
+
+});
 
     // ===============================
     // Initial State
