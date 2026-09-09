@@ -140,7 +140,7 @@
   width: 100% !important;
   height: 100% !important;
   border-radius: 50% !important;
-  filter: blur(45px) !important; // زيادة التمويه قليلاً لتناسب الحجم الأكبر
+  filter: blur(45px) !important;
   animation: none !important;
   z-index: 1 !important;
 }
@@ -149,8 +149,8 @@
 .stars-uniform-grid .star-card--uniform .star-card__img {
   position: relative !important;
   z-index: 2 !important;
-  // width: 300px !important; // ← تكبير القطر من 250px إلى 300px
-  // height: 300px !important; // ← تكبير القطر من 250px إلى 300px
+  // width: 300px !important;
+  // height: 300px !important;
   // min-width: 300px !important;
   // min-height: 300px !important;
   // max-width: 300px !important;
