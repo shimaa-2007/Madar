@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- solar system styles -->
+    <link rel="stylesheet" href="assets/css/Discoveries.css" />
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -72,6 +74,172 @@
       </div>
     </div>
 
+        <main>
+
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <div class="small-title">
+                    <span></span>
+                    DISPATCHES FROM THE DARK
+                </div>
+
+                <h1>
+                    <span class="white">New evidence.</span>
+                    <span class="gray">Old questions.</span>
+                </h1>
+
+            </div>
+
+            <div class="hero-right">
+                <p>
+                    The archive is always changing.
+                    Read the latest images, field notes,
+                    and signals from the people looking outward.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="dispatch-section">
+
+            <div class="dispatch-header">
+
+                <p>4 dispatches / latest first</p>
+
+                <div class="search">
+                    <span>⌕</span>
+                    <input type="text" placeholder="Search dispatches">
+                </div>
+
+            </div>
+
+            <div class="cards">
+
+                <div class="card card-big">
+
+                    <div>
+                        <div class="card-number">
+                            06.18.24 / FIELD NOTE 004
+                        </div>
+
+                        <h2>
+                            A moon with an ocean under its skin
+                        </h2>
+
+                        <p>
+                            Europa’s ice shell is restless.
+                            New readings sketch currents beneath the surface.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <button class="save-btn" onclick="saveDispatch(this)">
+                            ♧ Save dispatch
+                        </button>
+
+                        <span>01</span>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div>
+                        <div class="card-number">
+                            05.02.24 / IMAGE LOG 019
+                        </div>
+
+                        <h2>
+                            The nursery inside Orion
+                        </h2>
+
+                        <p>
+                            Webb peers through a veil of dust to reveal stars
+                            assembling in the dark.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <button class="save-btn" onclick="saveDispatch(this)">
+                            ♧ Save dispatch
+                        </button>
+
+                        <span>02</span>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div>
+                        <div class="card-number">
+                            03.11.24 / ORBITAL BRIEF
+                        </div>
+
+                        <h2>
+                            When a galaxy eats another galaxy
+                        </h2>
+
+                        <p>
+                            A slow collision leaves a signature in the shape
+                            of a halo and a trail of young stars.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <button class="save-btn" onclick="saveDispatch(this)">
+                            ♧ Save dispatch
+                        </button>
+
+                        <span>03</span>
+                    </div>
+
+                </div>
+
+                <div class="card card-big">
+
+                    <div>
+                        <div class="card-number">
+                            01.27.24 / SIGNAL REPORT
+                        </div>
+
+                        <h2>
+                            The 17-minute pulse
+                        </h2>
+
+                        <p>
+                            Astronomers isolate a strange repeating signal.
+                            The object does not behave like anything in the catalogue.
+                        </p>
+                    </div>
+
+                    <div class="card-bottom">
+                        <button class="save-btn" onclick="saveDispatch(this)">
+                            ♧ Save dispatch
+                        </button>
+
+                        <span>04</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            ASTRAVIA&nbsp; / &nbsp;OBSERVATORY 01&nbsp; — &nbsp;2024
+        </div>
+
+    </footer>
+
     <!-- footer -->
     <footer class="main-footer py-3 mt-5">
       <div class="container">
@@ -98,6 +266,7 @@
     </footer>
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
+    <!-- discoveries js -->
+    <script src="assets/js/discoveries.js"></script>
 </body>
 </html>
