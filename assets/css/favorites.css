@@ -1,0 +1,454 @@
+/* =====================================================
+   MADAR - FAVORITES PAGE
+   Same style as Planets page
+===================================================== */
+
+
+/* =====================================================
+   FAVORITES SECTION
+===================================================== */
+
+.favorites-section {
+
+    padding: 55px 0 90px;
+
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.favorites-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.favorites-subtitle {
+
+    color: #8795ff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.favorites-header h1 {
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin: 0 0 12px;
+
+}
+
+
+.favorites-header h1 span {
+
+    color: #7b8cff;
+
+}
+
+
+.favorites-header p {
+
+    color: #9da4b8;
+
+    margin: 0;
+
+    font-size: 15px;
+
+}
+
+
+.favorites-count {
+
+    color: #9da4b8;
+
+    font-size: 14px;
+
+    margin-top: 12px;
+
+}
+
+
+.favorites-count span {
+
+    color: #c8ff00;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.favorites-filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.favorite-filter {
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: #9da4b8;
+
+    padding: 10px 22px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.favorite-filter:hover {
+
+    background: rgba(86, 104, 232, 0.15);
+
+    color: #ffffff;
+
+    border-color: #5668e8;
+
+}
+
+
+.favorite-filter.active {
+
+    background: #5668e8;
+
+    color: #ffffff;
+
+    border-color: #5668e8;
+
+}
+
+/* =====================================================
+   FAVORITES GRID
+===================================================== */
+
+.favorites-grid {
+    margin-top: 5px;
+}
+
+.favorites-grid .row {
+    align-items: stretch;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.favorites-grid .planet-card {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #10131f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.favorites-grid .planet-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(123, 140, 255, 0.5);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   IMAGE CONTAINER
+===================================================== */
+
+.favorites-grid .planet-image {
+    height: 260px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050609;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.favorites-grid .planet-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 10px;
+
+    transition: transform 0.6s ease;
+}
+
+.favorites-grid .planet-card:hover
+.planet-image img {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   IMAGE GRADIENT
+===================================================== */
+
+.favorites-grid .planet-image::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 35%;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.35),
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.favorites-grid .planet-content {
+    padding: 20px 22px 22px;
+}
+
+
+/* =====================================================
+   TYPE
+===================================================== */
+
+.favorites-grid .planet-type {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+
+    color: #c8ff00;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.favorites-grid .planet-content h3 {
+    margin: 7px 0 10px;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    transition: color 0.3s ease;
+}
+
+.favorites-grid .planet-card:hover
+.planet-content h3 {
+    color: #c8ff00;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.favorites-grid .planet-content p {
+    color: #67718b;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    min-height: 48px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.favorites-grid .planet-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+/* =====================================================
+   EXPLORE
+===================================================== */
+
+.favorites-grid .planet-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    transition: all 0.3s ease;
+}
+
+.favorites-grid .planet-link i {
+    transition: transform 0.3s ease;
+}
+
+.favorites-grid .planet-link:hover {
+    color: #c8ff00;
+}
+
+.favorites-grid .planet-link:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   FAVORITE BUTTON
+===================================================== */
+
+.favorites-grid .favorite-btn {
+    position: absolute;
+
+    right: 14px;
+    top: 14px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 50%;
+
+    background: rgba(10, 13, 24, 0.75);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.favorites-grid .favorite-btn i {
+    font-size: 16px;
+}
+
+.favorites-grid .favorite-btn:hover {
+    transform: translateY(-2px);
+
+    border-color: #c8ff00;
+
+    color: #c8ff00;
+}
+
+.favorites-grid .favorite-btn.active {
+    background: #c8ff00;
+
+    border-color: #c8ff00;
+
+    color: #0b0e19;
+}
+
+
+/* =====================================================
+   HIDDEN
+===================================================== */
+
+.favorite-item.hidden {
+    display: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .favorites-grid .planet-image {
+        height: 250px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .favorites-grid .planet-image {
+        height: 280px;
+    }
+
+    .favorites-grid .planet-content {
+        padding: 20px;
+    }
+
+}
