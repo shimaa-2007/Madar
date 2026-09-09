@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------
-  // 1. Cosmic Facts (لصفحة الهوم بس لو العناصر موجودة)
+  // 1. Cosmic Facts
   // -------------------------------------------------------------
   const factTextEl = document.getElementById('factText');
   const nextFactBtn = document.getElementById('nextFactBtn');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------
-  // 2. Tune Signal Buttons (لو موجودة)
+  // 2. Tune Signal Buttons
   // -------------------------------------------------------------
   const tuneButtons = document.querySelectorAll('.tune-btn');
   if (tuneButtons.length > 0) {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------
-  // 3. Missions Filter (المهم هنا)
+  // 3. Missions Filter
   // -------------------------------------------------------------
   const filterButtons = document.querySelectorAll('.filter-pills .pill-btn');
   const timelineItems = document.querySelectorAll('.mission-item');
@@ -103,6 +103,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (recordsNum) {
           recordsNum.textContent = visibleIndex;
+        }
+      });
+    });
+  }
+  // -------------------------------------------------------------
+  // 4. Scroll Reveal + Real-Time Search
+  // -------------------------------------------------------------
+  const searchInput = document.querySelector('.filter-bar__search .search');
+  const tabButtons = document.querySelectorAll(
+    '#cosmic-tabs [data-bs-toggle="pill"]',
+  );
+
+  const cardObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.05,
+      rootMargin: '0px 0px -20px 0px',
+    },
+  );
+
+  function observeActiveCards() {
+    const activeTabPane = document.querySelector('.tab-pane.active');
+    if (!activeTabPane) return;
+
+    const cards = activeTabPane.querySelectorAll(
+      '.star-card:not(.search-hidden)',
+    );
+    cards.forEach((card, index) => {
+      card.style.setProperty('--delay', `${(index % 2) * 60}ms`);
+      if (!card.classList.contains('is-visible')) {
+        cardObserver.observe(card);
+      }
+    });
+  }
+
+  observeActiveCards();
+
+  tabButtons.forEach((tabBtn) => {
+    tabBtn.addEventListener('shown.bs.tab', () => {
+      if (searchInput) searchInput.value = '';
+      document.querySelectorAll('.star-card').forEach((card) => {
+        card.classList.remove('search-hidden', 'is-visible');
+      });
+      observeActiveCards();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.trim().toLowerCase();
+      const activeTabPane = document.querySelector('.tab-pane.active');
+      if (!activeTabPane) return;
+
+      const cards = activeTabPane.querySelectorAll('.star-card');
+
+      cards.forEach((card) => {
+        if (term === '') {
+          card.classList.remove('search-hidden');
+          card.classList.add('is-visible');
+          return;
+        }
+
+        const titles = Array.from(
+          card.querySelectorAll('.star-card__title'),
+        ).map((t) => t.textContent.trim().toLowerCase());
+
+        const isMatch = titles.some((title) => {
+          const words = title.split(/\s+/);
+          return words.some((word) => word.startsWith(term));
+        });
+
+        if (isMatch) {
+          card.classList.remove('search-hidden');
+          card.classList.add('is-visible');
+        } else {
+          card.classList.add('search-hidden');
         }
       });
     });

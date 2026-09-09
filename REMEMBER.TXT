@@ -11,3 +11,6 @@
 # take user name at first//////
 # section4 home --> its section planets dts
 # active at navbar   __________________ done
+
+# name attribute to form inputs
+# 
