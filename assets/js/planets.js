@@ -20,177 +20,121 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===============================
 
   function filterPlanets() {
-    const searchValue = searchInput.value.trim().toLowerCase();
+    if (!searchInput) return;
 
+    const searchValue = searchInput.value.trim().toLowerCase();
     let visibleCount = 0;
 
     planetItems.forEach((planet) => {
-      const planetName = planet.dataset.name.toLowerCase();
+      const planetName = (planet.dataset.name || '').toLowerCase();
+      const planetType = (planet.dataset.type || '').toLowerCase();
 
-      const planetType = planet.dataset.type.toLowerCase();
-
-      // Search condition
       const matchesSearch = planetName.includes(searchValue);
-
-      // Filter condition
       const matchesFilter =
         currentFilter === 'all' || planetType === currentFilter;
 
-      // Show / Hide
       if (matchesSearch && matchesFilter) {
         planet.style.display = '';
-
         visibleCount++;
       } else {
         planet.style.display = 'none';
       }
     });
 
-    // ===============================
-    // No Results
-    // ===============================
-
-    if (visibleCount === 0) {
-      noResults.style.display = 'block';
-    } else {
-      noResults.style.display = 'none';
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
     }
   }
-
-  // ===============================
-  // Search
-  // ===============================
 
   if (searchInput) {
     searchInput.addEventListener('input', filterPlanets);
   }
 
-  // ===============================
-  // Category Filters
-  // ===============================
-
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      // Remove active from all buttons
-      filterButtons.forEach((btn) => {
-        btn.classList.remove('active');
-      });
-
-      // Add active to clicked button
+      filterButtons.forEach((btn) => btn.classList.remove('active'));
       button.classList.add('active');
-
-      // Get selected filter
       currentFilter = button.dataset.filter;
-
-      // Apply filter
       filterPlanets();
     });
   });
 
-  // ===============================
-  // Explore Buttons
-  // ===============================
-
   const exploreButtons = document.querySelectorAll('.planet-link');
-
   exploreButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
-      // Get the card
       const planetItem = button.closest('.planet-item');
-
       if (!planetItem) return;
-
-      // Get planet name
       const planetName = planetItem.dataset.name;
-
-      // Prevent old static link
       event.preventDefault();
-
-      // Open details page with planet ID
       window.location.href = `3-Planets_Details.html?planet=${planetName}`;
     });
   });
 
   // ===============================
-  // FAVORITE PLANETS
+  // FAVORITE SYSTEM (PLANETS & STARS)
   // ===============================
 
   const favoriteButtons = document.querySelectorAll('.favorite-btn');
-
   let favoritePlanets =
     JSON.parse(localStorage.getItem('favoritePlanets')) || [];
 
-  // ===============================
-  // Update Favorite Button
-  // ===============================
-
-  function updateFavoriteButton(button, planetName) {
+  function updateFavoriteButton(button, itemName) {
     const icon = button.querySelector('i');
+    if (!icon) return;
 
-    if (favoritePlanets.includes(planetName)) {
+    if (favoritePlanets.includes(itemName)) {
       button.classList.add('active');
-
       icon.classList.remove('fa-regular');
       icon.classList.add('fa-solid');
     } else {
       button.classList.remove('active');
-
       icon.classList.remove('fa-solid');
       icon.classList.add('fa-regular');
     }
   }
 
-  // ===============================
-  // Initial Favorite State
-  // ===============================
-
+  // Initial State
   favoriteButtons.forEach((button) => {
     const itemCard = button.closest('.planet-item, .star-card');
-
     if (!itemCard) return;
 
-    const planetName =
+    const itemName =
+      button.dataset.name ||
       itemCard.dataset.name ||
-      itemCard.querySelector('.star-card__title')?.textContent.trim();
+      itemCard
+        .querySelector('.star-card__title')
+        ?.textContent.trim()
+        .toLowerCase();
 
-    if (!planetName) return;
-
-    updateFavoriteButton(button, planetName);
+    if (!itemName) return;
+    updateFavoriteButton(button, itemName);
   });
 
-  // ===============================
-  // Favorite Click
-  // ===============================
-
+  // Click Event
   favoriteButtons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
       const itemCard = button.closest('.planet-item, .star-card');
-
       if (!itemCard) return;
 
-      const planetName =
+      const itemName =
+        button.dataset.name ||
         itemCard.dataset.name ||
-        itemCard.querySelector('.star-card__title')?.textContent.trim();
+        itemCard
+          .querySelector('.star-card__title')
+          ?.textContent.trim()
+          .toLowerCase();
 
-      if (!planetName) return;
+      if (!itemName) return;
 
-      // Add / Remove favorite
-
-      if (favoritePlanets.includes(planetName)) {
-        favoritePlanets = favoritePlanets.filter(
-          (planet) => planet !== planetName,
-        );
+      if (favoritePlanets.includes(itemName)) {
+        favoritePlanets = favoritePlanets.filter((name) => name !== itemName);
       } else {
-        favoritePlanets.push(planetName);
+        favoritePlanets.push(itemName);
       }
 
-      // Save favorites
-
       localStorage.setItem('favoritePlanets', JSON.stringify(favoritePlanets));
-
-      // Update button
-
-      updateFavoriteButton(button, planetName);
+      updateFavoriteButton(button, itemName);
     });
   });
 
@@ -203,19 +147,15 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
-
           planetObserver.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.15,
-    },
+    { threshold: 0.15 },
   );
 
   planetItems.forEach((planet, index) => {
     planet.style.transitionDelay = `${index * 0.08}s`;
-
     planetObserver.observe(planet);
   });
 
@@ -224,29 +164,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===============================
 
   const modalTriggers = document.querySelectorAll('.planet-modal-trigger');
-
   const modalElement = document.getElementById('planetModal');
-
   const planetModal = modalElement ? new bootstrap.Modal(modalElement) : null;
 
   const modalTitle = document.getElementById('planetModalLabel');
-
   const modalImage = document.getElementById('modalPlanetImage');
-
   const modalType = document.getElementById('modalPlanetType');
-
   const modalDescription = document.getElementById('modalPlanetDescription');
   const modalTemperature = document.getElementById('modalPlanetTemperature');
-
   const modalGravity = document.getElementById('modalPlanetGravity');
-
   const modalMoons = document.getElementById('modalPlanetMoons');
-
   const modalExploreButton = document.getElementById('modalExploreBtn');
-
-  // ===============================
-  // Planet Data
-  // ===============================
 
   const planetData = {
     mercury: {
@@ -267,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gravity: '8.87 m/s²',
       moons: '0',
     },
-
     earth: {
       name: 'Earth',
       type: 'TERRESTRIAL PLANET',
@@ -277,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gravity: '9.81 m/s²',
       moons: '1',
     },
-
     mars: {
       name: 'Mars',
       type: 'TERRESTRIAL PLANET',
@@ -288,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gravity: '3.72 m/s²',
       moons: '2',
     },
-
     jupiter: {
       name: 'Jupiter',
       type: 'GAS GIANT',
@@ -298,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gravity: '24.79 m/s²',
       moons: '79',
     },
-
     saturn: {
       name: 'Saturn',
       type: 'GAS GIANT',
@@ -308,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gravity: '10.44 m/s²',
       moons: '82',
     },
-
     uranus: {
       name: 'Uranus',
       type: 'ICE GIANT',
@@ -318,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gravity: '8.69 m/s²',
       moons: '27',
     },
-
     neptune: {
       name: 'Neptune',
       type: 'ICE GIANT',
@@ -331,43 +253,36 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   };
 
-  // ===============================
-  // Open Modal
-  // ===============================
+  if (planetModal) {
+    modalTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const planetName = trigger.dataset.planet;
+        const planet = planetData[planetName];
+        if (!planet) return;
 
-  modalTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const planetName = trigger.dataset.planet;
+        if (modalTitle) modalTitle.textContent = planet.name;
+        if (modalImage) {
+          modalImage.src = planet.image;
+          modalImage.alt = planet.name;
+        }
+        if (modalType) modalType.textContent = planet.type;
+        if (modalDescription) modalDescription.textContent = planet.description;
+        if (modalTemperature) modalTemperature.textContent = planet.temperature;
+        if (modalGravity) modalGravity.textContent = planet.gravity;
+        if (modalMoons) modalMoons.textContent = planet.moons;
+        if (modalExploreButton) {
+          modalExploreButton.href = `3-Planets_Details.html?planet=${planetName}`;
+        }
 
-      const planet = planetData[planetName];
-
-      if (!planet) return;
-
-      modalTitle.textContent = planet.name;
-
-      modalImage.src = planet.image;
-
-      modalImage.alt = planet.name;
-
-      modalType.textContent = planet.type;
-
-      modalDescription.textContent = planet.description;
-      modalTemperature.textContent = planet.temperature;
-
-      modalGravity.textContent = planet.gravity;
-
-      modalMoons.textContent = planet.moons;
-      modalExploreButton.href = `3-Planets_Details.html?planet=${planetName}`;
-
-      planetModal.show();
+        planetModal.show();
+      });
     });
-  });
+  }
 
-  // ===============================
-  // Initial State
-  // ===============================
+  if (searchInput) {
+    filterPlanets();
+  }
 
-  filterPlanets();
   // =====================================================
   // COSMIC COMPARISON SLIDER
   // =====================================================
@@ -385,7 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '0',
       day: '1,408h',
     },
-
     {
       key: 'venus',
       name: 'VENUS',
@@ -399,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '0',
       day: '5,832h',
     },
-
     {
       key: 'earth',
       name: 'EARTH',
@@ -412,7 +325,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '1',
       day: '24h',
     },
-
     {
       key: 'mars',
       name: 'MARS',
@@ -426,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '2',
       day: '24.6h',
     },
-
     {
       key: 'jupiter',
       name: 'JUPITER',
@@ -440,7 +351,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '95',
       day: '9.9h',
     },
-
     {
       key: 'saturn',
       name: 'SATURN',
@@ -453,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '146',
       day: '10.7h',
     },
-
     {
       key: 'uranus',
       name: 'URANUS',
@@ -466,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
       moons: '28',
       day: '17.2h',
     },
-
     {
       key: 'neptune',
       name: 'NEPTUNE',
@@ -482,16 +390,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
 
-  // =====================================================
-  // CURRENT PLANETS
-  // =====================================================
-
   let planetOneIndex = 2; // Earth
   let planetTwoIndex = 3; // Mars
-
-  // =====================================================
-  // HELPER
-  // =====================================================
 
   function getNextIndex(index) {
     return (index + 1) % comparisonPlanets.length;
@@ -501,244 +401,126 @@ document.addEventListener('DOMContentLoaded', () => {
     return (index - 1 + comparisonPlanets.length) % comparisonPlanets.length;
   }
 
-  // =====================================================
-  // UPDATE COMPARISON PLANET
-  // =====================================================
-
   function updateComparisonPlanet(side, index, direction = 1) {
     const planet = comparisonPlanets[index];
-
     if (!planet) return;
 
-    // =================================================
-    // ELEMENTS
-    // =================================================
-
     const prefix = side === 'one' ? 'One' : 'Two';
-
     const image = document.getElementById(`planet${prefix}Image`);
-
     const name = document.getElementById(`planet${prefix}Name`);
-
     const type = document.getElementById(`planet${prefix}Type`);
-
     const description = document.getElementById(`planet${prefix}Description`);
-
     const counter = document.getElementById(`planet${prefix}Current`);
-
     const explore = document.getElementById(`planet${prefix}Explore`);
 
-    // =================================================
-    // COMPARISON STATISTICS
-    // =================================================
-
     const diameter = document.getElementById(`comparison${prefix}Diameter`);
-
     const gravity = document.getElementById(`comparison${prefix}Gravity`);
-
     const temperature = document.getElementById(
       `comparison${prefix}Temperature`,
     );
-
     const moons = document.getElementById(`comparison${prefix}Moons`);
-
     const day = document.getElementById(`comparison${prefix}Day`);
-
-    // =================================================
-    // SAFETY CHECK
-    // =================================================
 
     if (!image) return;
 
-    // =================================================
-    // SLIDE OUT
-    // =================================================
-
     image.style.opacity = '0';
-
     image.style.transform =
       direction > 0
         ? 'translateX(40px) scale(.85) rotate(8deg)'
         : 'translateX(-40px) scale(.85) rotate(-8deg)';
 
-    // =================================================
-    // UPDATE AFTER ANIMATION
-    // =================================================
-
     setTimeout(() => {
-      // Image
       image.src = planet.image;
       image.alt = planet.name;
 
-      // Main information
-      if (name) {
-        name.textContent = planet.name;
-      }
+      if (name) name.textContent = planet.name;
+      if (type) type.textContent = planet.type;
+      if (description) description.textContent = planet.description;
+      if (counter) counter.textContent = String(index + 1).padStart(2, '0');
+      if (diameter) diameter.textContent = planet.diameter;
+      if (gravity) gravity.textContent = planet.gravity;
+      if (temperature) temperature.textContent = planet.temperature;
+      if (moons) moons.textContent = planet.moons;
+      if (day) day.textContent = planet.day;
 
-      if (type) {
-        type.textContent = planet.type;
-      }
-
-      if (description) {
-        description.textContent = planet.description;
-      }
-
-      // Counter
-      if (counter) {
-        counter.textContent = String(index + 1).padStart(2, '0');
-      }
-
-      // Statistics
-      if (diameter) {
-        diameter.textContent = planet.diameter;
-      }
-
-      if (gravity) {
-        gravity.textContent = planet.gravity;
-      }
-
-      if (temperature) {
-        temperature.textContent = planet.temperature;
-      }
-
-      if (moons) {
-        moons.textContent = planet.moons;
-      }
-
-      if (day) {
-        day.textContent = planet.day;
-      }
-
-      // Explore button
       if (explore) {
         explore.href = `3-Planets_Details.html?planet=${planet.key}`;
-
-        explore.innerHTML = `EXPLORE ${planet.name}
-                 <i class="fas fa-arrow-right"></i>`;
+        explore.innerHTML = `EXPLORE ${planet.name} <i class="fas fa-arrow-right"></i>`;
       }
-
-      // =================================================
-      // SLIDE IN
-      // =================================================
 
       requestAnimationFrame(() => {
         image.style.opacity = '1';
-
         image.style.transform = 'translateX(0) scale(1) rotate(0deg)';
       });
     }, 180);
   }
 
-  // =====================================================
-  // FIRST PLANET
-  // =====================================================
-
   const planetOnePrev = document.getElementById('planetOnePrev');
-
   const planetOneNext = document.getElementById('planetOneNext');
-
   if (planetOnePrev) {
     planetOnePrev.addEventListener('click', () => {
       planetOneIndex = getPreviousIndex(planetOneIndex);
-
       updateComparisonPlanet('one', planetOneIndex, -1);
-
-      updateActiveThumbnail(planetOneIndex);
+      updateActiveThumbnail();
     });
   }
-
   if (planetOneNext) {
     planetOneNext.addEventListener('click', () => {
       planetOneIndex = getNextIndex(planetOneIndex);
-
       updateComparisonPlanet('one', planetOneIndex, 1);
-
-      updateActiveThumbnail(planetOneIndex);
+      updateActiveThumbnail();
     });
   }
 
-  // =====================================================
-  // SECOND PLANET
-  // =====================================================
-
   const planetTwoPrev = document.getElementById('planetTwoPrev');
-
   const planetTwoNext = document.getElementById('planetTwoNext');
-
   if (planetTwoPrev) {
     planetTwoPrev.addEventListener('click', () => {
       planetTwoIndex = getPreviousIndex(planetTwoIndex);
-
       updateComparisonPlanet('two', planetTwoIndex, -1);
+      updateActiveThumbnail();
     });
   }
-
   if (planetTwoNext) {
     planetTwoNext.addEventListener('click', () => {
       planetTwoIndex = getNextIndex(planetTwoIndex);
-
       updateComparisonPlanet('two', planetTwoIndex, 1);
+      updateActiveThumbnail();
     });
   }
 
-  // =====================================================
-  // THUMBNAIL SLIDER ARROWS
-  // =====================================================
-
   const selectorPrev = document.getElementById('comparisonSelectorPrev');
-
   const selectorNext = document.getElementById('comparisonSelectorNext');
-
-  // =====================================================
-  // INTERACTIVE PLANET SELECTOR
-  // =====================================================
-
   let comparisonSelectSide = 'one';
 
-  // =====================================================
-  // SELECT MODE BUTTONS
-  // =====================================================
-
   const selectLeftPlanet = document.getElementById('selectLeftPlanet');
-
   const selectRightPlanet = document.getElementById('selectRightPlanet');
 
   function setComparisonSelectSide(side) {
     comparisonSelectSide = side;
-
-    if (selectLeftPlanet) {
+    if (selectLeftPlanet)
       selectLeftPlanet.classList.toggle('active', side === 'one');
-    }
-
-    if (selectRightPlanet) {
+    if (selectRightPlanet)
       selectRightPlanet.classList.toggle('active', side === 'two');
-    }
-
     updateActiveThumbnail();
   }
 
   if (selectLeftPlanet) {
-    selectLeftPlanet.addEventListener('click', () => {
-      setComparisonSelectSide('one');
-    });
+    selectLeftPlanet.addEventListener('click', () =>
+      setComparisonSelectSide('one'),
+    );
   }
-
   if (selectRightPlanet) {
-    selectRightPlanet.addEventListener('click', () => {
-      setComparisonSelectSide('two');
-    });
+    selectRightPlanet.addEventListener('click', () =>
+      setComparisonSelectSide('two'),
+    );
   }
-
-  // =====================================================
-  // THUMBNAILS
-  // =====================================================
 
   const thumbnails = document.querySelectorAll('.comparison-thumbnail');
 
   function updateActiveThumbnail() {
     const currentIndex =
       comparisonSelectSide === 'one' ? planetOneIndex : planetTwoIndex;
-
     thumbnails.forEach((thumbnail, index) => {
       thumbnail.classList.toggle('active', index === currentIndex);
     });
@@ -746,113 +528,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener('click', () => {
-      // =========================================
-      // PREVENT SAME PLANET
-      // =========================================
-
-      if (comparisonSelectSide === 'one' && index === planetTwoIndex) {
-        thumbnail.animate(
-          [
-            {
-              transform: 'translateX(0)',
-            },
-            {
-              transform: 'translateX(-5px)',
-            },
-            {
-              transform: 'translateX(5px)',
-            },
-            {
-              transform: 'translateX(0)',
-            },
-          ],
-          {
-            duration: 250,
-          },
-        );
-
-        return;
-      }
-
-      if (comparisonSelectSide === 'two' && index === planetOneIndex) {
-        thumbnail.animate(
-          [
-            {
-              transform: 'translateX(0)',
-            },
-            {
-              transform: 'translateX(-5px)',
-            },
-            {
-              transform: 'translateX(5px)',
-            },
-            {
-              transform: 'translateX(0)',
-            },
-          ],
-          {
-            duration: 250,
-          },
-        );
-
-        return;
-      }
-
-      // =========================================
-      // UPDATE LEFT
-      // =========================================
+      if (comparisonSelectSide === 'one' && index === planetTwoIndex) return;
+      if (comparisonSelectSide === 'two' && index === planetOneIndex) return;
 
       if (comparisonSelectSide === 'one') {
         const direction = index >= planetOneIndex ? 1 : -1;
-
         planetOneIndex = index;
-
         updateComparisonPlanet('one', planetOneIndex, direction);
-      }
-
-      // =========================================
-      // UPDATE RIGHT
-      // =========================================
-      else {
+      } else {
         const direction = index >= planetTwoIndex ? 1 : -1;
-
         planetTwoIndex = index;
-
         updateComparisonPlanet('two', planetTwoIndex, direction);
       }
-
       updateActiveThumbnail();
     });
   });
 
   // =====================================================
-  // THUMBNAIL SLIDER ARROWS
+  // THUMBNAIL SLIDER ARROWS (مع التخطي التلقائي للكوكب المقابل)
   // =====================================================
 
   if (selectorPrev) {
     selectorPrev.addEventListener('click', () => {
       if (comparisonSelectSide === 'one') {
-        const nextIndex = getPreviousIndex(planetOneIndex);
-
+        let nextIndex = getPreviousIndex(planetOneIndex);
         if (nextIndex === planetTwoIndex) {
-          return;
+          nextIndex = getPreviousIndex(nextIndex);
         }
-
         planetOneIndex = nextIndex;
-
         updateComparisonPlanet('one', planetOneIndex, -1);
       } else {
-        const nextIndex = getPreviousIndex(planetTwoIndex);
-
+        let nextIndex = getPreviousIndex(planetTwoIndex);
         if (nextIndex === planetOneIndex) {
-          return;
+          nextIndex = getPreviousIndex(nextIndex);
         }
-
         planetTwoIndex = nextIndex;
-
         updateComparisonPlanet('two', planetTwoIndex, -1);
       }
-
       updateActiveThumbnail();
     });
   }
@@ -860,45 +572,28 @@ document.addEventListener('DOMContentLoaded', () => {
   if (selectorNext) {
     selectorNext.addEventListener('click', () => {
       if (comparisonSelectSide === 'one') {
-        const nextIndex = getNextIndex(planetOneIndex);
-
+        let nextIndex = getNextIndex(planetOneIndex);
         if (nextIndex === planetTwoIndex) {
-          return;
+          nextIndex = getNextIndex(nextIndex);
         }
-
         planetOneIndex = nextIndex;
-
         updateComparisonPlanet('one', planetOneIndex, 1);
       } else {
-        const nextIndex = getNextIndex(planetTwoIndex);
-
+        let nextIndex = getNextIndex(planetTwoIndex);
         if (nextIndex === planetOneIndex) {
-          return;
+          nextIndex = getNextIndex(nextIndex);
         }
-
         planetTwoIndex = nextIndex;
-
         updateComparisonPlanet('two', planetTwoIndex, 1);
       }
-
       updateActiveThumbnail();
     });
   }
 
-  // =====================================================
-  // INITIAL SELECT MODE
-  // =====================================================
-
-  setComparisonSelectSide('one');
-
-  // =====================================================
-  // INITIAL STATE
-  // =====================================================
-
-  updateComparisonPlanet('one', planetOneIndex);
-
-  updateComparisonPlanet('two', planetTwoIndex);
-
-  // Initial active thumbnail
-  updateActiveThumbnail(planetOneIndex);
+  if (document.getElementById('planetOneImage')) {
+    setComparisonSelectSide('one');
+    updateComparisonPlanet('one', planetOneIndex);
+    updateComparisonPlanet('two', planetTwoIndex);
+    updateActiveThumbnail();
+  }
 });

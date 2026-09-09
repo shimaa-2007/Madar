@@ -71,6 +71,13 @@
     color: #7b8cff;
 }
 
+.planets-hero h1 {
+    color: #aeb4c7;
+}
+
+.planets-header h2 {
+    color: #aeb4c7;
+}
 
 .planets-hero p {
     max-width: 620px;
@@ -175,7 +182,7 @@
 .filter-btn {
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.03);
-    color: #1f3675;
+    color: #aeb4c7;
     padding: 10px 22px;
     border-radius: 50px;
     cursor: pointer;
@@ -245,9 +252,9 @@
 }
 
 
-.planet-card:hover .planet-image img {
+/* .planet-card:hover .planet-image img {
     transform: scale(1.08);
-}
+} */
 
 
 /* Number */
@@ -440,9 +447,7 @@
    Creates the solar system visual inside
    the planets hero section.
 ========================================= */
-
 .solar-system {
-
     position: relative;
 
     width: 650px;
@@ -450,8 +455,9 @@
 
     margin: auto;
 
+    transform: scale(0.78) translateX(50px);
+    transform-origin: center center;
 }
-
 
 /* =========================================
    SUN
@@ -616,68 +622,44 @@
 /* =========================================
    PLANET SIZE DIFFERENCES
 ========================================= */
-
 .orbit-mercury .solar-planet {
-
-    width: 16px;
-    height: 16px;
-
+    width: 20px;
+    height: 20px;
 }
-
 
 .orbit-venus .solar-planet {
-
-    width: 22px;
-    height: 22px;
-
+    width: 27px;
+    height: 27px;
 }
-
 
 .orbit-earth .solar-planet {
-
-    width: 28px;
-    height: 28px;
-
+    width: 34px;
+    height: 34px;
 }
-
 
 .orbit-mars .solar-planet {
-
-    width: 24px;
-    height: 24px;
-
+    width: 30px;
+    height: 30px;
 }
-
 
 .orbit-jupiter .solar-planet {
-
-    width: 48px;
-    height: 48px;
-
+    width: 58px;
+    height: 58px;
 }
-
 
 .orbit-saturn .solar-planet {
-
-    width: 65px;
-    height: 45px;
-
+    width: 78px;
+    height: 54px;
 }
-
 
 .orbit-uranus .solar-planet {
-
-    width: 35px;
-    height: 35px;
-
+    width: 42px;
+    height: 42px;
 }
 
-
 .orbit-neptune .solar-planet {
-
-    width: 36px;
-    height: 36px;
-
+    width: 44px;
+    height: 44px;
 }
 
 
@@ -914,23 +896,17 @@
 /* =================================
    PLANET MODAL
 ================================= */
-
 .planet-modal-content {
     background: #0f121e;
     color: #ffffff;
-
     border: 1px solid rgba(180, 255, 0, 0.25);
     border-radius: 20px;
-
     overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
 
-    box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.65);
-
-    max-width: 850px;
+    max-width: 760px;
     margin: auto;
 }
-
 
 /* =================================
    MODAL HEADER
@@ -968,18 +944,12 @@
 ================================= */
 
 .planet-modal-body {
-
     display: flex;
-
     align-items: center;
-
-    gap: 40px;
-
-    padding: 35px 40px;
-
-    min-height: 300px;
+    gap: 30px;
+    padding: 28px 32px;
+    min-height: 260px;
 }
-
 
 /* =================================
    PLANET IMAGE
@@ -999,13 +969,10 @@
 }
 
 .planet-modal-image img {
-
-    width: 280px;
-
-    height: 280px;
+    width: 220px;
+    height: 220px;
 
     max-width: 100%;
-
     object-fit: contain;
 
     animation: planetFloat 5s ease-in-out infinite;
@@ -1027,7 +994,7 @@
     }
 
     50% {
-        transform: translateY(-20px) rotate(8deg);
+        transform: translateY(-8px) rotate(2deg);
     }
 
     100% {
@@ -1061,39 +1028,63 @@
 }
 
 .planet-modal-info p {
-
     color: #a9afbf;
 
     font-size: 1rem;
+    line-height: 1.6;
 
-    line-height: 1.8;
-
-    margin: 0;
+    margin: 0 0 20px;
 
     max-width: 390px;
 }
 
+/* =================================
+   PLANET MODAL STATISTICS
+================================= */
+
+.planet-modal-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.planet-modal-stat {
+    padding: 12px 6px;
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.025);
+    text-align: center;
+}
+
+.planet-modal-stat span {
+    display: block;
+    color: #8f96a8;
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+}
+
+.planet-modal-stat strong {
+    display: block;
+    color: #ffffff;
+    font-size: 0.66rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
 
 /* =================================
    MODAL FOOTER
 ================================= */
 
 .planet-modal-footer {
-
     display: flex;
-
     justify-content: flex-end;
-
     align-items: center;
-
     gap: 12px;
-
-    padding: 18px 28px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 24px;
 }
-
-
 /* =================================
    CLOSE BUTTON
 ================================= */
@@ -1166,6 +1157,13 @@
     transform: translateX(5px);
 }
 
+.planet-modal .modal-dialog {
+    max-width: 550px;
+
+    width: calc(100% - 30px);
+
+    margin: 20px auto;
+}
 
 /* =================================
    RESPONSIVE
@@ -1173,42 +1171,1665 @@
 
 @media (max-width: 768px) {
 
+    .planet-modal .modal-dialog {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
     .planet-modal-content {
-        margin: 15px;
+        max-height: calc(100vh - 20px);
     }
 
     .planet-modal-body {
-
         flex-direction: column;
 
         text-align: center;
 
-        gap: 20px;
+        gap: 15px;
 
-        padding: 30px 25px;
+        padding: 20px 18px;
+
+        max-height: calc(100vh - 170px);
+
+        overflow-y: auto;
     }
 
     .planet-modal-image {
-
         flex: none;
     }
 
     .planet-modal-image img {
+        width: 180px;
+        height: 180px;
+    }
 
-        width: 220px;
-
-        height: 220px;
+    .planet-modal-info {
+        width: 100%;
     }
 
     .planet-modal-info p {
+        max-width: 100%;
+    }
 
+    .planet-modal-stats {
         max-width: 100%;
     }
 
     .planet-modal-footer {
-
         justify-content: center;
 
         flex-wrap: wrap;
+
+        padding: 12px 18px;
     }
+}
+.planet-distance {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 8px;
+    color: var(--dots-color);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.planet-distance i {
+    color: var(--gold);
+    font-size: 0.7rem;
+}
+
+/* =================================
+   PLANET ROTATION / HOVER ANIMATION
+================================= */
+
+.planet-card .planet-image img {
+    transition: transform 0.7s ease;
+    transform-origin: center center;
+}
+
+.planet-card:hover .planet-image img {
+    transform: rotate(360deg) scale(1.05);
+}
+
+/* =========================================
+   🚀 PREMIUM PLANET CARD HOVER
+   Rotation + Animated Border + Glow
+========================================= */
+
+.planet-card {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================================
+   ANIMATED BORDER
+========================================= */
+
+.planet-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: inherit;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 240deg,
+        rgba(180, 255, 0, 0.15) 280deg,
+        rgba(180, 255, 0, 0.9) 320deg,
+        rgba(255, 255, 255, 0.95) 340deg,
+        transparent 360deg
+    );
+
+    opacity: 0;
+
+    z-index: -2;
+
+    animation:
+        planetBorderSpin 3s linear infinite;
+
+    transition:
+        opacity 0.4s ease;
+}
+
+
+/* =========================================
+   CARD INNER BACKGROUND
+========================================= */
+
+.planet-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: inherit;
+
+    background: #0f121e;
+
+    z-index: -1;
+}
+
+
+/* =========================================
+   HOVER CARD
+========================================= */
+
+.planet-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: rgba(180, 255, 0, 0.35);
+
+    box-shadow:
+        0 0 12px rgba(180, 255, 0, 0.08),
+        0 0 30px rgba(180, 255, 0, 0.12),
+        0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Activate border */
+
+.planet-card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================
+   PLANET IMAGE
+========================================= */
+
+.planet-card .planet-image img {
+
+    position: relative;
+
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.5s ease;
+
+    transform-origin: center center;
+}
+
+
+/* =========================================
+   PLANET HOVER
+========================================= */
+
+/* .planet-card:hover .planet-image img {
+
+    transform:
+        rotate(10deg)
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(180, 255, 0, 0.18)
+        )
+        drop-shadow(
+            0 15px 25px rgba(0, 0, 0, 0.4)
+        );
+} */
+
+
+/* =========================================
+   PLANET GLOW
+========================================= */
+
+.planet-card .planet-image {
+
+    position: relative;
+}
+
+
+/* Glow behind planet */
+
+.planet-card .planet-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180, 255, 0, 0.12),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    filter: blur(10px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.7s ease;
+}
+
+
+/* Glow appears */
+
+.planet-card:hover .planet-image::before {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.5);
+}
+
+
+/* =========================================
+   BORDER ROTATION
+========================================= */
+
+@keyframes planetBorderSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .planet-card,
+    .planet-card .planet-image img,
+    .planet-card::before {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+/* =====================================================
+   COSMIC COMPARISON
+===================================================== */
+
+.cosmic-comparison {
+    position: relative;
+    isolation: isolate;
+
+    padding: 110px 6% 80px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 45%,
+            rgba(180, 255, 0, 0.055),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(90, 120, 255, 0.045),
+            transparent 30%
+        ),
+        /* #080b14; */
+}
+
+
+/* =====================================================
+   STAR FIELD
+===================================================== */
+
+.comparison-stars {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    opacity: 0.5;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.55) 1px,
+            transparent 1px
+        );
+
+    background-size: 95px 95px;
+}
+
+
+.comparison-stars::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.3) 1px,
+            transparent 1px
+        );
+
+    background-size: 155px 155px;
+
+    opacity: 0.35;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.comparison-header {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.comparison-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: var(--gold);
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.comparison-header h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: clamp(2rem, 4vw, 3.3rem);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+
+.comparison-header h2 span {
+    color: var(--gold);
+}
+
+
+.comparison-header p {
+    max-width: 520px;
+
+    margin: 17px auto 0;
+
+    color: #858da0;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   MAIN PANEL
+===================================================== */
+
+.comparison-panel {
+    position: relative;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 45px 45px 42px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        90px
+        minmax(0, 1fr);
+
+    grid-template-rows:
+        auto
+        auto;
+
+    column-gap: 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.42);
+}
+
+
+/* =====================================================
+   PLANET COLUMNS
+===================================================== */
+
+.comparison-planet {
+    position: relative;
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+
+.comparison-planet-left {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+.comparison-planet-right {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+
+/* =====================================================
+   PLANET TOP CONTROLS
+===================================================== */
+
+.comparison-planet-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-height: 40px;
+}
+
+
+.comparison-nav-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 50px;
+
+    color: #858da0;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    font-size: 0.58rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.comparison-nav-btn i {
+    font-size: 0.65rem;
+}
+
+
+.comparison-nav-btn:hover {
+    color: var(--gold);
+
+    border-color:
+        rgba(180, 255, 0, 0.4);
+
+    background:
+        rgba(180, 255, 0, 0.045);
+
+    transform: translateY(-2px);
+}
+
+
+.comparison-nav-btn:active {
+    transform: scale(0.95);
+}
+
+
+.comparison-planet-counter {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+
+    min-width: 45px;
+
+    justify-content: center;
+}
+
+
+.comparison-planet-counter span {
+    color: var(--gold);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+}
+
+
+.comparison-planet-counter small {
+    color: #535b6c;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   PLANET INFO
+===================================================== */
+
+.comparison-planet-info {
+    margin-top: 24px;
+}
+
+
+.comparison-planet-type {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.comparison-planet-info h3 {
+    margin: 7px 0 0;
+
+    color: #fff;
+
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   PLANET VISUAL
+===================================================== */
+
+.comparison-planet-visual {
+    position: relative;
+
+    width: min(100%, 290px);
+
+    aspect-ratio: 1;
+
+    margin: 10px auto 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.comparison-planet-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+    height: 72%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180, 255, 0, 0.12),
+            transparent 68%
+        );
+
+    filter: blur(22px);
+
+    opacity: 0.8;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+}
+
+
+.comparison-planet-image {
+    position: relative;
+
+    z-index: 3;
+
+    width: 75%;
+    height: 75%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 20px 28px
+            rgba(0, 0, 0, 0.5)
+        );
+
+    transition:
+        transform 0.5s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        opacity 0.25s ease;
+}
+
+
+/* =====================================================
+   ORBIT
+===================================================== */
+
+.comparison-orbit {
+    position: absolute;
+
+    width: 94%;
+    height: 38%;
+
+    border:
+        1px solid
+        rgba(180, 255, 0, 0.12);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-18deg);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation:
+        orbitFloat 7s ease-in-out infinite;
+}
+
+
+.orbit-two {
+    transform:
+        rotate(18deg);
+
+    border-color:
+        rgba(120, 150, 255, 0.12);
+
+    animation-delay: -2s;
+}
+
+
+@keyframes orbitFloat {
+
+    0%,
+    100% {
+        transform:
+            rotate(-18deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotate(-18deg)
+            scale(1.04);
+    }
+
+}
+
+
+.orbit-two {
+    animation-name: orbitFloatTwo;
+}
+
+
+@keyframes orbitFloatTwo {
+
+    0%,
+    100% {
+        transform:
+            rotate(18deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotate(18deg)
+            scale(1.04);
+    }
+
+}
+
+
+/* =====================================================
+   PLANET HOVER
+===================================================== */
+
+.comparison-planet:hover
+.comparison-planet-image {
+    transform:
+        scale(1.06)
+        rotate(4deg);
+}
+
+
+.comparison-planet:hover
+.comparison-planet-visual::before {
+    transform: scale(1.18);
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.comparison-planet-description {
+    max-width: 300px;
+
+    min-height: 44px;
+
+    margin: 5px auto 20px;
+
+    color: #737c8f;
+
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   EXPLORE BUTTON
+===================================================== */
+
+.comparison-explore-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px 20px;
+
+    border:
+        1px solid
+        rgba(180, 255, 0, 0.35);
+
+    border-radius: 50px;
+
+    color: #0a0d16;
+
+    background: var(--gold);
+
+    text-decoration: none;
+
+    font-size: 0.62rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.comparison-explore-btn:hover {
+    color: #0a0d16;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(180, 255, 0, 0.18);
+}
+
+
+.comparison-explore-btn i {
+    transition:
+        transform 0.3s ease;
+}
+
+
+.comparison-explore-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   CENTER VS
+===================================================== */
+
+.comparison-center {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.comparison-vs {
+    position: relative;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(180, 255, 0, 0.38);
+
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    background:
+        rgba(180, 255, 0, 0.035);
+
+    box-shadow:
+        0 0 30px
+        rgba(180, 255, 0, 0.07);
+
+    font-size: 0.72rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    animation:
+        vsPulse 3s ease-in-out infinite;
+}
+
+
+.comparison-vs::before,
+.comparison-vs::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 110px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(180, 255, 0, 0.25),
+            transparent
+        );
+}
+
+
+.comparison-vs::before {
+    bottom: 100%;
+}
+
+
+.comparison-vs::after {
+    top: 100%;
+}
+
+
+@keyframes vsPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 22px
+            rgba(180, 255, 0, 0.06);
+    }
+
+    50% {
+        box-shadow:
+            0 0 38px
+            rgba(180, 255, 0, 0.16);
+    }
+
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.comparison-stats {
+    grid-column: 1 / 4;
+    grid-row: 2;
+
+    width: 100%;
+
+    margin-top: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.comparison-stat {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        150px
+        1fr;
+
+    align-items: center;
+
+    min-height: 54px;
+
+    padding: 0 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.065);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.comparison-stat:hover {
+    border-color:
+        rgba(180, 255, 0, 0.18);
+
+    background:
+        rgba(180, 255, 0, 0.025);
+
+    transform: translateY(-1px);
+}
+
+
+.comparison-stat strong {
+    color: #fff;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+}
+
+
+.comparison-stat strong:first-child {
+    text-align: right;
+
+    padding-right: 28px;
+}
+
+
+.comparison-stat strong:last-child {
+    text-align: left;
+
+    padding-left: 28px;
+}
+
+
+.comparison-stat > span {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #6e7789;
+
+    font-size: 0.56rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    text-align: center;
+}
+
+
+.comparison-stat > span i {
+    color: var(--gold);
+
+    font-size: 0.62rem;
+}
+
+
+/* =====================================================
+   PLANET SELECTOR
+===================================================== */
+
+.comparison-selector {
+    max-width: 1000px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.selector-arrow {
+    flex: 0 0 38px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+
+    color: #81899b;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    cursor: pointer;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.selector-arrow:hover {
+    color: var(--gold);
+
+    border-color:
+        rgba(180, 255, 0, 0.35);
+
+    transform: scale(1.08);
+}
+
+
+.comparison-thumbnails {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+}
+
+
+.comparison-thumbnail {
+    position: relative;
+
+    flex: 0 0 76px;
+
+    width: 76px;
+    height: 76px;
+
+    padding: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    cursor: pointer;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.comparison-thumbnail img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.comparison-thumbnail span {
+    color: #697285;
+
+    font-size: 0.48rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.comparison-thumbnail:hover {
+    border-color:
+        rgba(180, 255, 0, 0.25);
+
+    background:
+        rgba(180, 255, 0, 0.035);
+
+    transform: translateY(-4px);
+}
+
+
+.comparison-thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+
+.comparison-thumbnail.active {
+    border-color:
+        rgba(180, 255, 0, 0.55);
+
+    background:
+        rgba(180, 255, 0, 0.055);
+
+    box-shadow:
+        0 0 25px
+        rgba(180, 255, 0, 0.07);
+}
+
+
+.comparison-thumbnail.active span {
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.comparison-footer {
+    max-width: 500px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.comparison-footer > span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 255, 255, 0.1)
+        );
+}
+
+
+.comparison-footer > span:last-child {
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            rgba(255, 255, 255, 0.1)
+        );
+}
+
+
+.comparison-footer p {
+    margin: 0;
+
+    color: #555e70;
+
+    white-space: nowrap;
+
+    font-size: 0.52rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.comparison-footer b {
+    margin: 0 5px;
+
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .comparison-panel {
+        padding: 35px 25px;
+    }
+
+    .comparison-stat {
+        grid-template-columns:
+            1fr
+            125px
+            1fr;
+    }
+
+    .comparison-thumbnail {
+        flex-basis: 68px;
+
+        width: 68px;
+        height: 68px;
+    }
+
+    .comparison-thumbnail img {
+        width: 37px;
+        height: 37px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .cosmic-comparison {
+        padding: 80px 15px 60px;
+    }
+
+
+    .comparison-panel {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            auto
+            auto
+            auto;
+
+        gap: 35px;
+
+        padding: 30px 16px;
+    }
+
+
+    .comparison-planet-left {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+
+    .comparison-center {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+
+    .comparison-planet-right {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+
+    .comparison-center {
+        min-height: 60px;
+    }
+
+
+    .comparison-vs::before,
+    .comparison-vs::after {
+        width: 75px;
+
+        height: 1px;
+
+        top: 50%;
+
+        bottom: auto;
+    }
+
+
+    .comparison-vs::before {
+        right: 100%;
+        left: auto;
+    }
+
+
+    .comparison-vs::after {
+        left: 100%;
+        right: auto;
+    }
+
+
+    .comparison-stats {
+        grid-column: 1;
+        grid-row: 4;
+
+        margin-top: 0;
+    }
+
+
+    .comparison-stat {
+        grid-template-columns:
+            1fr 80px 1fr;
+
+        min-height: 52px;
+
+        padding: 0 8px;
+    }
+
+
+    .comparison-stat strong {
+        font-size: 0.65rem;
+    }
+
+
+    .comparison-stat strong:first-child {
+        padding-right: 8px;
+    }
+
+
+    .comparison-stat strong:last-child {
+        padding-left: 8px;
+    }
+
+
+    .comparison-stat > span {
+        font-size: 0.45rem;
+
+        letter-spacing: 0.6px;
+
+        gap: 4px;
+    }
+
+
+    .comparison-selector {
+        gap: 7px;
+    }
+
+
+    .comparison-thumbnails {
+        max-width: calc(100vw - 100px);
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+
+    .comparison-thumbnails::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .comparison-thumbnail {
+        flex-basis: 62px;
+
+        width: 62px;
+        height: 62px;
+    }
+
+
+    .comparison-thumbnail img {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .selector-arrow {
+        flex-basis: 32px;
+
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .comparison-footer {
+        padding: 0 15px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .comparison-vs,
+    .comparison-orbit {
+        animation: none;
+    }
+
+    .comparison-planet-image,
+    .comparison-planet-visual::before,
+    .comparison-nav-btn,
+    .comparison-explore-btn,
+    .comparison-thumbnail,
+    .selector-arrow {
+        transition: none;
+    }
+
+}
+
+/* =====================================================
+   COMPARISON SELECT MODE
+===================================================== */
+
+.comparison-select-mode {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 28px auto 0;
+
+    padding: 4px;
+
+    width: fit-content;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.comparison-select-mode button {
+    border: 0;
+
+    padding: 9px 17px;
+
+    border-radius: 50px;
+
+    color: #697285;
+
+    background: transparent;
+
+    font-size: 0.55rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.comparison-select-mode button i {
+    font-size: 0.55rem;
+
+    margin: 0 4px;
+}
+
+
+.comparison-select-mode button:hover {
+    color: #fff;
+}
+
+
+.comparison-select-mode button.active {
+    color: #080b14;
+
+    background: var(--gold);
+
+    box-shadow:
+        0 5px 18px
+        rgba(180, 255, 0, 0.15);
+}
+
+
+/* =====================================================
+   SELECT MODE RESPONSIVE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .comparison-select-mode {
+        width: 100%;
+
+        max-width: 290px;
+    }
+
+    .comparison-select-mode button {
+        flex: 1;
+
+        padding: 8px 10px;
+
+        font-size: 0.48rem;
+    }
+
 }

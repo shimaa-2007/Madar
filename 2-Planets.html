@@ -315,8 +315,16 @@
 
                 <p>The smallest planet and the closest world to the Sun.</p>
 
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  57.9 million km from Sun
+                </span>
+
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=mercury"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -358,9 +366,15 @@
                 <h3>Venus</h3>
 
                 <p>A hot world hidden beneath a thick atmosphere.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  108.2 million km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=venus"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -402,9 +416,15 @@
                 <h3>Earth</h3>
 
                 <p>Our home planet and the only known world supporting life.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  149.6 million km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=earth"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -446,9 +466,15 @@
                 <h3>Mars</h3>
 
                 <p>The red planet with a history of ancient water.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  227.9 million km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=mars"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -490,9 +516,15 @@
                 <h3>Jupiter</h3>
 
                 <p>The largest planet in our solar system.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  778.5 million km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=jupiter"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -534,9 +566,15 @@
                 <h3>Saturn</h3>
 
                 <p>A magnificent gas giant famous for its spectacular rings.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  1.43 billion km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=saturn"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -578,9 +616,15 @@
                 <h3>Uranus</h3>
 
                 <p>An icy blue world rotating on its side.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  2.87 billion km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=uranus"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -622,9 +666,15 @@
                 <h3>Neptune</h3>
 
                 <p>The distant blue giant with incredibly powerful winds.</p>
-
+                <span class="planet-distance">
+                  <i class="fa-solid fa-location-arrow"></i>
+                  4.5 billion km from Sun
+                </span>
                 <div class="planet-actions">
-                  <a href="3-Planets_Details.html" class="planet-link">
+                  <a
+                    href="3-Planets_Details.html?planet=neptune"
+                    class="planet-link"
+                  >
                     Explore
                     <i class="fa-solid fa-arrow-right"></i>
                   </a>
@@ -676,11 +726,14 @@
           </div>
 
           <!-- Body -->
+          <!-- Body -->
           <div class="modal-body planet-modal-body">
+            <!-- Planet Image -->
             <div class="planet-modal-image">
               <img id="modalPlanetImage" src="" alt="" />
             </div>
 
+            <!-- Planet Info -->
             <div class="planet-modal-info">
               <span id="modalPlanetType" class="planet-modal-type">
                 ICE GIANT
@@ -690,9 +743,26 @@
                 A distant ice giant known for its deep blue color and powerful
                 winds.
               </p>
+
+              <!-- Planet Statistics -->
+              <div class="planet-modal-stats">
+                <div class="planet-modal-stat">
+                  <span>Temperature</span>
+                  <strong id="modalPlanetTemperature">-200°C</strong>
+                </div>
+
+                <div class="planet-modal-stat">
+                  <span>Gravity</span>
+                  <strong id="modalPlanetGravity">11.15 m/s²</strong>
+                </div>
+
+                <div class="planet-modal-stat">
+                  <span>Moons</span>
+                  <strong id="modalPlanetMoons">16</strong>
+                </div>
+              </div>
             </div>
           </div>
-
           <!-- Footer -->
           <div class="modal-footer planet-modal-footer">
             <button
@@ -711,6 +781,393 @@
         </div>
       </div>
     </div>
+    <!-- =====================================================
+     COSMIC COMPARISON SECTION
+===================================================== -->
+
+    <section class="cosmic-comparison" id="cosmic-comparison">
+      <!-- Background stars -->
+      <div class="comparison-stars"></div>
+
+      <!-- Section Header -->
+      <div class="comparison-header">
+        <span class="comparison-eyebrow"> COSMIC COMPARISON </span>
+
+        <h2>Compare Two <span>Worlds</span></h2>
+
+        <p>
+          Explore the differences between any two planets in our solar system.
+        </p>
+      </div>
+
+      <!-- =================================================
+         MAIN COMPARISON PANEL
+    ================================================== -->
+
+      <div class="comparison-panel">
+        <!-- =============================================
+             LEFT PLANET
+        ============================================== -->
+
+        <div class="comparison-planet comparison-planet-left">
+          <!-- Planet Controls -->
+          <div class="comparison-planet-top">
+            <button
+              type="button"
+              class="comparison-nav-btn"
+              id="planetOnePrev"
+              aria-label="Previous planet"
+            >
+              <i class="fas fa-arrow-left"></i>
+              <span>PREV</span>
+            </button>
+
+            <div class="comparison-planet-counter">
+              <span id="planetOneCurrent">03</span>
+              <small>/ 08</small>
+            </div>
+
+            <button
+              type="button"
+              class="comparison-nav-btn"
+              id="planetOneNext"
+              aria-label="Next planet"
+            >
+              <span>NEXT</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Planet Info -->
+
+          <div class="comparison-planet-info">
+            <span class="comparison-planet-type" id="planetOneType">
+              TERRESTRIAL PLANET
+            </span>
+
+            <h3 id="planetOneName">EARTH</h3>
+          </div>
+
+          <!-- Planet Image -->
+
+          <div class="comparison-planet-visual">
+            <div class="comparison-orbit orbit-one"></div>
+
+            <img
+              id="planetOneImage"
+              src="assets/images/planets/Earth.png"
+              alt="Earth"
+              class="comparison-planet-image"
+            />
+          </div>
+
+          <!-- Description -->
+
+          <p class="comparison-planet-description" id="planetOneDescription">
+            Our home planet and the only known world to support life.
+          </p>
+
+          <!-- Explore -->
+
+          <a
+            href="3-Planets_Details.html?planet=earth"
+            class="comparison-explore-btn"
+            id="planetOneExplore"
+          >
+            EXPLORE EARTH
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- =================================================
+             CENTER VS
+        ================================================== -->
+
+        <div class="comparison-center">
+          <div class="comparison-vs">VS</div>
+        </div>
+
+        <!-- =============================================
+             RIGHT PLANET
+        ============================================== -->
+
+        <div class="comparison-planet comparison-planet-right">
+          <!-- Planet Controls -->
+
+          <div class="comparison-planet-top">
+            <button
+              type="button"
+              class="comparison-nav-btn"
+              id="planetTwoPrev"
+              aria-label="Previous planet"
+            >
+              <i class="fas fa-arrow-left"></i>
+              <span>PREV</span>
+            </button>
+
+            <div class="comparison-planet-counter">
+              <span id="planetTwoCurrent">04</span>
+              <small>/ 08</small>
+            </div>
+
+            <button
+              type="button"
+              class="comparison-nav-btn"
+              id="planetTwoNext"
+              aria-label="Next planet"
+            >
+              <span>NEXT</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Planet Info -->
+
+          <div class="comparison-planet-info">
+            <span class="comparison-planet-type" id="planetTwoType">
+              TERRESTRIAL PLANET
+            </span>
+
+            <h3 id="planetTwoName">MARS</h3>
+          </div>
+
+          <!-- Planet Image -->
+
+          <div class="comparison-planet-visual">
+            <div class="comparison-orbit orbit-two"></div>
+
+            <img
+              id="planetTwoImage"
+              src="assets/images/planets/Mars.png"
+              alt="Mars"
+              class="comparison-planet-image"
+            />
+          </div>
+
+          <!-- Description -->
+
+          <p class="comparison-planet-description" id="planetTwoDescription">
+            The Red Planet, a world of mystery and future possibilities.
+          </p>
+
+          <!-- Explore -->
+
+          <a
+            href="3-Planets_Details.html?planet=mars"
+            class="comparison-explore-btn"
+            id="planetTwoExplore"
+          >
+            EXPLORE MARS
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- =================================================
+             COMPARISON STATISTICS
+        ================================================== -->
+
+        <div class="comparison-stats">
+          <!-- Diameter -->
+
+          <div class="comparison-stat">
+            <strong id="comparisonOneDiameter"> 12,742 km </strong>
+
+            <span>
+              <i class="fas fa-circle"></i>
+              DIAMETER
+            </span>
+
+            <strong id="comparisonTwoDiameter"> 6,779 km </strong>
+          </div>
+
+          <!-- Gravity -->
+
+          <div class="comparison-stat">
+            <strong id="comparisonOneGravity"> 9.81 m/s² </strong>
+
+            <span>
+              <i class="fas fa-gem"></i>
+              GRAVITY
+            </span>
+
+            <strong id="comparisonTwoGravity"> 3.71 m/s² </strong>
+          </div>
+
+          <!-- Temperature -->
+
+          <div class="comparison-stat">
+            <strong id="comparisonOneTemperature"> 15°C </strong>
+
+            <span>
+              <i class="fas fa-circle-notch"></i>
+              TEMPERATURE
+            </span>
+
+            <strong id="comparisonTwoTemperature"> -63°C </strong>
+          </div>
+
+          <!-- Moons -->
+
+          <div class="comparison-stat">
+            <strong id="comparisonOneMoons"> 1 </strong>
+
+            <span>
+              <i class="fas fa-diamond"></i>
+              MOONS
+            </span>
+
+            <strong id="comparisonTwoMoons"> 2 </strong>
+          </div>
+
+          <!-- Day Length -->
+
+          <div class="comparison-stat">
+            <strong id="comparisonOneDay"> 24h </strong>
+
+            <span>
+              <i class="fas fa-clock"></i>
+              DAY LENGTH
+            </span>
+
+            <strong id="comparisonTwoDay"> 24.6h </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================================================
+         PLANET SELECTOR
+    ================================================== -->
+
+      <!-- =====================================================
+     PLANET SELECTOR
+===================================================== -->
+
+      <div class="comparison-select-mode">
+        <button id="selectLeftPlanet" class="active" type="button">
+          <i class="fas fa-arrow-left"></i>
+          LEFT PLANET
+        </button>
+
+        <button id="selectRightPlanet" type="button">
+          RIGHT PLANET
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="comparison-selector">
+        <button
+          class="selector-arrow"
+          id="comparisonSelectorPrev"
+          type="button"
+          aria-label="Previous planet"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="comparison-thumbnails">
+          <button
+            class="comparison-thumbnail"
+            data-planet="mercury"
+            type="button"
+          >
+            <img src="assets/images/planets/Mercury.png" alt="Mercury" />
+
+            <span>Mercury</span>
+          </button>
+
+          <button
+            class="comparison-thumbnail"
+            data-planet="venus"
+            type="button"
+          >
+            <img src="assets/images/planets/Venus.png" alt="Venus" />
+
+            <span>Venus</span>
+          </button>
+
+          <button
+            class="comparison-thumbnail active"
+            data-planet="earth"
+            type="button"
+          >
+            <img src="assets/images/planets/Earth.png" alt="Earth" />
+
+            <span>Earth</span>
+          </button>
+
+          <button class="comparison-thumbnail" data-planet="mars" type="button">
+            <img src="assets/images/planets/Mars.png" alt="Mars" />
+
+            <span>Mars</span>
+          </button>
+
+          <button
+            class="comparison-thumbnail"
+            data-planet="jupiter"
+            type="button"
+          >
+            <img src="assets/images/planets/Jupiter.png" alt="Jupiter" />
+
+            <span>Jupiter</span>
+          </button>
+
+          <button
+            class="comparison-thumbnail"
+            data-planet="saturn"
+            type="button"
+          >
+            <img src="assets/images/planets/Saturn.png" alt="Saturn" />
+
+            <span>Saturn</span>
+          </button>
+
+          <button
+            class="comparison-thumbnail"
+            data-planet="uranus"
+            type="button"
+          >
+            <img src="assets/images/planets/Uranus.png" alt="Uranus" />
+
+            <span>Uranus</span>
+          </button>
+
+          <button
+            class="comparison-thumbnail"
+            data-planet="neptune"
+            type="button"
+          >
+            <img src="assets/images/planets/Neptune.png" alt="Neptune" />
+
+            <span>Neptune</span>
+          </button>
+        </div>
+
+        <button
+          class="selector-arrow"
+          id="comparisonSelectorNext"
+          type="button"
+          aria-label="Next planet"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- =================================================
+         FOOTER LINE
+    ================================================== -->
+
+      <div class="comparison-footer">
+        <span></span>
+
+        <p>
+          DIFFERENT WORLDS
+          <b>•</b>
+          SAME UNIVERSE
+        </p>
+
+        <span></span>
+      </div>
+    </section>
 
     <!-- footer -->
     <footer class="main-footer py-3 mt-5">
