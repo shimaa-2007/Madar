@@ -1,16 +1,17 @@
 # navbar --> responsive -- collapsse __________________ done
-# light and dark mode
+# light and dark mode ___________ cancelled
 # footer __________________ done
-# to top button --> js
+# to top button --> js ___________ done
 
 # social icon --> general ___________________ done
 # select text --> general -> gold _____________ done
 
-# form validation --> js
-
+# form validation --> js _____________ done
+- password in regular expression js ____________ done
 # take user name at first//////
+# sweet alert
 # section4 home --> its section planets dts
 # active at navbar   __________________ done
 
-# name attribute to form inputs
-# 
+# name attribute to form inputs ___________ cancelled
+# set interval --> static numbers

@@ -101,36 +101,51 @@
                 <i class="fas fa-satellite-dish me-2 text-warning"></i> Transmission Terminal
               </h3>
               
-              <form>
+              <form id="contactForm" novalidate>
                 <div class="row g-3">
+                  <!-- name -->
                   <div class="col-md-6">
                     <label class="form-label text-light fs-7">Full Name</label>
-                    <input type="text" class="form-control custom-input" placeholder="e.g. Shimaa Aboelela" />
+                    <input type="text" id="fullName" class="form-control custom-input" placeholder="e.g. Shimaa Aboelela" />
+                    <div class="invalid-feedback">Please enter your name (at least 3 characters).</div>
                   </div>
                   
+                  <!-- phone -->
                   <div class="col-md-6">
-                    <label class="form-label text-light fs-7">Email Address</label>
-                    <input type="email" class="form-control custom-input" placeholder="name@gmail.com" />
+                    <label class="form-label text-light fs-7">Mobile Phone</label>
+                    <input type="tel" id="phone" class="form-control custom-input" placeholder="01xxxxxxxx" />
+                    <div class="invalid-feedback">Please enter a valid phone number.</div>
                   </div>
 
+                  <!-- email -->
+                  <div class="col-12">
+                    <label class="form-label text-light fs-7">Email Address</label>
+                    <input type="email" id="email" class="form-control custom-input" placeholder="name@gmail.com" />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+
+                  <!-- topic -->
                   <div class="col-12">
                     <label class="form-label text-light fs-7">Space Topic</label>
-                    <select class="form-select custom-input text-light">
-                      <option selected disabled class="bg-dark">Select a Topic</option>
-                      <option class="bg-dark">Scientific Inquiry (Site Content)</option>
-                      <option class="bg-dark">Technical Inquiry (Website Development)</option>
+                    <select id="topic" class="form-select custom-input text-light">
+                      <option value="" selected disabled class="bg-dark">Select a Topic</option>
+                      <option value="scientific" class="bg-dark">Scientific Inquiry (Site Content)</option>
+                      <option value="technical" class="bg-dark">Technical Inquiry (Website Development)</option>
                     </select>
+                    <div class="invalid-feedback">Please select a topic.</div>
                   </div>
 
+                  <!-- message -->
                   <div class="col-12">
                     <label class="form-label text-light fs-7">Message</label>
-                    <textarea class="form-control custom-input" rows="4" placeholder="Write your message here..."></textarea>
+                    <textarea id="message" class="form-control custom-input" rows="4" placeholder="Write your message here..."></textarea>
                   </div>
 
+                  <!-- submit -->
                   <div class="col-12">
-                    <a href="10-confirm.html" class="btn main-btn w-100 rounded-pill fw-bold py-3 text-uppercase tracking-wider">
-                    Transmit Message <i class="fas fa-paper-plane ms-2"></i>
-                    </a>
+                    <button type="submit" class="btn main-btn w-100 rounded-pill fw-bold py-3 text-uppercase tracking-wider border-0">
+                      Transmit Message <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -188,5 +203,7 @@
     </footer>
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- js for validation -->
+     <script src="assets/js/contact.js"></script>
 </body>
 </html>
