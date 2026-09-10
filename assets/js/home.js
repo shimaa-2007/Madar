@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     var target = parseFloat(counter.getAttribute("data-target")); 
     var suffix = counter.getAttribute("data-suffix") || "";       
-    var duration = 2000;                                          
+    var duration = 4000;                                          
     var stepTime = 20;                                           
     
     var current = 0;                                              
