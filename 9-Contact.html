@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact-Madar</title>
     <!-- fav icon -->
     <link rel="icon" href="assets/images/favicon.jpg" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Bg style -->
+    <link rel="stylesheet" href="assets/css/stars-bg.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/9-contact.css" />
@@ -32,10 +34,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+  </head>
+  <body class="contact-body">
     <!-- navbar -->
-     <div class="container-fluid sticky-top navbar-bg">
+    <div class="container-fluid sticky-top navbar-bg">
       <div class="container">
         <nav class="navbar navbar-expand-lg py-3">
           <a class="navbar-brand me-0" href="1-Home.html">
@@ -49,36 +51,65 @@
             data-bs-target="#madarNavbar"
             aria-controls="madarNavbar"
             aria-expanded="false"
-            aria-label="Toggle navigation" >
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="madarNavbar">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 pt-3 pt-lg-0 align-items-center">
-              <li class="nav-item"><a class="nav-link-custom" href="2-Planets.html">Planets</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="3-Planets_Details.html">Planets Details</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="4-Stars_Galaxies.html">Stars & Galaxies</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="5-Missions.html">Missions</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="6-Discoveries.html">Discoveries</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="7-Solar_System.html">Solar System</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="8-About_Us.html">About Us</a></li>
+            <ul
+              class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 pt-3 pt-lg-0 align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link-custom" href="2-Planets.html">Planets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="3-Planets_Details.html"
+                  >Planets Details</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="4-Stars_Galaxies.html"
+                  >Stars & Galaxies</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="5-Missions.html">Missions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="6-Discoveries.html"
+                  >Discoveries</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="7-Solar_System.html"
+                  >Solar System</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="8-About_Us.html">About Us</a>
+              </li>
             </ul>
 
             <div class="text-center pt-2 pt-lg-0">
-              <a class="main-btn btn rounded-pill fw-medium d-inline-block" href="9-Contact.html">Transmit</a>
+              <a
+                class="main-btn btn rounded-pill fw-medium d-inline-block"
+                href="9-Contact.html"
+                >Transmit</a
+              >
             </div>
           </div>
-
         </nav>
       </div>
     </div>
     <!-- ---------- -->
     <section class="contact-section py-5 position-relative overflow-hidden">
       <div class="container py-4">
-        
         <div class="text-center mb-5">
-          <h1 class="text-white fw-bold display-4 glow-text">Send a Transmission</h1>
-           <!-- <i class="fa-solid fa-rocket"></i> -- rocket -->
+          <h1 class="text-white fw-bold display-4 glow-text">
+            Send a Transmission
+          </h1>
+          <!-- <i class="fa-solid fa-rocket"></i> -- rocket -->
           <p class="msg opacity-75">
             Ready to send a message beyond the stars?<br />
             <strong>Tell us what’s on your mind.</strong>
@@ -86,19 +117,28 @@
         </div>
 
         <div class="row justify-content-center align-items-center g-4">
-          
           <div class="col-lg-8 col-md-10 position-relative">
-            
             <div class="rocket-wrapper">
-              <img src="assets/images/shimaa_images/spaceCraft-removebg-preview.png" alt="Rocket" class="floating-rocket" />
+              <img
+                src="assets/images/shimaa_images/spaceCraft-removebg-preview.png"
+                alt="Rocket"
+                class="floating-rocket"
+              />
             </div>
             <div class="astronaut-wrapper">
-            <img src="assets/images/shimaa_images/astronaut.png" alt="Astronaut" class="floating-astro" />
+              <img
+                src="assets/images/shimaa_images/astronaut.png"
+                alt="Astronaut"
+                class="floating-astro"
+              />
             </div>
 
             <div class="glass-card p-4 p-md-5 rounded-4 shadow-lg">
-              <h3 class="text-white mb-4 fs-4 fw-semibold border-bottom border-secondary pb-3">
-                <i class="fas fa-satellite-dish me-2 text-warning"></i> Transmission Terminal
+              <h3
+                class="text-white mb-4 fs-4 fw-semibold border-bottom border-secondary pb-3"
+              >
+                <i class="fas fa-satellite-dish me-2 text-warning"></i>
+                Transmission Terminal
               </h3>
               
               <form id="contactForm" novalidate>
@@ -150,25 +190,41 @@
                 </div>
               </form>
             </div>
-
           </div>
 
           <div class="col-lg-4 col-md-10">
             <div class="glass-card p-4 rounded-4 mb-4">
-              <h4 class="text-white mb-3 fs-5"><i class="fas fa-headset me-2 text-warning"></i> Contact Info</h4>
+              <h4 class="text-white mb-3 fs-5">
+                <i class="fas fa-headset me-2 text-warning"></i> Contact Info
+              </h4>
               <ul class="list-unstyled text-light opacity-75 mb-0">
-                <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-warning"></i> 123 Cosmic Way, Sector 7</li>
-                <li class="mb-2"><i class="fas fa-phone me-2 text-warning"></i> +20 11 4752 0585</li>
-                <li><i class="fas fa-envelope me-2 text-warning"></i> s03034702@gmail.com</li>
+                <li class="mb-2">
+                  <i class="fas fa-map-marker-alt me-2 text-warning"></i> 123
+                  Cosmic Way, Sector 7
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-phone me-2 text-warning"></i> +20 11 4752
+                  0585
+                </li>
+                <li>
+                  <i class="fas fa-envelope me-2 text-warning"></i>
+                  s03034702@gmail.com
+                </li>
               </ul>
             </div>
 
             <div class="glass-card p-4 rounded-4 text-center">
               <h5 class="text-white mb-3 fs-6">Connect across the Galaxy</h5>
               <div class="d-flex justify-content-center gap-3">
-                <a href="#" class="social-icon"><i class="fab me-0 fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab me-0 fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fa-brands fa-discord"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -176,21 +232,34 @@
       </div>
     </section>
 
-
     <!-- footer -->
     <footer class="main-footer py-3 mt-5">
       <div class="container">
-        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3 text-center text-lg-start">
-          
-          <div class="d-flex flex-column flex-sm-row align-items-center gap-2 gap-sm-3">
-            <a href="1-Home.html"><img src="assets/images/logo.jpg" alt="Madar Logo" class="logo" /></a>
-            <span class="copyright-text small">&copy; 2026 <span class="text-warning">MADAR</span>. All rights reserved.</span>
+        <div
+          class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3 text-center text-lg-start"
+        >
+          <div
+            class="d-flex flex-column flex-sm-row align-items-center gap-2 gap-sm-3"
+          >
+            <a href="1-Home.html"
+              ><img src="assets/images/logo.jpg" alt="Madar Logo" class="logo"
+            /></a>
+            <span class="copyright-text small"
+              >&copy; 2026 <span class="text-warning">MADAR</span>. All rights
+              reserved.</span
+            >
           </div>
 
           <div class="d-flex gap-3">
-            <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-discord"></i
+            ></a>
             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
           </div>
 

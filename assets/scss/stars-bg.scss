@@ -1,10 +1,14 @@
 @use 'abstract/index' as *;
 // Stars Background
-.stars-hero,
-.stars-cards,
-.cosmic-facts,
-.signal-inspector,
-.filter-bar {
+.stars-body,
+.home-body,
+.planets-body,
+.planets-details-body,
+.discoveries-body,
+.solar-system-body,
+.about-body,
+.contact-body,
+.confirm-body {
   position: relative;
   background-color: #0b0d14;
   overflow-x: hidden;

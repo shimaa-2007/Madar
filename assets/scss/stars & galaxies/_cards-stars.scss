@@ -284,3 +284,56 @@
   filter: drop-shadow(0 0 26px rgba(220, 40, 240, 0.95))
     drop-shadow(0 0 45px rgba(255, 120, 0, 0.5)) !important;
 }
+
+// Favourite button
+.favorite-btn {
+  width: clamp(2rem, 3vw, 2.75rem);
+  height: clamp(2rem, 3vw, 2.75rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background: rgba(10, 7, 18, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease;
+
+  i {
+    @include flex(center, center, column nowrap);
+    font-size: clamp(0.75rem, 4vw, 1rem);
+    margin-top: 0.15rem;
+  }
+
+  &:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(10, 7, 18, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  }
+
+  &.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #0b0e19;
+    box-shadow: 0 0 16px rgba(255, 215, 0, 0.35);
+  }
+}
+
+// .card__buttons-container {
+//   margin-block-start: clamp(0.75rem, 3vw, 1rem);
+//   @include flex(space-between, center, row nowrap);
+// }
+
+.star-card__body {
+  .favorite-btn {
+    position: absolute !important;
+    bottom: 8%;
+    right: 4%;
+    z-index: 3;
+  }
+}

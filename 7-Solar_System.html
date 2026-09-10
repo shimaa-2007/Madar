@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SolarSystem-Madar</title>
     <!-- fav icon -->
     <link rel="icon" href="assets/images/favicon.jpg" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Bg style -->
+    <link rel="stylesheet" href="assets/css/stars-bg.css" />
     <!-- main style -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- google fonts -->
@@ -31,8 +33,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+  </head>
+  <body class="solar-system-body">
     <!-- navbar -->
     <div class="container-fluid sticky-top navbar-bg">
       <div class="container">
@@ -48,26 +50,54 @@
             data-bs-target="#madarNavbar"
             aria-controls="madarNavbar"
             aria-expanded="false"
-            aria-label="Toggle navigation" >
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="madarNavbar">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 pt-3 pt-lg-0 align-items-center">
-              <li class="nav-item"><a class="nav-link-custom" href="2-Planets.html">Planets</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="3-Planets_Details.html">Planets Details</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="4-Stars_Galaxies.html">Stars & Galaxies</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="5-Missions.html">Missions</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="6-Discoveries.html">Discoveries</a></li>
-              <li class="nav-item"><a class="nav-link-custom active" href="7-Solar_System.html">Solar System</a></li>
-              <li class="nav-item"><a class="nav-link-custom" href="8-About_Us.html">About Us</a></li>
+            <ul
+              class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2 pt-3 pt-lg-0 align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link-custom" href="2-Planets.html">Planets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="3-Planets_Details.html"
+                  >Planets Details</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="4-Stars_Galaxies.html"
+                  >Stars & Galaxies</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="5-Missions.html">Missions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="6-Discoveries.html"
+                  >Discoveries</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom active" href="7-Solar_System.html"
+                  >Solar System</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-custom" href="8-About_Us.html">About Us</a>
+              </li>
             </ul>
 
             <div class="text-center pt-2 pt-lg-0">
-              <a class="main-btn btn rounded-pill fw-medium d-inline-block" href="9-Contact.html">Transmit</a>
+              <a
+                class="main-btn btn rounded-pill fw-medium d-inline-block"
+                href="9-Contact.html"
+                >Transmit</a
+              >
             </div>
           </div>
-
         </nav>
       </div>
     </div>
@@ -75,17 +105,31 @@
     <!-- footer -->
     <footer class="main-footer py-3 mt-5">
       <div class="container">
-        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3 text-center text-lg-start">
-          
-          <div class="d-flex flex-column flex-sm-row align-items-center gap-2 gap-sm-3">
-            <a href="1-Home.html"><img src="assets/images/logo.jpg" alt="Madar Logo" class="logo" /></a>
-            <span class="copyright-text small">&copy; 2026 <span class="text-warning">MADAR</span>. All rights reserved.</span>
+        <div
+          class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3 text-center text-lg-start"
+        >
+          <div
+            class="d-flex flex-column flex-sm-row align-items-center gap-2 gap-sm-3"
+          >
+            <a href="1-Home.html"
+              ><img src="assets/images/logo.jpg" alt="Madar Logo" class="logo"
+            /></a>
+            <span class="copyright-text small"
+              >&copy; 2026 <span class="text-warning">MADAR</span>. All rights
+              reserved.</span
+            >
           </div>
 
           <div class="d-flex gap-3">
-            <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-discord"></i
+            ></a>
             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
           </div>
 
