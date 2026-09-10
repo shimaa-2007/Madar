@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #080a16;
+    color: #f4f0e8;
+    font-family: "Space Grotesk", sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    width: 90%;
+    max-width: 100%;
+    margin: auto;
+
+    min-height: 430px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 70px 0 60px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-left {
+    width: 70%;
+    max-width: 100%;
+}
+
+.small-title {
+    color: #c5ff28;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.small-title span {
+    display: inline-block;
+
+    width: 30px;
+    height: 1px;
+
+    background: #c5ff28;
+
+    vertical-align: middle;
+
+    margin-right: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 125px);
+
+    line-height: 0.95;
+
+    letter-spacing: -6px;
+
+    font-weight: 500;
+
+    max-width: 100%;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.white {
+    color: #f4f0e8;
+}
+
+.gray {
+    color: #a3a5bc;
+}
+
+.hero-right {
+    width: 28%;
+    max-width: 100%;
+
+    align-self: flex-end;
+
+    margin-bottom: 20px;
+}
+
+.hero-right p {
+    color: #a0a2b6;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= DISPATCH ================= */
+
+.dispatch-section {
+    width: 90%;
+    max-width: 100%;
+    margin: auto;
+
+    padding: 40px 0 100px;
+}
+
+.dispatch-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+    max-width: 100%;
+}
+
+.dispatch-header > p {
+    color: #a3a5b8;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+}
+
+.search {
+    display: flex;
+
+    align-items: center;
+
+    border-bottom: 1px solid #282b3e;
+
+    padding-bottom: 10px;
+
+    width: 210px;
+
+    max-width: 100%;
+}
+
+.search span {
+    color: #a3a5b8;
+
+    font-size: 22px;
+
+    margin-right: 8px;
+}
+
+.search input {
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    width: 100%;
+
+    min-width: 0;
+
+    font-family: inherit;
+}
+
+.search input::placeholder {
+    color: #8c8fa3;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: 2fr 1.1fr 1.1fr;
+
+    gap: 16px;
+
+    width: 100%;
+
+    max-width: 100%;
+}
+
+.card {
+    min-height: 385px;
+
+    min-width: 0;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    border: 1px solid #292c42;
+
+    background:
+        linear-gradient(
+            135deg,
+            #202438,
+            #101225
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+.card:nth-child(2),
+.card:nth-child(3) {
+    background:
+        linear-gradient(
+            135deg,
+            #181a31,
+            #0f1022
+        );
+}
+
+.card:nth-child(4) {
+    grid-column: span 1;
+}
+
+.card-number {
+    color: #c5ff28;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.card h2 {
+    font-size: 27px;
+
+    line-height: 1.15;
+
+    font-weight: 500;
+
+    color: #f4f0e8;
+
+    margin-bottom: 20px;
+
+    overflow-wrap: break-word;
+}
+
+.card p {
+    color: #979aae;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+}
+
+
+/* ================= CARD BOTTOM ================= */
+
+.card-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.save-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #c5ff28;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    padding: 0;
+}
+
+.save-btn:hover {
+    color: #e0ff8a;
+}
+
+.card-bottom > span {
+    color: #a3a5b7;
+
+    font-size: 16px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    width: 90%;
+    max-width: 100%;
+
+    margin: auto;
+
+    min-height: 120px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #7f8298;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}

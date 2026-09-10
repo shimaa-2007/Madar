@@ -1,0 +1,659 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* HERO */
+
+.space {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at center, #100020, #05000d 45%, #000);
+}
+
+
+/*  STARS  */
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, #aaa 1px, transparent 1px);
+
+    background-size:
+        70px 70px,
+        110px 110px,
+        170px 170px;
+
+    background-position:
+        10px 20px,
+        40px 80px,
+        100px 30px;
+
+    transition: 4s;
+}
+
+.space.active .stars {
+    opacity: .8;
+}
+
+
+/* SHOOTING STARS  */
+
+.shooting-star {
+    position: absolute;
+
+    width: 120px;
+    height: 2px;
+
+    background: linear-gradient(to right, transparent, white);
+
+    transform: rotate(-35deg);
+
+    opacity: 0;
+}
+
+.star1 {
+    top: 20%;
+    left: 10%;
+}
+
+.star2 {
+    top: 35%;
+    left: 70%;
+}
+
+.star3 {
+    top: 70%;
+    left: 30%;
+}
+
+.space.active .star1 {
+    animation: shooting 3s 1s linear;
+}
+
+.space.active .star2 {
+    animation: shooting 3s 2s linear;
+}
+
+.space.active .star3 {
+    animation: shooting 3s 3s linear;
+}
+
+@keyframes shooting {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(500px, 300px) rotate(-35deg);
+    }
+}
+
+
+/* SUN */
+
+.sun {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    background:
+        radial-gradient(
+            circle,
+            #fff,
+            #fff700 20%,
+            #ff9d00 55%,
+            #ff4500
+        );
+
+    box-shadow:
+        0 0 30px #fff700,
+        0 0 70px #ff9900,
+        0 0 130px #ff4500;
+
+    z-index: 10;
+
+    transition: transform 2s;
+}
+
+.space.active .sun {
+    transform: translate(-50%, -50%) scale(1);
+
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+
+    to {
+        box-shadow:
+            0 0 50px #fff700,
+            0 0 100px #ff9900,
+            0 0 170px #ff4500;
+    }
+}
+
+
+/* SOLAR SYSTEM  */
+
+.solar-system {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    opacity: 0;
+
+    transform: scale(.3);
+
+    transition: 4s;
+
+    z-index: 5;
+}
+
+.space.system .solar-system {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ORBITS  */
+
+.orbit {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(255, 255, 255, .18);
+
+    border-radius: 50%;
+
+    animation: rotate linear infinite;
+}
+
+.orbit1 {
+    width: 170px;
+    height: 170px;
+    animation-duration: 8s;
+}
+
+.orbit2 {
+    width: 250px;
+    height: 250px;
+    animation-duration: 12s;
+}
+
+.orbit3 {
+    width: 340px;
+    height: 340px;
+    animation-duration: 16s;
+}
+
+.orbit4 {
+    width: 440px;
+    height: 440px;
+    animation-duration: 20s;
+}
+
+.orbit5 {
+    width: 570px;
+    height: 570px;
+    animation-duration: 25s;
+}
+
+.orbit6 {
+    width: 700px;
+    height: 700px;
+    animation-duration: 30s;
+}
+
+.orbit7 {
+    width: 820px;
+    height: 820px;
+    animation-duration: 35s;
+}
+
+.orbit8 {
+    width: 950px;
+    height: 950px;
+    animation-duration: 40s;
+}
+
+@keyframes rotate {
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+/* PLANETS  */
+
+.planet {
+    position: absolute;
+
+    top: -10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: 1s;
+}
+
+.mercury {
+    width: 14px;
+    height: 14px;
+
+    background: #8d8d8d;
+
+    box-shadow: 0 0 8px #aaa;
+}
+
+.venus {
+    width: 20px;
+    height: 20px;
+
+    background: #d99b5f;
+
+    box-shadow: 0 0 10px #d99b5f;
+}
+
+.earth {
+    width: 24px;
+    height: 24px;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #55c7ff,
+            #0066cc 55%,
+            #003366
+        );
+
+    box-shadow: 0 0 12px #0088ff;
+}
+
+.mars {
+    width: 20px;
+    height: 20px;
+
+    background: #c94c36;
+
+    box-shadow: 0 0 10px #ff3300;
+}
+
+.jupiter {
+    width: 48px;
+    height: 48px;
+
+    background:
+        linear-gradient(
+            #d9b38c 20%,
+            #a96d48 30%,
+            #e0c09d 45%,
+            #985d40 60%,
+            #d6a77d 75%
+        );
+}
+
+.saturn {
+    width: 42px;
+    height: 42px;
+
+    background: #d5b276;
+}
+
+.saturn::after {
+    content: "";
+
+    position: absolute;
+
+    width: 68px;
+    height: 20px;
+
+    top: 11px;
+    left: -13px;
+
+    border: 3px solid #c9aa78;
+
+    border-radius: 50%;
+
+    transform: rotate(-20deg);
+}
+
+.uranus {
+    width: 28px;
+    height: 28px;
+
+    background: #72d7dc;
+
+    box-shadow: 0 0 12px #72d7dc;
+}
+
+.neptune {
+    width: 27px;
+    height: 27px;
+
+    background: #4169e1;
+
+    box-shadow: 0 0 12px #4169e1;
+}
+
+
+/* PLANETS APPEAR */
+
+.space.system .planet {
+    opacity: 1;
+}
+
+.space.system .mercury {
+    transition-delay: .2s;
+}
+
+.space.system .venus {
+    transition-delay: .5s;
+}
+
+.space.system .earth {
+    transition-delay: .8s;
+}
+
+.space.system .mars {
+    transition-delay: 1.1s;
+}
+
+.space.system .jupiter {
+    transition-delay: 1.4s;
+}
+
+.space.system .saturn {
+    transition-delay: 1.7s;
+}
+
+.space.system .uranus {
+    transition-delay: 2s;
+}
+
+.space.system .neptune {
+    transition-delay: 2.3s;
+}
+
+
+/* INTRO  */
+
+.intro {
+    position: absolute;
+
+    top: 12%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    color: white;
+
+    opacity: 0;
+
+    transition: 2s;
+
+    z-index: 20;
+}
+
+.space.active .intro {
+    opacity: 1;
+}
+
+.intro h1 {
+    font-size: 50px;
+
+    letter-spacing: 10px;
+
+    text-shadow:
+        0 0 15px white,
+        0 0 40px #7b00ff;
+}
+
+.intro p {
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    color: #ccc;
+
+    letter-spacing: 3px;
+}
+
+
+/*  FORMATION SECTION  */
+
+.formation-section {
+    min-height: 100vh;
+
+    padding: 100px 8%;
+
+    position: relative;
+
+    background: #040409;
+}
+
+
+/*  SECTION TITLE  */
+
+.section-title {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: 0 auto 70px;
+}
+
+.section-title span {
+    display: block;
+
+    color: #a66cff;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 15px #fff,
+        0 0 35px #7b00ff;
+}
+
+.section-title p {
+    margin-top: 20px;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/*  TIMELINE */
+
+.timeline {
+    max-width: 1000px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #7b00ff,
+            #fff,
+            #7b00ff,
+            transparent
+        );
+}
+
+.timeline-item {
+    width: 50%;
+
+    padding: 20px 45px;
+
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-number {
+    position: absolute;
+
+    top: 20px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #090014;
+
+    border: 1px solid #9b5cff;
+
+    color: #fff;
+
+    box-shadow:
+        0 0 15px #7b00ff;
+}
+
+.timeline-item:nth-child(odd) .timeline-number {
+    right: -19px;
+}
+
+.timeline-item:nth-child(even) .timeline-number {
+    left: -19px;
+}
+
+.timeline-content {
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    backdrop-filter: blur(10px);
+
+    transition: .4s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px);
+
+    border-color: #9b5cff;
+
+    box-shadow:
+        0 0 30px rgba(123, 0, 255, .25);
+}
+
+.formation-icon {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.timeline-content h3 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: #aaa;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
