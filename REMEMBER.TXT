@@ -8,10 +8,10 @@
 
 # form validation --> js _____________ done
 - password in regular expression js ____________ done
-# take user name at first//////
-# sweet alert
+# take user name at first//////# sweet alert ___________ cancelled
 # section4 home --> its section planets dts
 # active at navbar   __________________ done
 
 # name attribute to form inputs ___________ cancelled
 # set interval --> static numbers
+# add fav to navbar ___________ done
