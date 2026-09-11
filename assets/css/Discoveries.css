@@ -336,3 +336,29 @@ footer {
 
     letter-spacing: 1px;
 }
+
+
+/* ================= SAVE MESSAGE ================= */
+
+.save-message {
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #c5ff28;
+
+    color: #10120d;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    z-index: 1000;
+}
