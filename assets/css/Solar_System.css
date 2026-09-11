@@ -26,6 +26,7 @@ body {
 } 
 
 /* STARS */ 
+/* STARS */
 .stars { 
     position: absolute; 
     inset: 0; 
@@ -35,16 +36,15 @@ body {
         radial-gradient(circle, white 1px, transparent 1px), 
         radial-gradient(circle, #aaa 1px, transparent 1px); 
     background-size: 
-        70px 70px, 
-        110px 110px, 
-        170px 170px; 
+        100px 100px, 
+        150px 150px, 
+        220px 220px; 
     background-position: 
         10px 20px, 
         40px 80px, 
         100px 30px; 
     transition: 4s; 
-} 
-
+}
 
 
 /* SHOOTING STARS */ 
