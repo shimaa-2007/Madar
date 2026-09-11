@@ -45,9 +45,7 @@ body {
     transition: 4s; 
 } 
 
-.space.active .stars {
-    opacity: 1;
-}
+
 
 /* SHOOTING STARS */ 
 .shooting-star { 
